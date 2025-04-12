@@ -603,23 +603,23 @@ function App() {
               <LinkIcon className="w-6 h-6" />
               友情链接
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
 
               <a href="https://www.it.fudan.edu.cn/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                复旦大学信息科学与工程学院
+                信息科学与工程学院
               </a>
               <a href="http://www.it.fudan.edu.cn/Data/View/1178" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                李聪科研学术主页
+                李聪的科研学术主页
               </a>
               <a href="https://can.fudan.edu.cn/welcome_cn/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                复旦大学自适应网络与控制研究室
+                自适应网络与控制研究室
               </a>
               <a href="https://scholar.google.com/citations?user=S7-6p4MAAAAJ&hl=fi" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                Google Scholar 主页
+                李聪的Google Scholar主页
               </a>
               <a href="https://can.fudan.edu.cn/author/licong/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
