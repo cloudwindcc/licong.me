@@ -13,23 +13,11 @@ function App() {
   const publications = {
     books: [
       {
-        en: "Characterization and Design of Complex Networks",
-        zh: "复杂网络的特征与设计",
-        isbn: "978-94-6186-364-5",
-        year: "2014",
-        authors: "C. Li",
-        cover: "https://m.media-amazon.com/images/I/61wIe+aPBbL._SY522_.jpg",
-        links: {
-          amazon: "https://www.amazon.com/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%BC%A0%E6%92%AD%E7%90%86%E8%AE%BA-%E6%B5%81%E8%A1%8C%E7%9A%84%E9%9A%90%E7%A7%A9%E5%BA%8F-%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%B7%A5%E7%A8%8B%E4%B8%9B%E4%B9%A6-%E6%9D%8E%E7%BF%94-%E6%9D%8E%E8%81%AA-%E7%8E%8B%E5%BB%BA%E6%B3%A2/dp/7040546051",
-          jd: "https://item.jd.com/10112656325175.html"
-        }
-      },
-      {
         en: "Theory of Spreading on Complex Networks: Hidden Rules of Epidemics",
-        zh: "复杂网络传播理论--流行的隐秩序",
+        zh: "复杂网络传播理论——流行的隐秩序",
         isbn: "978-94-6186-364-5",
-        year: "2014",
-        authors: "X. Li, C. Li, J.B. Wang",
+        year: "2020",
+        authors: "Li Xiang; Li Cong; Wang Jian Bo",
         cover: "https://m.media-amazon.com/images/I/61wIe+aPBbL._SY522_.jpg",
         links: {
           amazon: "https://www.amazon.com/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%BC%A0%E6%92%AD%E7%90%86%E8%AE%BA-%E6%B5%81%E8%A1%8C%E7%9A%84%E9%9A%90%E7%A7%A9%E5%BA%8F-%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6%E4%B8%8E%E5%B7%A5%E7%A8%8B%E4%B8%9B%E4%B9%A6-%E6%9D%8E%E7%BF%94-%E6%9D%8E%E8%81%AA-%E7%8E%8B%E5%BB%BA%E6%B3%A2/dp/7040546051",
@@ -37,18 +25,7 @@ function App() {
         }
       }
     ],
-    chapters: [
-      {
-        en: "Towards Identifying and Predicting Spatial Epidemics on Complex Meta-population Networks",
-        zh: "复杂元群网络上空间流行病的识别与预测",
-        book: "Temporal Network Epidemiology",
-        pages: "129-160",
-        publisher: "Springer",
-        isbn: "978-981-10-5286-6",
-        year: "2017",
-        authors: "X. Li, J.B. Wang, C. Li"
-      }
-    ],
+ 
     journals: [
       {
         en: "Epidemic threshold in temporal multiplex networks with individual layer preference",
@@ -214,14 +191,14 @@ function App() {
                             active ? 'bg-gray-700' : ''
                           } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
                         >
-                          网络科学入门书籍
+                          复旦图书馆
                         </a>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#complex-systems"
+                          href="https://fudan.newbook.pro/sortList"
                           className={`${
                             active ? 'bg-gray-700' : ''
                           } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
@@ -313,12 +290,8 @@ function App() {
                   <li className="flex gap-1">
                     <span className="font-semibold">（一）</span>
                     <span>网络描述及性能分析、网络动力学过程分析、网络设计</span>
-                  </li>
-                  <li className="flex gap-1">
                     <span className="font-semibold">（二）</span>
                     <span>人类集群行为分析、社交网络分析等</span>
-                  </li>
-                  <li className="flex gap-1">
                     <span className="font-semibold">（三）</span>
                     <span>大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
                   </li>
@@ -384,7 +357,7 @@ function App() {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold mb-3">期刊审稿</h3>
                 <p className="text-gray-200 leading-relaxed">
-                  Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) 等国际期刊审稿人
+                  Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) 等
                 </p>
               </div>
             </div>
@@ -393,24 +366,24 @@ function App() {
           <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <GraduationCap className="w-6 h-6" />
-              教授课程
+              主导课程
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <a href="https://jwc.fudan.edu.cn/9397/list.htm" 
+              <a href="" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
                 <h3 className="font-semibold mb-2">本科基础课</h3>
                 <h4 className="font-semibold text-purple-300">线性代数</h4>
                 <p className="text-sm text-gray-300 mt-1">上海市精品课程</p>
               </a>
               
-              <a href="https://cs.fudan.edu.cn/courses" 
+              <a href="" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
                 <h3 className="font-semibold mb-2">本科专业选修课</h3>
                 <h4 className="font-semibold text-purple-300">网络科学导论</h4>
                 <p className="text-sm text-gray-300 mt-1">复旦大学精品课程</p>
               </a>
               
-              <a href="https://gs.fudan.edu.cn/info/1165/3391.htm" 
+              <a href="" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
                 <h3 className="font-semibold mb-2">硕士生专业基础课</h3>
                 <h4 className="font-semibold text-purple-300">网络动力学</h4>
@@ -483,45 +456,6 @@ function App() {
                                 </a>
                               </div>
                             </div>
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">专著章节</h3>
-              <div className="space-y-4">
-                {publications.chapters.map((chapter, index) => (
-                  <Disclosure key={index}>
-                    {({ open }) => (
-                      <>
-                        <Disclosure.Button className="flex w-full justify-between items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                          <div className="text-left">
-                            <h4 className="font-semibold">{chapter.zh}</h4>
-                            <p className="text-sm text-gray-300">
-                              {chapter.authors}, {chapter.book}, {chapter.year}
-                            </p>
-                          </div>
-                          {open ? (
-                            <ChevronUp className="w-5 h-5 text-gray-400" />
-                          ) : (
-                            <ChevronDown className="w-5 h-5 text-gray-400" />
-                          )}
-                        </Disclosure.Button>
-                        <Disclosure.Panel className="px-4 py-3 bg-gray-800/30 rounded-lg mt-2">
-                          <div className="space-y-2">
-                            <p className="text-purple-300">{chapter.en}</p>
-                            <p className="text-sm text-gray-300">
-                              In: {chapter.book}, pp. {chapter.pages}
-                              <br />
-                              Publisher: {chapter.publisher}
-                              <br />
-                              ISBN: {chapter.isbn}
-                            </p>
                           </div>
                         </Disclosure.Panel>
                       </>
