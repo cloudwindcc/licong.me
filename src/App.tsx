@@ -186,7 +186,7 @@ function App() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#network-science"
+                          href="https://fudan.newbook.pro/sortList"
                           className={`${
                             active ? 'bg-gray-700' : ''
                           } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
@@ -206,18 +206,7 @@ function App() {
                           复杂系统推荐读物
                         </a>
                       )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#data-science"
-                          className={`${
-                            active ? 'bg-gray-700' : ''
-                          } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
-                        >
-                          数据科学经典著作
-                        </a>
-                      )}
+
                     </Menu.Item>
                   </div>
                 </Menu.Items>
@@ -254,18 +243,7 @@ function App() {
                           学术论文集
                         </a>
                       )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#projects"
-                          className={`${
-                            active ? 'bg-gray-700' : ''
-                          } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
-                        >
-                          研究项目展示
-                        </a>
-                      )}
+
                     </Menu.Item>
                   </div>
                 </Menu.Items>
@@ -443,7 +421,7 @@ function App() {
                                   className="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition"
                                 >
                                   <ShoppingCart className="w-4 h-4" />
-                                  亚马逊购买
+                                  亚马逊（链接）
                                 </a>
                                 <a
                                   href={book.links.jd}
@@ -452,7 +430,7 @@ function App() {
                                   className="inline-flex items-center gap-2 text-sm text-red-400 hover:text-red-300 transition"
                                 >
                                   <ShoppingCart className="w-4 h-4" />
-                                  京东购买
+                                  京东（链接）
                                 </a>
                               </div>
                             </div>
@@ -545,7 +523,7 @@ function App() {
               </a>
               <a href="http://www.it.fudan.edu.cn/Data/View/1178" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                李聪的科研学术主页
+                科研学术主页
               </a>
               <a href="https://can.fudan.edu.cn/welcome_cn/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
@@ -553,7 +531,7 @@ function App() {
               </a>
               <a href="https://scholar.google.com/citations?user=S7-6p4MAAAAJ&hl=fi" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                李聪的Google Scholar主页
+                Google Scholar主页
               </a>
               <a href="https://can.fudan.edu.cn/author/licong/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
@@ -568,7 +546,7 @@ function App() {
           </section>
 
           <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
-            <p className="text-gray-300">© 2025 复旦大学 信息科学与工程学院</p>
+            <p className="text-gray-300">© 2025 李聪 Licong 复旦大学信息科学与工程学院</p>
             <div className="flex items-center justify-center gap-6 mt-2 text-gray-400">
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
