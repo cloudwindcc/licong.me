@@ -191,8 +191,8 @@ function App() {
               <div>
                 <h1 className="text-4xl font-bold mb-2">李聪</h1>
                 <div className="space-y-1">
-                  <p className="text-xl text-gray-200">电子工程系副研究员，硕士生导师，副系主任</p>
-                  <p className="text-xl font-bold text-emerald-300">复旦大学信息科学与工程学院教授</p>
+                  <p className="text-xl text-gray-200">电子工程系，副主任</p>
+                  <p className="text-xl font-bold text-emerald-300">复旦大学信息科学与工程学院</p>
                 </div>
               </div>
             </div>
@@ -305,20 +305,20 @@ function App() {
             </h2>
             <div className="space-y-6">
               <p className="text-gray-200 leading-relaxed">
-                李聪，女，复旦大学信息科学与工程学院，电子工程系副主任，博士生导师。2014年获得荷兰代尔夫特理工大学智能系统专业哲学博士学位，2005年至2010年在吉林大学通信工程学院分别获得通信工程专业学士及模式识别与智能系统专业硕士研究生学位。主持国家级项目多项。上海市科技创新项目评审10余项，在国际顶级会议和期刊上发表论文20余篇。获2019年度上海市科技进步一等奖（排名第二），担任多个国际会议程序委员会委员及多个国际期刊编委人。
+                李聪，女，复旦大学信息科学与工程学院，电子工程系副主任。2014年获荷兰代尔夫特理工大学智能系统专业哲学博士学位，2005年至2010年在吉林大学通信工程学院分别获得通信工程专业学士及模式识别与智能系统专业硕士研究生学位。主持多项国家级和上海市项目。担任多个国际会议程序委员会委员及多个国际期刊编委人。
               </p>
               <div>
                 <h3 className="text-xl font-semibold mb-3">主要研究方向：复杂网络的理论及应用</h3>
                 <ul className="space-y-4 text-gray-200">
-                  <li className="flex gap-2">
+                  <li className="flex gap-1">
                     <span className="font-semibold">（一）</span>
                     <span>网络描述及性能分析、网络动力学过程分析、网络设计</span>
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-1">
                     <span className="font-semibold">（二）</span>
                     <span>人类集群行为分析、社交网络分析等</span>
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-1">
                     <span className="font-semibold">（三）</span>
                     <span>大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
                   </li>
@@ -580,15 +580,20 @@ function App() {
                 <h3 className="font-semibold mb-2">李聪老师荣获24年度上海开源创新卓越成果奖特等奖</h3>
                 <p className="text-sm text-gray-300">— 复旦大学自适应网络与控制研究室, 2024 [查看全文]</p>
               </a>
-              <a href="https://scholar.google.com/citations?user=XXXX" 
+              <a href="https://can.fudan.edu.cn/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E9%AB%98%E9%98%B6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%96%B0%E8%BF%9B%E5%B1%95%E5%AD%A6%E6%9C%AF%E4%BA%A4%E6%B5%81%E4%BC%9A/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                <h3 className="font-semibold mb-2">"本教授的研究成果可望改变深度学习的未来..."</h3>
-                <p className="text-sm text-gray-300">—《人工智能评论》, 2024 [查看全文]</p>
+                <h3 className="font-semibold mb-2">"李聪老师主持复杂网络高阶动力学研究新进展学术交流会"</h3>
+                <p className="text-sm text-gray-300">— 复旦大学自适应网络与控制研究室,, 2024 [查看全文]</p>
               </a>
-              <a href="https://scholar.google.com/citations?user=XXXX"
+              <a href="https://can.fudan.edu.cn/%E7%A0%94%E7%A9%B6%E5%AE%A4%E6%9D%8E%E8%81%AA%E8%80%81%E5%B8%88%E8%8D%A3%E8%8E%B72022%E5%B9%B4%E5%BA%A6%E4%B8%8A%E6%B5%B7%E5%B8%82%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%95%99%E5%AD%A6/"
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                <h3 className="font-semibold mb-2">"这项研究为计算机视觉领域带来了革命性的突破..."</h3>
-                <p className="text-sm text-gray-300">— International Conference on AI, 2023 [查看全文]</p>
+                <h3 className="font-semibold mb-2">"李聪老师荣获2022年度上海市计算机学会教学成果奖三等奖"</h3>
+                <p className="text-sm text-gray-300">— 上海市计算机学会, 2022 [查看全文]</p>
+              </a>
+              <a href="https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b72020%e5%b9%b4%e5%ba%a6%e4%bf%a1%e6%81%af%e5%ad%a6%e9%99%a2%e9%99%a2%e9%95%bf%e5%a5%96/" 
+                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                <h3 className="font-semibold mb-2">"李聪老师荣获2020年度信息学院院长奖"</h3>
+                <p className="text-sm text-gray-300">— 信息科学与工程学院,, 2020 [查看全文]</p>
               </a>
             </div>
           </section>
@@ -599,17 +604,14 @@ function App() {
               友情链接
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="https://www.fudan.edu.cn" 
+
+              <a href="https://www.it.fudan.edu.cn/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                复旦大学
-              </a>
-              <a href="https://www.fudan.edu.cn/" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                信息科学与工程学院
+                复旦大学信息科学与工程学院
               </a>
               <a href="http://www.it.fudan.edu.cn/Data/View/1178" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                科研学术页
+                李聪科研学术主页
               </a>
               <a href="https://can.fudan.edu.cn/welcome_cn/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
@@ -625,17 +627,14 @@ function App() {
               </a>
               <a href="https://pattern.swarma.org/user/52054" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                集智斑图
+                集智斑图个人主页
               </a>
-              <a href="https://dce.jlu.edu.cn/" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                吉林大学通信工程学院
-              </a>
+
             </div>
           </section>
 
           <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
-            <p className="text-gray-300">© 2024 复旦大学 信息科学与工程学院</p>
+            <p className="text-gray-300">© 2025 复旦大学 信息科学与工程学院</p>
             <div className="flex items-center justify-center gap-6 mt-2 text-gray-400">
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
