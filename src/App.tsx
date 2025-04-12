@@ -638,7 +638,7 @@ function App() {
             <div className="flex items-center justify-center gap-6 mt-2 text-gray-400">
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                邮箱: cong_li@fudan.edu.cn
+                邮箱: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">cong_li@fudan.edu.cn</a>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
