@@ -481,34 +481,34 @@ function App() {
             </div>
           </section>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-              <ExternalLink className="w-6 h-6" />
-              学术动态
-            </h2>
-            <div className="space-y-4">
-              <a href="https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b724%e5%b9%b4%e5%ba%a6%e4%b8%8a%e6%b5%b7%e5%bc%80%e6%ba%90%e5%88%9b%e6%96%b0%e5%8d%93%e8%b6%8a%e6%88%90%e6%9e%9c%e5%a5%96%e7%89%b9%e7%ad%89%e5%a5%96/" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                <h3 className="font-semibold mb-2">李聪老师荣获24年度上海开源创新卓越成果奖特等奖</h3>
-                <p className="text-sm text-gray-300">— 复旦大学自适应网络与控制研究室, 2024 [查看全文]</p>
-              </a>
-              <a href="https://can.fudan.edu.cn/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E9%AB%98%E9%98%B6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%96%B0%E8%BF%9B%E5%B1%95%E5%AD%A6%E6%9C%AF%E4%BA%A4%E6%B5%81%E4%BC%9A/" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                <h3 className="font-semibold mb-2">"李聪老师主持复杂网络高阶动力学研究新进展学术交流会"</h3>
-                <p className="text-sm text-gray-300">— 复旦大学自适应网络与控制研究室,, 2024 [查看全文]</p>
-              </a>
-              <a href="https://can.fudan.edu.cn/%E7%A0%94%E7%A9%B6%E5%AE%A4%E6%9D%8E%E8%81%AA%E8%80%81%E5%B8%88%E8%8D%A3%E8%8E%B72022%E5%B9%B4%E5%BA%A6%E4%B8%8A%E6%B5%B7%E5%B8%82%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%95%99%E5%AD%A6/"
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                <h3 className="font-semibold mb-2">"李聪老师荣获2022年度上海市计算机学会教学成果奖三等奖"</h3>
-                <p className="text-sm text-gray-300">— 上海市计算机学会, 2022 [查看全文]</p>
-              </a>
-              <a href="https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b72020%e5%b9%b4%e5%ba%a6%e4%bf%a1%e6%81%af%e5%ad%a6%e9%99%a2%e9%99%a2%e9%95%bf%e5%a5%96/" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
-                <h3 className="font-semibold mb-2">"李聪老师荣获2020年度信息学院院长奖"</h3>
-                <p className="text-sm text-gray-300">— 信息科学与工程学院,, 2020 [查看全文]</p>
-              </a>
-            </div>
-          </section>
+<section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+  <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+    <ExternalLink className="w-6 h-6" />
+    学术动态
+  </h2>
+  <div className="grid grid-cols-2 gap-4">
+    <a href="https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b724%e5%b9%b4%e5%ba%a6%e4%b8%8a%e6%b5%b7%e5%bc%80%e6%ba%90%e5%88%9b%e6%96%b0%e5%8d%93%e8%b6%8a%e6%88%90%e6%9e%9c%e5%a5%96%e7%89%b9%e7%ad%89%e5%a5%96/" 
+       className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+      <h3 className="font-semibold mb-2">李聪老师荣获24年度上海开源创新卓越成果奖特等奖</h3>
+      <p className="text-sm text-gray-300">— 复旦大学自适应网络与控制研究室, 2024 [查看全文]</p>
+    </a>
+    <a href="https://can.fudan.edu.cn/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E9%AB%98%E9%98%B6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%96%B0%E8%BF%9B%E5%B1%95%E5%AD%A6%E6%9C%AF%E4%BA%A4%E6%B5%81%E4%BC%9A/" 
+       className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+      <h3 className="font-semibold mb-2">"李聪老师主持复杂网络高阶动力学研究新进展学术交流会"</h3>
+      <p className="text-sm text-gray-300">— 复旦大学自适应网络与控制研究室,, 2024 [查看全文]</p>
+    </a>
+    <a href="https://can.fudan.edu.cn/%E7%A0%94%E7%A9%B6%E5%AE%A4%E6%9D%8E%E8%81%AA%E8%80%81%E5%B8%88%E8%8D%A3%E8%8E%B72022%E5%B9%B4%E5%BA%A6%E4%B8%8A%E6%B5%B7%E5%B8%82%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%95%99%E5%AD%A6/"
+       className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+      <h3 className="font-semibold mb-2">"李聪老师荣获2022年度上海市计算机学会教学成果奖三等奖"</h3>
+      <p className="text-sm text-gray-300">— 上海市计算机学会, 2022 [查看全文]</p>
+    </a>
+    <a href="https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b72020%e5%b9%b4%e5%ba%a6%e4%bf%a1%e6%81%af%e5%ad%a6%e9%99%a2%e9%99%a2%e9%95%bf%e5%a5%96/" 
+       className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+      <h3 className="font-semibold mb-2">"李聪老师荣获2020年度信息学院院长奖"</h3>
+      <p className="text-sm text-gray-300">— 信息科学与工程学院,, 2020 [查看全文]</p>
+    </a>
+  </div>
+</section>
 
           <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
