@@ -156,23 +156,26 @@ function App() {
         className="absolute inset-0"
       />
 
-      <div className="relative z-10">
-        <header className="max-w-6xl mx-auto px-4 py-8">
-          <div className="flex justify-between items-start">
-            <div className="flex items-center gap-8">
-              <img
-                src="https://qiniu.swarma.org//master/image/2a98d4e3d7567f756229659196055d30.png"
-                alt="pic"
-                className="w-32 h-32 rounded-full border-4 border-white shadow-xl object-cover"
-              />
-              <div>
-                <h1 className="text-4xl font-bold mb-2">李聪</h1>
-                <div className="space-y-1">
-                  <p className="text-xl text-gray-200">电子工程系，副主任</p>
-                  <p className="text-xl font-bold text-emerald-300">复旦大学信息科学与工程学院</p>
+<div className="relative z-10">
+    <header className="max-w-6xl mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-8">
+                <img
+                    src="https://qiniu.swarma.org//master/image/2a98d4e3d7567f756229659196055d30.png"
+                    alt="pic"
+                    className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-xl object-cover"
+                />
+                <div>
+                    <h1 className="text-3xl md:text-4xl font-bold mb-2">李聪</h1>
+                    <div className="space-y-1">
+                        <p className="text-lg md:text-xl text-gray-200">电子工程系，副主任</p>
+                        <p className="text-lg md:text-xl font-bold text-emerald-300">复旦大学信息科学与工程学院</p>
+                    </div>
                 </div>
-              </div>
             </div>
+        </div>
+    </header>
+</div>    
             
             <div className="flex gap-4">
               <Menu as="div" className="relative">
@@ -260,11 +263,11 @@ function App() {
             </h2>
             <div className="space-y-6">
               <p className="text-gray-200 leading-relaxed">
-                李聪，女，复旦大学信息科学与工程学院，电子工程系副主任。2014年获荷兰代尔夫特理工大学智能系统专业哲学博士学位，2010年在吉林大学通信工程学院获得模式识别与智能系统硕士研究生学位。主持多项国家级项目.担任多个国际会议程序委员会委员及国际期刊编委。
+                李聪，女，复旦大学信息科学与工程学院，电子工程系副主任。荷兰代尔夫特理工大学智能系统哲学博士，吉林大学通信工程学院模式识别与智能系统硕士。主持多项国家级项目，担任多个国际会议程序委员会委员及国际期刊编委。
               </p>
               
               <div>
-<h3 className="text-xl font-semibold mb-3">主要研究方向：复杂网络的理论及应用</h3>
+<h3 className="text-xl font-semibold mb-3">研究方向：复杂网络的理论及应用</h3>
 <ul className="space-y-4 text-gray-200">
   <li className="flex gap-1">
     <span>1.网络描述及性能分析、网络动力学过程分析、网络设计</span>
@@ -424,7 +427,7 @@ function App() {
                                   className="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 transition"
                                 >
                                   <ShoppingCart className="w-4 h-4" />
-                                  亚马逊（链接）
+                                  亚马逊
                                 </a>
                                 <a
                                   href={book.links.jd}
@@ -433,7 +436,7 @@ function App() {
                                   className="inline-flex items-center gap-2 text-sm text-red-400 hover:text-red-300 transition"
                                 >
                                   <ShoppingCart className="w-4 h-4" />
-                                  京东（链接）
+                                  京东
                                 </a>
                               </div>
                             </div>
