@@ -517,7 +517,7 @@ function App() {
           <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <LinkIcon className="w-6 h-6" />
-              友情链接
+              相关链接
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
 
@@ -527,7 +527,7 @@ function App() {
               </a>
               <a href="http://www.it.fudan.edu.cn/Data/View/1178" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                科研学术主页
+                复旦科研主页
               </a>
               <a href="https://can.fudan.edu.cn/welcome_cn/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
@@ -535,22 +535,22 @@ function App() {
               </a>
               <a href="https://scholar.google.com/citations?user=S7-6p4MAAAAJ&hl=fi" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                Google Scholar主页
+                Google Scholar
               </a>
               <a href="https://can.fudan.edu.cn/author/licong/" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                实验室个人主页
+                实验室主页
               </a>
               <a href="https://pattern.swarma.org/user/52054" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
-                集智斑图个人主页
+                集智斑图主页
               </a>
 
             </div>
           </section>
 
 <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
-    <p className="text-gray-300">© 2025 李聪 复旦大学信息科学与工程学院</p>
+    <p className="text-gray-300">© 2025 李聪 复旦大学</p>
     <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-2 text-gray-400">
         <p className="flex items-center gap-2">
             <Mail className="w-4 h-4" />
