@@ -261,20 +261,14 @@ function App() {
             </h2>
             <div className="space-y-6">
               <p className="text-gray-200 leading-relaxed">
-                李聪，女，复旦大学信息科学与工程学院，电子工程系副主任。荷兰代尔夫特理工大学智能系统哲学博士，吉林大学通信工程学院模式识别与智能系统硕士。主持多项国家级项目，担任多个国际会议程序委员会委员及国际期刊编委。
+                李聪，女，复旦大学信息科学与工程学院，电子工程系副主任。荷兰代尔夫特理工大学智能系统哲学博士，吉林大学模式识别与智能系统硕士。主持多项国家级项目，担任多个国际会议程序委员会委员及国际期刊编委。
               </p>
               
               <div>
 <h3 className="text-xl font-semibold mb-3">研究方向：复杂网络的理论及应用</h3>
 <ul className="space-y-4 text-gray-200">
   <li className="flex gap-1">
-    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计</span>
-  </li>
-  <li className="flex gap-1">
-    <span>2.人类集群行为分析、社交网络分析等</span>
-  </li>
-  <li className="flex gap-1">
-    <span>3.大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
+    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计；2.人类集群行为分析、社交网络分析；3.大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
   </li>
 </ul>
               </div>
