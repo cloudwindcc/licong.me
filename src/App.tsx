@@ -267,9 +267,13 @@ function App() {
               <div>
 <h3 className="text-xl font-semibold mb-3">研究方向：复杂网络的理论及应用</h3>
 <ul className="space-y-4 text-gray-200">
-  <li className="flex gap-1">
-    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计；</span>
-    <span>2.人类集群行为分析、社交网络分析；</span>
+  <li className="flex gap-0.2">
+    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计</span>
+  </li>
+  <li className="flex gap-0.2">
+    <span>2.人类集群行为分析、社交网络分析等</span>
+  </li>
+  <li className="flex gap-0.2">
     <span>3.大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
   </li>
 </ul>
@@ -545,18 +549,19 @@ function App() {
             </div>
           </section>
 
-          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
-            <p className="text-gray-300">© 2025 李聪 Licong 复旦大学信息科学与工程学院</p>
-            <div className="flex items-center justify-center gap-6 mt-2 text-gray-400">
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                邮箱: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">cong_li@fudan.edu.cn</a>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                电话: 021-31242510
-              </p>
-            </div>
+<footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
+    <p className="text-gray-300">© 2025 李聪 复旦大学信息科学与工程学院</p>
+    <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-2 text-gray-400">
+        <p className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
+            邮箱: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">cong_li@fudan.edu.cn</a>
+        </p>
+        <p className="flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            电话: 021-31242510
+        </p>
+    </div>
+          
           </footer>
         </main>
       </div>
