@@ -268,7 +268,9 @@ function App() {
 <h3 className="text-xl font-semibold mb-3">研究方向：复杂网络的理论及应用</h3>
 <ul className="space-y-4 text-gray-200">
   <li className="flex gap-1">
-    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计；2.人类集群行为分析、社交网络分析；3.大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
+    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计；</span>
+    <span>2.人类集群行为分析、社交网络分析；</span>
+    <span>3.大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
   </li>
 </ul>
               </div>
