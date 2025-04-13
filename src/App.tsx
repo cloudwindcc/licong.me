@@ -173,9 +173,7 @@ function App() {
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-</div>    
+
             
             <div className="flex gap-4">
               <Menu as="div" className="relative">
