@@ -162,7 +162,7 @@ function App() {
             <div className="flex items-center gap-8">
               <img
                 src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=S7-6p4MAAAAJ&citpid=7"
-                alt="李聪"
+                alt="pic"
                 className="w-32 h-32 rounded-full border-4 border-white shadow-xl object-cover"
               />
               <div>
@@ -266,12 +266,9 @@ function App() {
                 <h3 className="text-xl font-semibold mb-3">主要研究方向：复杂网络的理论及应用</h3>
                 <ul className="space-y-4 text-gray-200">
                   <li className="flex gap-1">
-                    <span className="font-semibold">（一）</span>
-                    <span>网络描述及性能分析、网络动力学过程分析、网络设计</span>
-                    <span className="font-semibold">（二）</span>
-                    <span>人类集群行为分析、社交网络分析等</span>
-                    <span className="font-semibold">（三）</span>
-                    <span>大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
+                    <span>1.网络描述及性能分析、网络动力学过程分析、网络设计</span>
+                    <span>2.人类集群行为分析、社交网络分析等</span>
+                    <span>3.大数据挖掘与分析、图嵌入（图神经网络：社团挖掘、链路预测）等</span>
                   </li>
                 </ul>
               </div>
