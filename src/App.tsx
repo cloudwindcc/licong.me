@@ -33,7 +33,7 @@ function App() {
         journal: "IEEE Transactions on Network Science and Engineering",
         details: "vol. 8, no. 1, pp. 814-824",
         year: "2021",
-        href="https://sci-hub.se/10.1109/icca.2016.7505262",
+        href: "https://sci-hub.se/10.1109/icca.2016.7505262",
         authors: "C. Li, Y. Zhang, X. Li"
       },
       {
