@@ -33,6 +33,7 @@ function App() {
         journal: "IEEE Transactions on Network Science and Engineering",
         details: "vol. 8, no. 1, pp. 814-824",
         year: "2021",
+        href="https://sci-hub.se/10.1109/icca.2016.7505262"
         authors: "C. Li, Y. Zhang, X. Li"
       },
       {
@@ -236,7 +237,7 @@ function App() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#papers"
+                          href="https://scholar.google.com/citations?view_op=list_mandates&hl=en&user=S7-6p4MAAAAJ&tzom=-600"
                           className={`${
                             active ? 'bg-gray-700' : ''
                           } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
@@ -533,7 +534,7 @@ function App() {
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
                 自适应网络与控制研究室
               </a>
-              <a href="https://scholar.google.com/citations?user=S7-6p4MAAAAJ&hl=fi" 
+              <a href="https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" 
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
                 Google Scholar
               </a>
