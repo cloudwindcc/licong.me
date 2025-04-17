@@ -169,7 +169,7 @@ function App() {
                 <div>
                     <h1 className="text-3xl md:text-4xl font-bold mb-2">李聪</h1>
                     <div className="space-y-1">
-                        <p className="text-lg md:text-xl text-gray-200">电子工程系，副主任</p>
+                        <p className="text-lg md:text-xl text-gray-200">副教授，电子工程系副主任</p>
                         <p className="text-lg md:text-xl font-bold text-emerald-300">复旦大学信息科学与工程学院</p>
                     </div>
                 </div>
@@ -237,7 +237,7 @@ function App() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="https://scholar.google.com/citations?view_op=list_mandates&hl=en&user=S7-6p4MAAAAJ&tzom=-600"
+                          href="https://www.researchgate.net/profile/Cong-Li-27/research"
                           className={`${
                             active ? 'bg-gray-700' : ''
                           } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
