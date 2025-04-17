@@ -546,6 +546,11 @@ function App() {
                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
                 集智斑图主页
               </a>
+              <a href=" https://www.researchgate.net/profile/Cong-Li-27" 
+                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
+                ResearchGate
+              </a>
+             
 
             </div>
           </section>
