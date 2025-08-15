@@ -34,7 +34,14 @@ function App() {
         details: "vol. 15, Article ID 2347",
         year: "2024",
         authors: "C. Li, X. Li, Y. Zhang, J. Wang",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:u-x6o8ySG0sC"
+      {
+        en: "Higher-order interactions in temporal networks: The impact of triadic closure on epidemic spreading",
+        zh: "时态网络中的高阶交互：三元闭对流行传播的影响",
+        journal: "Nature Communications",
+        details: "vol. 15, Article ID 2347",
+        year: "2024",
+        authors: "C. Li, X. Li, Y. Zhang, J. Wang",
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Dynamic community detection in temporal networks with memory effects",
@@ -43,7 +50,7 @@ function App() {
         details: "vol. 108, no. 4, pp. 044301",
         year: "2023",
         authors: "C. Li, M. Tang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:9yKSN-GCB0IC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Optimal control strategies for epidemic spreading in multilayer networks",
@@ -52,7 +59,7 @@ function App() {
         details: "vol. 168, Article ID 113194",
         year: "2023",
         authors: "C. Li, Y. Zhang, L. Wang",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:WbkHhVStYXYC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Network embedding for link prediction in complex systems",
@@ -61,7 +68,7 @@ function App() {
         details: "vol. 437, Article ID 127561",
         year: "2023",
         authors: "C. Li, Z. Liu, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:2osOgNQ5qMEC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Epidemic threshold in temporal multiplex networks with individual layer preference",
@@ -70,7 +77,7 @@ function App() {
         details: "vol. 8, no. 1, pp. 814-824",
         year: "2021",
         authors: "C. Li, Y. Zhang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:u5HHmVD_uO8C"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Evolving nature of human contact networks with its impact on epidemic processes",
@@ -79,7 +86,7 @@ function App() {
         details: "Article ID 6643658",
         year: "2021",
         authors: "C. Li, J. Li, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:d1gkVwhDpl0C"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Optimal control of epidemic spreading in heterogeneous temporal networks",
@@ -88,7 +95,7 @@ function App() {
         details: "vol. 31, no. 3, pp. 033104",
         year: "2021",
         authors: "C. Li, X. Li, J. Chen",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Se3iqnhoufwC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Influence maximization in complex networks through optimal percolation",
@@ -97,7 +104,7 @@ function App() {
         details: "vol. 22, Article ID 093045",
         year: "2020",
         authors: "C. Li, X. Li, Y. Liu",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Zph67rFs4hoC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Link prediction in complex networks based on local naïve Bayes model",
@@ -106,7 +113,7 @@ function App() {
         details: "vol. 129, no. 4, pp. 48003",
         year: "2020",
         authors: "C. Li, R. Wang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Tyk-4Ss8FVUC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Identifying influential nodes in complex networks based on network embedding",
@@ -115,7 +122,7 @@ function App() {
         details: "vol. 7, no. 3, pp. 1512-1524",
         year: "2020",
         authors: "C. Li, Z. Wang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Y0pCki6q_DkC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Community detection in temporal networks using tensor decomposition",
@@ -124,7 +131,7 @@ function App() {
         details: "vol. 9, Article ID 18234",
         year: "2019",
         authors: "C. Li, H. Wang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:WF5omc3nYNoC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Controllability of complex networks with community structure",
@@ -133,7 +140,7 @@ function App() {
         details: "vol. 99, no. 2, pp. 022312",
         year: "2019",
         authors: "C. Li, J. Zhang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:4OULZ7Y8kw4C"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Robustness analysis of network controllability under cascading failures",
@@ -142,7 +149,7 @@ function App() {
         details: "vol. 513, pp. 450-459",
         year: "2019",
         authors: "C. Li, Y. Liu, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:IjCSPb-OGe4C"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Percolation on interacting networks with feedback dependence",
@@ -151,7 +158,7 @@ function App() {
         details: "vol. 28, no. 8, pp. 083106",
         year: "2018",
         authors: "C. Li, X. Li, S. Wang",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:5nxA0vEk-isC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Spreading dynamics in complex networks with community structure",
@@ -160,7 +167,7 @@ function App() {
         details: "Article ID 083403",
         year: "2018",
         authors: "C. Li, X. Li, Y. Chen",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:8k81kl-MbHgC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Identifying influential spreaders in complex networks based on gravity model",
@@ -169,7 +176,7 @@ function App() {
         details: "vol. 7, Article ID 46424",
         year: "2017",
         authors: "C. Li, Q. Wang, X. Li",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:9yKSN-GCB0IC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "The effect of network topology on the stability of discrete state dynamics",
@@ -178,7 +185,7 @@ function App() {
         details: "vol. 27, no. 10, pp. 103102",
         year: "2017",
         authors: "C. Li, X. Li, J. Wang",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:3s1wT3WcHBgC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "Analysis of random walks on networks with second-order neighbors",
@@ -187,7 +194,7 @@ function App() {
         details: "vol. 88, Article ID 266",
         year: "2015",
         authors: "C. Li, X. Li, Y. Tang",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:u-x6o8ySG0sC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       },
       {
         en: "The influence of network structure on the dynamics of random walks",
@@ -196,7 +203,7 @@ function App() {
         details: "vol. 428, pp. 180-188",
         year: "2015",
         authors: "C. Li, X. Li, Z. Zhang",
-        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:roLk4NBRz8UC"
+        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
       }
     ]
   };
