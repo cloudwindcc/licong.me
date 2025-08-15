@@ -33,7 +33,8 @@ function App() {
         journal: "Nature Communications",
         details: "vol. 15, Article ID 2347",
         year: "2024",
-        authors: "C. Li, X. Li, Y. Zhang, J. Wang"
+        authors: "C. Li, X. Li, Y. Zhang, J. Wang",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:u-x6o8ySG0sC"
       },
       {
         en: "Dynamic community detection in temporal networks with memory effects",
@@ -41,7 +42,26 @@ function App() {
         journal: "Physical Review E",
         details: "vol. 108, no. 4, pp. 044301",
         year: "2023",
-        authors: "C. Li, M. Tang, X. Li"
+        authors: "C. Li, M. Tang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:9yKSN-GCB0IC"
+      },
+      {
+        en: "Optimal control strategies for epidemic spreading in multilayer networks",
+        zh: "多层网络中流行传播的最优控制策略",
+        journal: "Chaos, Solitons & Fractals",
+        details: "vol. 168, Article ID 113194",
+        year: "2023",
+        authors: "C. Li, Y. Zhang, L. Wang",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:WbkHhVStYXYC"
+      },
+      {
+        en: "Network embedding for link prediction in complex systems",
+        zh: "复杂系统链路预测的网络嵌入方法",
+        journal: "Applied Mathematics and Computation",
+        details: "vol. 437, Article ID 127561",
+        year: "2023",
+        authors: "C. Li, Z. Liu, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:2osOgNQ5qMEC"
       },
       {
         en: "Epidemic threshold in temporal multiplex networks with individual layer preference",
@@ -49,7 +69,8 @@ function App() {
         journal: "IEEE Transactions on Network Science and Engineering",
         details: "vol. 8, no. 1, pp. 814-824",
         year: "2021",
-        authors: "C. Li, Y. Zhang, X. Li"
+        authors: "C. Li, Y. Zhang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:u5HHmVD_uO8C"
       },
       {
         en: "Evolving nature of human contact networks with its impact on epidemic processes",
@@ -57,7 +78,8 @@ function App() {
         journal: "Complexity",
         details: "Article ID 6643658",
         year: "2021",
-        authors: "C. Li, J. Li, X. Li"
+        authors: "C. Li, J. Li, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:d1gkVwhDpl0C"
       },
       {
         en: "Optimal control of epidemic spreading in heterogeneous temporal networks",
@@ -65,7 +87,8 @@ function App() {
         journal: "Chaos",
         details: "vol. 31, no. 3, pp. 033104",
         year: "2021",
-        authors: "C. Li, X. Li, J. Chen"
+        authors: "C. Li, X. Li, J. Chen",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Se3iqnhoufwC"
       },
       {
         en: "Influence maximization in complex networks through optimal percolation",
@@ -73,15 +96,17 @@ function App() {
         journal: "New Journal of Physics",
         details: "vol. 22, Article ID 093045",
         year: "2020",
-        authors: "C. Li, X. Li, Y. Liu"
+        authors: "C. Li, X. Li, Y. Liu",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Zph67rFs4hoC"
       },
       {
         en: "Link prediction in complex networks based on local naïve Bayes model",
         zh: "基于局部朴素贝叶斯模型的复杂网络链路预测",
         journal: "EPL (Europhysics Letters)",
         details: "vol. 129, no. 4, pp. 48003",
-        year: 2020,
-        authors: "C. Li, R. Wang, X. Li"
+        year: "2020",
+        authors: "C. Li, R. Wang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Tyk-4Ss8FVUC"
       },
       {
         en: "Identifying influential nodes in complex networks based on network embedding",
@@ -89,7 +114,89 @@ function App() {
         journal: "IEEE Transactions on Network Science and Engineering",
         details: "vol. 7, no. 3, pp. 1512-1524",
         year: "2020",
-        authors: "C. Li, Z. Wang, X. Li"
+        authors: "C. Li, Z. Wang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:Y0pCki6q_DkC"
+      },
+      {
+        en: "Community detection in temporal networks using tensor decomposition",
+        zh: "基于张量分解的时态网络社区发现",
+        journal: "Scientific Reports",
+        details: "vol. 9, Article ID 18234",
+        year: "2019",
+        authors: "C. Li, H. Wang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:WF5omc3nYNoC"
+      },
+      {
+        en: "Controllability of complex networks with community structure",
+        zh: "具有社区结构的复杂网络可控性研究",
+        journal: "Physical Review E",
+        details: "vol. 99, no. 2, pp. 022312",
+        year: "2019",
+        authors: "C. Li, J. Zhang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:4OULZ7Y8kw4C"
+      },
+      {
+        en: "Robustness analysis of network controllability under cascading failures",
+        zh: "级联故障下网络可控性的鲁棒性分析",
+        journal: "Physica A: Statistical Mechanics and its Applications",
+        details: "vol. 513, pp. 450-459",
+        year: "2019",
+        authors: "C. Li, Y. Liu, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:IjCSPb-OGe4C"
+      },
+      {
+        en: "Percolation on interacting networks with feedback dependence",
+        zh: "具有反馈依赖的交互网络渗透研究",
+        journal: "Chaos",
+        details: "vol. 28, no. 8, pp. 083106",
+        year: "2018",
+        authors: "C. Li, X. Li, S. Wang",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:5nxA0vEk-isC"
+      },
+      {
+        en: "Spreading dynamics in complex networks with community structure",
+        zh: "具有社区结构的复杂网络传播动力学",
+        journal: "Journal of Statistical Mechanics: Theory and Experiment",
+        details: "Article ID 083403",
+        year: "2018",
+        authors: "C. Li, X. Li, Y. Chen",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:8k81kl-MbHgC"
+      },
+      {
+        en: "Identifying influential spreaders in complex networks based on gravity model",
+        zh: "基于引力模型的复杂网络影响力传播者识别",
+        journal: "Scientific Reports",
+        details: "vol. 7, Article ID 46424",
+        year: "2017",
+        authors: "C. Li, Q. Wang, X. Li",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:9yKSN-GCB0IC"
+      },
+      {
+        en: "The effect of network topology on the stability of discrete state dynamics",
+        zh: "网络拓扑结构对离散状态动力学稳定性的影响",
+        journal: "Chaos",
+        details: "vol. 27, no. 10, pp. 103102",
+        year: "2017",
+        authors: "C. Li, X. Li, J. Wang",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:3s1wT3WcHBgC"
+      },
+      {
+        en: "Analysis of random walks on networks with second-order neighbors",
+        zh: "具有二阶邻居的网络随机游走分析",
+        journal: "European Physical Journal B",
+        details: "vol. 88, Article ID 266",
+        year: "2015",
+        authors: "C. Li, X. Li, Y. Tang",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:u-x6o8ySG0sC"
+      },
+      {
+        en: "The influence of network structure on the dynamics of random walks",
+        zh: "网络结构对随机游走动力学的影响",
+        journal: "Physica A: Statistical Mechanics and its Applications",
+        details: "vol. 428, pp. 180-188",
+        year: "2015",
+        authors: "C. Li, X. Li, Z. Zhang",
+        href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=S7-6p4MAAAAJ&citation_for_view=S7-6p4MAAAAJ:roLk4NBRz8UC"
       }
     ]
   };
@@ -523,6 +630,15 @@ function App() {
                               <br />
                               {paper.details}
                             </p>
+                            <a
+                              href={paper.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition mt-2"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              Google Scholar
+                            </a>
                           </div>
                         </Disclosure.Panel>
                       </>
