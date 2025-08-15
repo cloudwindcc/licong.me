@@ -10,7 +10,8 @@
       "Bash(git pull:*)",
       "WebFetch(domain:scholar.google.com)",
       "Bash(grep:*)",
-      "Bash(npm install)"
+      "Bash(npm install)",
+      "Bash(rg:*)"
     ],
     "defaultMode": "acceptEdits"
   }
