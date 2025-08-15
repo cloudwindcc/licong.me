@@ -1,0 +1,50 @@
+{
+  "news": [
+    {
+      "title": "李聪老师荣获24年度上海开源创新卓越成果奖特等奖",
+      "source": "复旦大学自适应网络与控制研究室",
+      "date": "2024-11-15",
+      "url": "https://can.fudan.edu.cn/李聪老师荣获24年度上海开源创新卓越成果奖特等奖/",
+      "type": "award"
+    },
+    {
+      "title": "李聪老师主持复杂网络高阶动力学研究新进展学术交流会",
+      "source": "复旦大学自适应网络与控制研究室",
+      "date": "2024-10-28",
+      "url": "https://can.fudan.edu.cn/复杂网络高阶动力学研究新进展学术交流会/",
+      "type": "event"
+    },
+    {
+      "title": "李聪老师荣获2022年度上海市计算机学会教学成果奖三等奖",
+      "source": "上海市计算机学会",
+      "date": "2022-12-20",
+      "url": "https://can.fudan.edu.cn/2022年度上海市计算机学会教学成果奖/",
+      "type": "award"
+    }
+  ],
+  "papers": [
+    {
+      "title": "Higher-order interactions in temporal networks: The impact of triadic closure on epidemic spreading",
+      "journal": "Nature Communications",
+      "year": 2024,
+      "date": "2024-03-15",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&user=S7-6p4MAAAAJ"
+    },
+    {
+      "title": "Dynamic community detection in temporal networks with memory effects",
+      "journal": "Physical Review E",
+      "year": 2023,
+      "date": "2023-11-20",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&user=S7-6p4MAAAAJ"
+    }
+  ],
+  "awards": [
+    {
+      "title": "2024年度上海开源创新卓越成果奖特等奖",
+      "organization": "上海市",
+      "date": "2024-11-15",
+      "description": "在开源创新方面的卓越贡献"
+    }
+  ],
+  "lastUpdate": "2024-12-20T09:00:00.000Z"
+}

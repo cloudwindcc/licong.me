@@ -1,0 +1,42 @@
+name: Academic Updates Bot
+# 李聪教授学术动态自动更新工作流
+
+on:
+  schedule:
+    # 每天上午9点运行
+    - cron: '0 9 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  monitor-updates:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        npm install axios cheerio fs-extra
+
+    - name: Run academic agent
+      run: |
+        node academic-agent.js
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SERP_API_KEY: ${{ secrets.SERP_API_KEY }}
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git diff --staged --quiet || git commit -m "🤖 Auto-update: Academic updates $(date +'%Y-%m-%d')"
+        git push
