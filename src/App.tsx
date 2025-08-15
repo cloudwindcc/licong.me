@@ -1013,20 +1013,19 @@ function App() {
             </div>
           </section>
 
-<footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
-    <p className="text-gray-300">{content[language].footer.copyright}</p>
-    <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-2 text-gray-400">
-        <p className="flex items-center gap-2">
-            <Mail className="w-4 h-4" />
-            {content[language].footer.email}: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">{content[language].footer.emailAddress}</a>
-        </p>
-        <p className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            {content[language].footer.phone}: {content[language].footer.phoneNumber}
-        </p>
-    </div>
-          
-          </section>
+          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
+            <p className="text-gray-300">{content[language].footer.copyright}</p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-2 text-gray-400">
+              <p className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                {content[language].footer.email}: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">{content[language].footer.emailAddress}</a>
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                {content[language].footer.phone}: {content[language].footer.phoneNumber}
+              </p>
+            </div>
+          </footer>
 
           <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30 mt-12">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
@@ -1038,7 +1037,6 @@ function App() {
                 {language === 'zh' 
                   ? '探索复杂网络科学的核心概念和研究领域' 
                   : 'Explore core concepts and research areas in complex network science'}
-              }
               </p>
             </div>
             
@@ -1079,8 +1077,7 @@ function App() {
                 {language === 'zh' 
                   ? `共 ${seoKeywords.length} 个关键词 | 点击标签了解更多`
                   : `${seoKeywords.length} keywords | Click tags to explore`}
-              }
-              </p>
+</p>
             </div>
           </section>
 
@@ -1114,8 +1111,7 @@ function App() {
                 {language === 'zh' 
                   ? '本页面针对复杂网络科学相关关键词进行SEO优化'
                   : 'This page is SEO-optimized for complex network science keywords'}
-              }
-              </p>
+</p>
             </div>
           </footer>
         </main>
