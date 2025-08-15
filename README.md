@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 李聪个人学术主页网站 (licong.me)
 
 这是复旦大学信息科学与工程学院副教授李聪老师的个人学术主页网站，基于现代Web技术栈构建，展示其学术成就、研究方向和教学信息。
@@ -106,3 +107,8 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 - **邮箱**: cong_li@fudan.edu.cn
 - **电话**: 021-31242510
 - **单位**: 复旦大学信息科学与工程学院
+=======
+# licong.me 复旦大学副教授的个人主页网站
+
+[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/cloudwindcc/licong.me)
+>>>>>>> 71077f645146593145d6c05113d99321d67093e6
