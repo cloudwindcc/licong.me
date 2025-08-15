@@ -18,6 +18,44 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = language;
+    
+    // Update meta tags for SEO
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    const metaAuthor = document.querySelector('meta[name="author"]');
+    
+    const descriptionText = language === 'zh' 
+      ? "李聪教授 - 复旦大学电子工程系副教授，复杂网络科学专家。研究网络动力学、传播理论、链路预测、社区发现等领域，发表多篇高水平学术论文。"
+      : "Prof. Cong Li - Associate Professor at Fudan University Electronic Engineering, expert in complex network science. Research areas include network dynamics, spreading theory, link prediction, community detection with numerous high-impact publications.";
+    
+    const keywordsText = seoKeywords.map(k => k[language]).join(', ');
+    
+    if (metaDescription) {
+      metaDescription.setAttribute('content', descriptionText);
+    } else {
+      const newMeta = document.createElement('meta');
+      newMeta.setAttribute('name', 'description');
+      newMeta.setAttribute('content', descriptionText);
+      document.head.appendChild(newMeta);
+    }
+    
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', keywordsText);
+    } else {
+      const newMeta = document.createElement('meta');
+      newMeta.setAttribute('name', 'keywords');
+      newMeta.setAttribute('content', keywordsText);
+      document.head.appendChild(newMeta);
+    }
+    
+    if (metaAuthor) {
+      metaAuthor.setAttribute('content', 'Cong Li, Fudan University');
+    } else {
+      const newMeta = document.createElement('meta');
+      newMeta.setAttribute('name', 'author');
+      newMeta.setAttribute('content', 'Cong Li, Fudan University');
+      document.head.appendChild(newMeta);
+    }
   }, [language]);
 
   const publications = {
@@ -471,6 +509,40 @@ function App() {
       }
     }
   };
+
+  const seoKeywords = [
+    { zh: "复杂网络", en: "Complex Networks", category: "primary" },
+    { zh: "网络科学", en: "Network Science", category: "primary" },
+    { zh: "网络动力学", en: "Network Dynamics", category: "primary" },
+    { zh: "传播理论", en: "Spreading Theory", category: "primary" },
+    { zh: "链路预测", en: "Link Prediction", category: "primary" },
+    { zh: "社区发现", en: "Community Detection", category: "primary" },
+    { zh: "网络嵌入", en: "Network Embedding", category: "primary" },
+    { zh: "图神经网络", en: "Graph Neural Networks", category: "primary" },
+    { zh: "时态网络", en: "Temporal Networks", category: "secondary" },
+    { zh: "多层网络", en: "Multilayer Networks", category: "secondary" },
+    { zh: "网络控制", en: "Network Control", category: "secondary" },
+    { zh: "网络鲁棒性", en: "Network Robustness", category: "secondary" },
+    { zh: "网络渗透", en: "Network Percolation", category: "secondary" },
+    { zh: "影响最大化", en: "Influence Maximization", category: "secondary" },
+    { zh: "随机游走", en: "Random Walks", category: "secondary" },
+    { zh: "社交网络分析", en: "Social Network Analysis", category: "application" },
+    { zh: "大数据挖掘", en: "Big Data Mining", category: "application" },
+    { zh: "人工智能", en: "Artificial Intelligence", category: "application" },
+    { zh: "机器学习", en: "Machine Learning", category: "application" },
+    { zh: "数据科学", en: "Data Science", category: "application" },
+    { zh: "系统科学", en: "Systems Science", category: "application" },
+    { zh: "统计物理", en: "Statistical Physics", category: "theory" },
+    { zh: "非线性动力学", en: "Nonlinear Dynamics", category: "theory" },
+    { zh: "优化理论", en: "Optimization Theory", category: "theory" },
+    { zh: "信息论", en: "Information Theory", category: "theory" },
+    { zh: "复旦大学", en: "Fudan University", category: "institution" },
+    { zh: "电子工程", en: "Electronic Engineering", category: "institution" },
+    { zh: "副教授", en: "Associate Professor", category: "position" },
+    { zh: "学术任职", en: "Academic Positions", category: "position" },
+    { zh: "科研成果", en: "Research Achievements", category: "academic" },
+    { zh: "学术论文", en: "Academic Papers", category: "academic" }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900 text-white relative">
@@ -954,6 +1026,97 @@ function App() {
         </p>
     </div>
           
+          </section>
+
+          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30 mt-12">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+              <span className="text-purple-400">#</span>
+              {language === 'zh' ? 'SEO关键词' : 'SEO Keywords'}
+            </h2>
+            <div className="mb-6">
+              <p className="text-gray-300 mb-4">
+                {language === 'zh' 
+                  ? '探索复杂网络科学的核心概念和研究领域' 
+                  : 'Explore core concepts and research areas in complex network science'}
+              }
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-4xl mx-auto">
+              {seoKeywords.map((keyword, index) => (
+                <button
+                  key={index}
+                  className={`
+                    px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900
+                    ${keyword.category === 'primary' 
+                      ? 'bg-purple-600 hover:bg-purple-500 text-white focus:ring-purple-400' 
+                      : keyword.category === 'secondary'
+                      ? 'bg-blue-600 hover:bg-blue-500 text-white focus:ring-blue-400'
+                      : keyword.category === 'application'
+                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white focus:ring-emerald-400'
+                      : keyword.category === 'theory'
+                      ? 'bg-amber-600 hover:bg-amber-500 text-white focus:ring-amber-400'
+                      : 'bg-gray-600 hover:bg-gray-500 text-white focus:ring-gray-400'
+                    }
+                  `}
+                  title={`${keyword[language]} (${keyword[language === 'zh' ? 'en' : 'zh']}) - ${keyword.category}`}
+                  aria-label={`${keyword[language]} - ${keyword.category} category keyword`}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <span className="flex items-center gap-1">
+                    <span className="hidden md:inline">{keyword[language]}</span>
+                    <span className="md:hidden">{keyword[language].length > 4 
+                      ? keyword[language].substring(0, 4) + '...' 
+                      : keyword[language]}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+            
+            <div className="mt-6 text-center">
+              <p className="text-xs text-gray-400">
+                {language === 'zh' 
+                  ? `共 ${seoKeywords.length} 个关键词 | 点击标签了解更多`
+                  : `${seoKeywords.length} keywords | Click tags to explore`}
+              }
+              </p>
+            </div>
+          </section>
+
+          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30 mt-12">
+            <div className="mb-6">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-400 mb-4">
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  {content[language].footer.email}: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">{content[language].footer.emailAddress}</a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  {content[language].footer.phone}: {content[language].footer.phoneNumber}
+                </p>
+              </div>
+              
+              <div className="text-sm text-gray-500 mb-4">
+                <p className="sr-only">
+                  {language === 'zh' 
+                    ? "页面SEO描述：李聪教授复杂网络科学研究主页"
+                    : "Page SEO Description: Prof. Cong Li's Complex Network Science Research Homepage"
+                  }
+                </p>
+              </div>
+            </div>
+            
+            <p className="text-gray-300">{content[language].footer.copyright}</p>
+            
+            <div className="mt-4 text-xs text-gray-500">
+              <p>
+                {language === 'zh' 
+                  ? '本页面针对复杂网络科学相关关键词进行SEO优化'
+                  : 'This page is SEO-optimized for complex network science keywords'}
+              }
+              </p>
+            </div>
           </footer>
         </main>
       </div>
