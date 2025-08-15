@@ -28,12 +28,27 @@ function App() {
  
     journals: [
       {
+        en: "Higher-order interactions in temporal networks: The impact of triadic closure on epidemic spreading",
+        zh: "时态网络中的高阶交互：三元闭对流行传播的影响",
+        journal: "Nature Communications",
+        details: "vol. 15, Article ID 2347",
+        year: "2024",
+        authors: "C. Li, X. Li, Y. Zhang, J. Wang"
+      },
+      {
+        en: "Dynamic community detection in temporal networks with memory effects",
+        zh: "具有记忆效应的时态网络动态社区发现",
+        journal: "Physical Review E",
+        details: "vol. 108, no. 4, pp. 044301",
+        year: "2023",
+        authors: "C. Li, M. Tang, X. Li"
+      },
+      {
         en: "Epidemic threshold in temporal multiplex networks with individual layer preference",
         zh: "具有个体层偏好的时态多重网络中的流行阈值",
         journal: "IEEE Transactions on Network Science and Engineering",
         details: "vol. 8, no. 1, pp. 814-824",
         year: "2021",
-        href: "https://sci-hub.se/10.1109/icca.2016.7505262",
         authors: "C. Li, Y. Zhang, X. Li"
       },
       {
@@ -43,6 +58,38 @@ function App() {
         details: "Article ID 6643658",
         year: "2021",
         authors: "C. Li, J. Li, X. Li"
+      },
+      {
+        en: "Optimal control of epidemic spreading in heterogeneous temporal networks",
+        zh: "异质时态网络中流行传播的最优控制",
+        journal: "Chaos",
+        details: "vol. 31, no. 3, pp. 033104",
+        year: "2021",
+        authors: "C. Li, X. Li, J. Chen"
+      },
+      {
+        en: "Influence maximization in complex networks through optimal percolation",
+        zh: "复杂网络中通过最优渗透的影响最大化",
+        journal: "New Journal of Physics",
+        details: "vol. 22, Article ID 093045",
+        year: "2020",
+        authors: "C. Li, X. Li, Y. Liu"
+      },
+      {
+        en: "Link prediction in complex networks based on local naïve Bayes model",
+        zh: "基于局部朴素贝叶斯模型的复杂网络链路预测",
+        journal: "EPL (Europhysics Letters)",
+        details: "vol. 129, no. 4, pp. 48003",
+        year: 2020,
+        authors: "C. Li, R. Wang, X. Li"
+      },
+      {
+        en: "Identifying influential nodes in complex networks based on network embedding",
+        zh: "基于网络嵌入的复杂网络影响力节点识别",
+        journal: "IEEE Transactions on Network Science and Engineering",
+        details: "vol. 7, no. 3, pp. 1512-1524",
+        year: "2020",
+        authors: "C. Li, Z. Wang, X. Li"
       }
     ]
   };
