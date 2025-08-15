@@ -1027,25 +1027,13 @@ function App() {
             </div>
           </footer>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30 mt-12">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-              <span className="text-purple-400">#</span>
-              {language === 'zh' ? 'SEO关键词' : 'SEO Keywords'}
-            </h2>
-            <div className="mb-6">
-              <p className="text-gray-300 mb-4">
-                {language === 'zh' 
-                  ? '探索复杂网络科学的核心概念和研究领域' 
-                  : 'Explore core concepts and research areas in complex network science'}
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-4xl mx-auto">
+          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-4 border border-gray-700/30 mt-12">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center max-w-4xl mx-auto">
               {seoKeywords.map((keyword, index) => (
                 <button
                   key={index}
                   className={`
-                    px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900
+                    px-2 py-1 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-900
                     ${keyword.category === 'primary' 
                       ? 'bg-purple-600 hover:bg-purple-500 text-white focus:ring-purple-400' 
                       : keyword.category === 'secondary'
@@ -1063,22 +1051,15 @@ function App() {
                   tabIndex={0}
                 >
                   <span className="flex items-center gap-1">
-                    <span className="hidden md:inline">{keyword[language]}</span>
-                    <span className="md:hidden">{keyword[language].length > 4 
-                      ? keyword[language].substring(0, 4) + '...' 
+                    <span className="hidden lg:inline">{keyword[language]}</span>
+                    <span className="lg:hidden">{keyword[language].length > 3 
+                      ? keyword[language].substring(0, 3) + '...' 
                       : keyword[language]}</span>
                   </span>
                 </button>
               ))}
             </div>
             
-            <div className="mt-6 text-center">
-              <p className="text-xs text-gray-400">
-                {language === 'zh' 
-                  ? `共 ${seoKeywords.length} 个关键词 | 点击标签了解更多`
-                  : `${seoKeywords.length} keywords | Click tags to explore`}
-</p>
-            </div>
           </section>
 
           <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30 mt-12">
@@ -1094,25 +1075,10 @@ function App() {
                 </p>
               </div>
               
-              <div className="text-sm text-gray-500 mb-4">
-                <p className="sr-only">
-                  {language === 'zh' 
-                    ? "页面SEO描述：李聪教授复杂网络科学研究主页"
-                    : "Page SEO Description: Prof. Cong Li's Complex Network Science Research Homepage"
-                  }
-                </p>
               </div>
-            </div>
             
             <p className="text-gray-300">{content[language].footer.copyright}</p>
             
-            <div className="mt-4 text-xs text-gray-500">
-              <p>
-                {language === 'zh' 
-                  ? '本页面针对复杂网络科学相关关键词进行SEO优化'
-                  : 'This page is SEO-optimized for complex network science keywords'}
-</p>
-            </div>
           </footer>
         </main>
       </div>
