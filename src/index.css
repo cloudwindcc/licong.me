@@ -63,3 +63,19 @@ p, span, div {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 }
+
+/* Reduce font size for English content */
+html:lang(en) {
+  font-size: 0.9em;
+}
+
+html:lang(en) .text-3xl { font-size: 2rem; }
+html:lang(en) .text-4xl { font-size: 2.25rem; }
+html:lang(en) .text-xl { font-size: 1.125rem; }
+html:lang(en) .text-2xl { font-size: 1.5rem; }
+html:lang(en) .text-lg { font-size: 1.125rem; }
+
+/* English-specific font optimization */
+html:lang(en) {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
