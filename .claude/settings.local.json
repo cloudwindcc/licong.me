@@ -8,7 +8,9 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "WebFetch(domain:scholar.google.com)"
+      "WebFetch(domain:scholar.google.com)",
+      "Bash(grep:*)",
+      "Bash(npm install)"
     ],
     "defaultMode": "acceptEdits"
   }

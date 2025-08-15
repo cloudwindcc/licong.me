@@ -1,0 +1,8 @@
+:root
+# Cloudflare Pages configuration
+[build]
+command = "npm run build"
+output_dir = "dist"
+
+[build.environment]
+NODE_VERSION = "18"
