@@ -6,14 +6,18 @@ import { ExternalLink, FileText, GraduationCap, Link as LinkIcon, Mail, User, Aw
 import { Disclosure, Menu } from '@headlessui/react';
 
 function App() {
-  const [language, setLanguage] = useState<'zh' | 'en'>('zh');
+  const [language, setLanguage] = useState<'zh' | 'en' | 'ja'>('zh');
   
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'zh' ? 'en' : 'zh');
+    setLanguage(prev => {
+      if (prev === 'zh') return 'en';
+      if (prev === 'en') return 'ja';
+      return 'zh';
+    });
   };
 
   useEffect(() => {
@@ -507,41 +511,170 @@ function App() {
         publishedBooks: "Published Books",
         academicPapers: "Academic Papers"
       }
+    },
+    ja: {
+      title: "李聰",
+      subtitle: "准教授、電子工学部副主任",
+      university: "復旦大学情報科学技術学院",
+      nav: {
+        books: "おすすめ書籍",
+        works: "私の作品"
+      },
+      sections: {
+        profile: "プロフィール",
+        positions: "学術的役職",
+        courses: "講義科目",
+        publications: "出版物",
+        news: "学術ニュース",
+        links: "関連リンク"
+      },
+      profile: {
+        title: "プロフィール",
+        content: "李聰、復旦大学情報科学技術学院電子工学部准教授兼副主任。オランダ・デルフト工科大学より知的システム哲学博士号を取得、吉林大学よりパターン認識と知的システム修士号を取得。複数の国家プロジェクトの主要研究者、国際会議のプログラム委員会メンバー、国際ジャーナルの編集委員会メンバー。",
+        research: "研究分野：複雑ネットワークの理論と応用",
+        areas: [
+          "ネットワーク特性と性能解析、ネットワークダイナミクス、ネットワーク設計",
+          "人間集団行動解析、ソーシャルネットワーク解析など",
+          "ビッグデータマイニングと分析、グラフ埋め込み（グラフニューラルネットワーク：コミュニティ発見、リンク予測）など"
+        ]
+      },
+      academic: {
+        positions: {
+          title: "学術的役職",
+          society: {
+            title: "学会役職",
+            items: [
+              { position: "理事、上海市非線形科学研究会", period: "2024年11月より" },
+              { position: "常務理事、中国中医薬情報学会中医診断情報分科会", period: "2018年11月より" },
+              { position: "事務局長、国際ネットワーク科学協会中国支部", period: "2018年1月より" },
+              { position: "委員、中国産業応用数学学会複雑システム・複雑ネットワーク専門委員会", period: "2016年10月より" },
+              { position: "委員、中国指揮制御学会ネットワーク科学・工学専門委員会", period: "2016年4月より" },
+              { position: "秘書、上海市自動化学会自動化理論専門委員会", period: "2015年8月〜2019年7月" }
+            ]
+          },
+          conference: {
+            title: "会議役職",
+            items: [
+              { position: "NetSciX 2018, Program Committee", period: "2017-2018年" },
+              { position: "プログラム委員会委員、全国複雑ネットワーク大会", period: "2017年より" },
+              { position: "プログラム委員会委員、中国ネットワーク科学フォーラム", period: "2016年より" }
+            ]
+          },
+          journal: {
+            title: "ジャーナル査読",
+            content: "Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) など"
+          }
+        }
+      },
+      courses: {
+        undergraduateBasic: "学部基礎科目",
+        undergraduateElective: "学部専門選択科目",
+        graduateFoundation: "大学院専門基礎科目",
+        networkScienceSeries: "ネットワーク科学シリーズ",
+        linearAlgebra: "線形代数",
+        networkScienceIntro: "ネットワーク科学入門",
+        networkDynamics: "ネットワークダイナミクス",
+        networkPropagation: "ネットワーク科学：ネットワーク伝播",
+        shanghaiExcellent: "上海市優秀講座",
+        fudanExcellent: "復旦大学優秀講座",
+        swarmaOnline: "集智学園オンライン講座"
+      },
+      publications: {
+        books: "書籍",
+        journals: "ジャーナル論文",
+        amazon: "Amazon",
+        jd: "JD.com",
+        googleScholar: "Google Scholar"
+      },
+      news: {
+        title: "学術ニュース",
+        items: [
+          {
+            title: "李聰先生、2024年度上海オープンイノベーション卓越成果賞特別賞受賞",
+            source: "復旦大学適応ネットワーク・制御研究室",
+            year: "2024",
+            link: "続きを読む"
+          },
+          {
+            title: "李聰先生、複雑ネットワーク高次ダイナミクス研究新進展学術交流会主宰",
+            source: "復旦大学適応ネットワーク・制御研究室",
+            year: "2024",
+            link: "続きを読む"
+          },
+          {
+            title: "李聰先生、2022年度上海市計算機学会教育成果賞三等賞受賞",
+            source: "上海市計算機学会",
+            year: "2022",
+            link: "続きを読む"
+          },
+          {
+            title: "李聰先生、2020年度情報学院院長賞受賞",
+            source: "情報科学技術学院",
+            year: "2020",
+            link: "続きを読む"
+          }
+        ]
+      },
+      links: {
+        title: "関連リンク",
+        items: [
+          { name: "情報科学技術学院", href: "https://www.it.fudan.edu.cn/" },
+          { name: "復旦研究ホームページ", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "適応ネットワーク・制御研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
+          { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
+          { name: "研究室ホームページ", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "集智斑図ホームページ", href: "https://pattern.swarma.org/user/52054" },
+          { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
+        ]
+      },
+      footer: {
+        copyright: "© 2025 李聰、復旦大学",
+        email: "メール",
+        phone: "電話",
+        emailAddress: "cong_li@fudan.edu.cn",
+        phoneNumber: "021-31242510"
+      },
+      menu: {
+        fudanLibrary: "復旦図書館",
+        complexSystemsBooks: "複雑システム書籍",
+        publishedBooks: "出版書籍",
+        academicPapers: "学術論文集"
+      }
     }
   };
 
   const seoKeywords = [
-    { zh: "复杂网络", en: "Complex Networks", category: "primary" },
-    { zh: "网络科学", en: "Network Science", category: "primary" },
-    { zh: "网络动力学", en: "Network Dynamics", category: "primary" },
-    { zh: "传播理论", en: "Spreading Theory", category: "primary" },
-    { zh: "链路预测", en: "Link Prediction", category: "primary" },
-    { zh: "社区发现", en: "Community Detection", category: "primary" },
-    { zh: "网络嵌入", en: "Network Embedding", category: "primary" },
-    { zh: "图神经网络", en: "Graph Neural Networks", category: "primary" },
-    { zh: "时态网络", en: "Temporal Networks", category: "secondary" },
-    { zh: "多层网络", en: "Multilayer Networks", category: "secondary" },
-    { zh: "网络控制", en: "Network Control", category: "secondary" },
-    { zh: "网络鲁棒性", en: "Network Robustness", category: "secondary" },
-    { zh: "网络渗透", en: "Network Percolation", category: "secondary" },
-    { zh: "影响最大化", en: "Influence Maximization", category: "secondary" },
-    { zh: "随机游走", en: "Random Walks", category: "secondary" },
-    { zh: "社交网络分析", en: "Social Network Analysis", category: "application" },
-    { zh: "大数据挖掘", en: "Big Data Mining", category: "application" },
-    { zh: "人工智能", en: "Artificial Intelligence", category: "application" },
-    { zh: "机器学习", en: "Machine Learning", category: "application" },
-    { zh: "数据科学", en: "Data Science", category: "application" },
-    { zh: "系统科学", en: "Systems Science", category: "application" },
-    { zh: "统计物理", en: "Statistical Physics", category: "theory" },
-    { zh: "非线性动力学", en: "Nonlinear Dynamics", category: "theory" },
-    { zh: "优化理论", en: "Optimization Theory", category: "theory" },
-    { zh: "信息论", en: "Information Theory", category: "theory" },
-    { zh: "复旦大学", en: "Fudan University", category: "institution" },
-    { zh: "电子工程", en: "Electronic Engineering", category: "institution" },
-    { zh: "副教授", en: "Associate Professor", category: "position" },
-    { zh: "学术任职", en: "Academic Positions", category: "position" },
-    { zh: "科研成果", en: "Research Achievements", category: "academic" },
-    { zh: "学术论文", en: "Academic Papers", category: "academic" }
+    { zh: "复杂网络", en: "Complex Networks", ja: "複雑ネットワーク", category: "primary" },
+    { zh: "网络科学", en: "Network Science", ja: "ネットワーク科学", category: "primary" },
+    { zh: "网络动力学", en: "Network Dynamics", ja: "ネットワークダイナミクス", category: "primary" },
+    { zh: "传播理论", en: "Spreading Theory", ja: "伝播理論", category: "primary" },
+    { zh: "链路预测", en: "Link Prediction", ja: "リンク予測", category: "primary" },
+    { zh: "社区发现", en: "Community Detection", ja: "コミュニティ発見", category: "primary" },
+    { zh: "网络嵌入", en: "Network Embedding", ja: "ネットワーク埋め込み", category: "primary" },
+    { zh: "图神经网络", en: "Graph Neural Networks", ja: "グラフニューラルネットワーク", category: "primary" },
+    { zh: "时态网络", en: "Temporal Networks", ja: "時系列ネットワーク", category: "secondary" },
+    { zh: "多层网络", en: "Multilayer Networks", ja: "多層ネットワーク", category: "secondary" },
+    { zh: "网络控制", en: "Network Control", ja: "ネットワーク制御", category: "secondary" },
+    { zh: "网络鲁棒性", en: "Network Robustness", ja: "ネットワーク頑健性", category: "secondary" },
+    { zh: "网络渗透", en: "Network Percolation", ja: "ネットワーク浸透", category: "secondary" },
+    { zh: "影响最大化", en: "Influence Maximization", ja: "影響最大化", category: "secondary" },
+    { zh: "随机游走", en: "Random Walks", ja: "ランダムウォーク", category: "secondary" },
+    { zh: "社交网络分析", en: "Social Network Analysis", ja: "ソーシャルネットワーク解析", category: "application" },
+    { zh: "大数据挖掘", en: "Big Data Mining", ja: "ビッグデータマイニング", category: "application" },
+    { zh: "人工智能", en: "Artificial Intelligence", ja: "人工知能", category: "application" },
+    { zh: "机器学习", en: "Machine Learning", ja: "機械学習", category: "application" },
+    { zh: "数据科学", en: "Data Science", ja: "データサイエンス", category: "application" },
+    { zh: "系统科学", en: "Systems Science", ja: "システム科学", category: "application" },
+    { zh: "统计物理", en: "Statistical Physics", ja: "統計物理学", category: "theory" },
+    { zh: "非线性动力学", en: "Nonlinear Dynamics", ja: "非線形ダイナミクス", category: "theory" },
+    { zh: "优化理论", en: "Optimization Theory", ja: "最適化理論", category: "theory" },
+    { zh: "信息论", en: "Information Theory", ja: "情報理論", category: "theory" },
+    { zh: "复旦大学", en: "Fudan University", ja: "復旦大学", category: "institution" },
+    { zh: "电子工程", en: "Electronic Engineering", ja: "電子工学", category: "institution" },
+    { zh: "副教授", en: "Associate Professor", ja: "准教授", category: "position" },
+    { zh: "学术任职", en: "Academic Positions", ja: "学術役職", category: "position" },
+    { zh: "科研成果", en: "Research Achievements", ja: "研究成果", category: "academic" },
+    { zh: "学术论文", en: "Academic Papers", ja: "学術論文", category: "academic" }
   ];
 
   return (
@@ -676,11 +809,11 @@ function App() {
             <div className="flex gap-4">
               <button
                 onClick={toggleLanguage}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition"
-                title={language === 'zh' ? 'Switch to English' : '切换到中文'}
+                className="fixed top-4 right-4 z-50 inline-flex items-center gap-2 px-3 py-2 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition text-sm font-medium shadow-lg"
+                title={language === 'zh' ? 'Switch to English' : language === 'en' ? '日本語に切り替える' : '切换到中文'}
               >
-                <Globe className="w-5 h-5" />
-                {language === 'zh' ? 'EN' : '中文'}
+                <Globe className="w-4 h-4" />
+                {language === 'zh' ? 'EN' : language === 'en' ? '日本語' : '中文'}
               </button>
               
               <Menu as="div" className="relative">
