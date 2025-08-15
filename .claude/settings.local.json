@@ -12,8 +12,7 @@
       "Bash(grep:*)",
       "Bash(npm install)",
       "Bash(rg:*)",
-      "Bash(npm run build)",
-      "Bash(sed:*)"
+      "Bash(npm run build)"
     ],
     "defaultMode": "acceptEdits"
   }

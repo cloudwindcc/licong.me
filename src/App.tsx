@@ -1013,6 +1013,73 @@ function App() {
             </div>
           </section>
 
+          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
+            <p className="text-gray-300">{content[language].footer.copyright}</p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-2 text-gray-400">
+              <p className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                {content[language].footer.email}: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">{content[language].footer.emailAddress}</a>
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                {content[language].footer.phone}: {content[language].footer.phoneNumber}
+              </p>
+            </div>
+          </footer>
+
+          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-4 border border-gray-700/30 mt-12">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center max-w-4xl mx-auto">
+              {seoKeywords.map((keyword, index) => (
+                <button
+                  key={index}
+                  className={`
+                    px-2 py-1 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-900
+                    ${keyword.category === 'primary' 
+                      ? 'bg-purple-600 hover:bg-purple-500 text-white focus:ring-purple-400' 
+                      : keyword.category === 'secondary'
+                      ? 'bg-blue-600 hover:bg-blue-500 text-white focus:ring-blue-400'
+                      : keyword.category === 'application'
+                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white focus:ring-emerald-400'
+                      : keyword.category === 'theory'
+                      ? 'bg-amber-600 hover:bg-amber-500 text-white focus:ring-amber-400'
+                      : 'bg-gray-600 hover:bg-gray-500 text-white focus:ring-gray-400'
+                    }
+                  `}
+                  title={`${keyword[language]} (${keyword[language === 'zh' ? 'en' : 'zh']}) - ${keyword.category}`}
+                  aria-label={`${keyword[language]} - ${keyword.category} category keyword`}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <span className="flex items-center gap-1">
+                    <span className="hidden lg:inline">{keyword[language]}</span>
+                    <span className="lg:hidden">{keyword[language].length > 3 
+                      ? keyword[language].substring(0, 3) + '...' 
+                      : keyword[language]}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+            
+          </section>
+
+          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30 mt-12">
+            <div className="mb-6">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-400 mb-4">
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  {content[language].footer.email}: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">{content[language].footer.emailAddress}</a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  {content[language].footer.phone}: {content[language].footer.phoneNumber}
+                </p>
+              </div>
+              
+              </div>
+            
+            <p className="text-gray-300">{content[language].footer.copyright}</p>
+            
+          </footer>
         </main>
       </div>
     </div>
