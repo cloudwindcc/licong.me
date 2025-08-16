@@ -6,7 +6,7 @@ import { ExternalLink, FileText, GraduationCap, Link as LinkIcon, Mail, User, Aw
 import { Disclosure, Menu } from '@headlessui/react';
 
 function App() {
-  const [language, setLanguage] = useState<'zh' | 'en' | 'ja'>('zh');
+  const [language, setLanguage] = useState<'zh' | 'en' | 'ja' | 'de' | 'ko' | 'hk' | 'es'>('zh');
   
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
@@ -14,9 +14,9 @@ function App() {
 
   const toggleLanguage = () => {
     setLanguage(prev => {
-      if (prev === 'zh') return 'en';
-      if (prev === 'en') return 'ja';
-      return 'zh';
+      const languages = ['zh', 'en', 'ja', 'de', 'ko', 'hk', 'es'] as const;
+      const currentIndex = languages.indexOf(prev);
+      return languages[(currentIndex + 1) % languages.length];
     });
   };
 
@@ -28,9 +28,15 @@ function App() {
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     const metaAuthor = document.querySelector('meta[name="author"]');
     
-    const descriptionText = language === 'zh' 
-      ? "李聪教授 - 复旦大学电子工程系副教授，复杂网络科学专家。研究网络动力学、传播理论、链路预测、社区发现等领域，发表多篇高水平学术论文。"
-      : "Prof. Cong Li - Associate Professor at Fudan University Electronic Engineering, expert in complex network science. Research areas include network dynamics, spreading theory, link prediction, community detection with numerous high-impact publications.";
+    const descriptionText = {
+      zh: "李聪教授 - 复旦大学电子工程系副教授，复杂网络科学专家。研究网络动力学、传播理论、链路预测、社区发现等领域，发表多篇高水平学术论文。",
+      en: "Prof. Cong Li - Associate Professor at Fudan University Electronic Engineering, expert in complex network science. Research areas include network dynamics, spreading theory, link prediction, community detection with numerous high-impact publications.",
+      ja: "李聰教授 - 復旦大学電子工学部准教授、複雑ネットワーク科学の専門家。ネットワークダイナミクス、伝播理論、リンク予測、コミュニティ発見などの分野で研究し、多数の高インパクトな学術論文を発表。",
+      de: "Prof. Dr. Cong Li - Professorin an der Fakultät für Elektrotechnik der Fudan-Universität, Expertin für komplexe Netzwerke. Forschungsbereiche: Netzwerk-Dynamik, Ausbreitungstheorie, Link-Vorhersage, Community-Erkennung mit zahlreichen hochrangigen Publikationen.",
+      ko: "이총 교수 - 푸단대학교 전자공학부 부교수, 복잡 네트워크 과학 전문가. 네트워크 역학, 전파 이론, 링크 예측, 커뮤니티 발견 등 분야에서 연구하며 다수의 높은 임팩트 학술 논문을 발표.",
+      hk: "李聰教授 - 復旦大學電子工程系副教授，複雜網絡科學專家。研究網絡動力學、傳播理論、鏈路預測、社區發現等領域，發表多篇高水平學術論文。",
+      es: "Prof. Dra. Cong Li - Profesora Asociada de Ingeniería Electrónica en la Universidad de Fudan, experta en ciencia de redes complejas. Áreas de investigación: dinámica de redes, teoría de propagación, predicción de enlaces, detección de comunidades con numerosas publicaciones de alto impacto."
+    }[language];
     
     const keywordsText = seoKeywords.map(k => k[language]).join(', ');
     
@@ -640,41 +646,557 @@ function App() {
         publishedBooks: "出版書籍",
         academicPapers: "学術論文集"
       }
+    },
+    de: {
+      title: "Cong Li",
+      subtitle: "Professorin, Stellvertretende Direktorin der Elektrotechnik",
+      university: "Fakultät für Informationswissenschaft und Technologie, Fudan-Universität",
+      nav: {
+        books: "Empfohlene Bücher",
+        works: "Meine Werke"
+      },
+      sections: {
+        profile: "Profil",
+        positions: "Akademische Positionen",
+        courses: "Lehrveranstaltungen",
+        publications: "Publikationen",
+        news: "Akademische Nachrichten",
+        links: "Verwandte Links"
+      },
+      profile: {
+        title: "Profil",
+        content: "Cong Li, Professorin und stellvertretende Direktorin der Elektrotechnik an der Fakultät für Informationswissenschaft und Technologie der Fudan-Universität. PhD in Intelligenten Systemen von der Technischen Universität Delft, Niederlande. MS in Mustererkennung und Intelligente Systeme von der Jilin-Universität. Hauptforscherin für mehrere nationale Projekte, Mitglied des Programmkomitees internationaler Konferenzen und Mitglied der Redaktionskommission internationaler Fachzeitschriften.",
+        research: "Forschungsgebiet: Theorie und Anwendungen komplexer Netzwerke",
+        areas: [
+          "Netzwerkcharakterisierung und Leistungsanalyse, Netzwerk-Dynamik, Netzwerk-Design",
+          "Analyse kollektiven menschlichen Verhaltens, soziale Netzwerkanalyse",
+          "Big-Data-Mining und -Analyse, Graph-Einbettung (Graph-Neuronale Netzwerke: Community-Erkennung, Link-Vorhersage)"
+        ]
+      },
+      academic: {
+        positions: {
+          title: "Akademische Positionen",
+          society: {
+            title: "Gesellschaftliche Positionen",
+            items: [
+              { position: "Vorstandsmitglied, Shanghai Gesellschaft für Nichtlineare Wissenschaft", period: "Nov. 2024 - heute" },
+              { position: "Ausführendes Vorstandsmitglied, Chinesische Gesellschaft für TCM-Diagnoseinformation", period: "Nov. 2018 - heute" },
+              { position: "Generalsekretärin, China-Kapitel der International Network Science Society (NetSci)", period: "Jan. 2018 - heute" },
+              { position: "Komiteemitglied, Komplexe Systeme und Netzwerke, Chinesische Gesellschaft für Industrielle und Angewandte Mathematik", period: "Okt. 2016 - heute" },
+              { position: "Komiteemitglied, Netzwerk-Wissenschaft und -Technik, Chinesisches Institut für Kommando und Kontrolle", period: "Apr. 2016 - heute" },
+              { position: "Sekretärin, Komitee für Automatisierungstheorie, Shanghai Automation Society", period: "Aug. 2015 - Juli 2019" }
+            ]
+          },
+          conference: {
+            title: "Konferenzpositionen",
+            items: [
+              { position: "NetSciX 2018, Programmkomitee", period: "2017-2018" },
+              { position: "Programmkomitee-Mitglied, Nationale Konferenz für Komplexe Netzwerke", period: "2017 - heute" },
+              { position: "Programmkomitee-Mitglied, China Network Science Forum", period: "2016 - heute" }
+            ]
+          },
+          journal: {
+            title: "Zeitschriftenbegutachtung",
+            content: "Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) usw."
+          }
+        }
+      },
+      courses: {
+        undergraduateBasic: "Grundkurse für Bachelor",
+        undergraduateElective: "Wahlkurse für Bachelor",
+        graduateFoundation: "Grundkurse für Master",
+        networkScienceSeries: "Netzwerk-Wissenschaft-Serie",
+        linearAlgebra: "Lineare Algebra",
+        networkScienceIntro: "Einführung in die Netzwerk-Wissenschaft",
+        networkDynamics: "Netzwerk-Dynamik",
+        networkPropagation: "Netzwerk-Wissenschaft: Netzwerk-Ausbreitung",
+        shanghaiExcellent: "Shanghai Exzellente Kurse",
+        fudanExcellent: "Fudan-Universität Exzellente Kurse",
+        swarmaOnline: "Swarma Online-Kurse"
+      },
+      publications: {
+        books: "Bücher",
+        journals: "Fachzeitschriften",
+        amazon: "Amazon",
+        jd: "JD.com",
+        googleScholar: "Google Scholar"
+      },
+      news: {
+        title: "Akademische Nachrichten",
+        items: [
+          {
+            title: "Prof. Cong Li gewinnt Sonderpreis bei den Shanghai Open Source Innovation Excellence Awards 2024",
+            source: "Adaptive Netzwerke und Kontroll-Labor, Fudan-Universität",
+            year: "2024",
+            link: "Mehr lesen"
+          },
+          {
+            title: "Prof. Cong Li leitet den akademischen Austausch über Fortschritte in der höheren Ordnungsdynamik komplexer Netzwerke",
+            source: "Adaptive Netzwerke und Kontroll-Labor, Fudan-Universität",
+            year: "2024",
+            link: "Mehr lesen"
+          },
+          {
+            title: "Prof. Cong Li gewinnt dritten Preis bei den Shanghai Computer Society Teaching Achievement Awards 2022",
+            source: "Shanghai Computer Society",
+            year: "2022",
+            link: "Mehr lesen"
+          },
+          {
+            title: "Prof. Cong Li gewinnt den Dekanpreis der Fakultät 2020",
+            source: "Fakultät für Informationswissenschaft und Technologie",
+            year: "2020",
+            link: "Mehr lesen"
+          }
+        ]
+      },
+      links: {
+        title: "Verwandte Links",
+        items: [
+          { name: "Fakultät für Informationswissenschaft und Technologie", href: "https://www.it.fudan.edu.cn/" },
+          { name: "Fudan Forschungs-Homepage", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "Adaptive Netzwerke und Kontroll-Labor", href: "https://can.fudan.edu.cn/welcome_cn/" },
+          { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
+          { name: "Labor-Homepage", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "Swarma Pattern Homepage", href: "https://pattern.swarma.org/user/52054" },
+          { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
+        ]
+      },
+      footer: {
+        copyright: "© 2025 Cong Li, Fudan-Universität",
+        email: "E-Mail",
+        phone: "Telefon",
+        emailAddress: "cong_li@fudan.edu.cn",
+        phoneNumber: "021-31242510"
+      },
+      menu: {
+        fudanLibrary: "Fudan Bibliothek",
+        complexSystemsBooks: "Komplexe Systeme Bücher",
+        publishedBooks: "Veröffentlichte Bücher",
+        academicPapers: "Akademische Arbeiten"
+      }
+    },
+    ko: {
+      title: "이총",
+      subtitle: "부교수, 전자공학부 부주임",
+      university: "푸단대학교 정보과학기술학원",
+      nav: {
+        books: "추천 도서",
+        works: "나의 저작"
+      },
+      sections: {
+        profile: "프로필",
+        positions: "학술 직책",
+        courses: "수업 과목",
+        publications: "출판물",
+        news: "학술 뉴스",
+        links: "관련 링크"
+      },
+      profile: {
+        title: "프로필",
+        content: "이총, 푸단대학교 정보과학기술학원 전자공학부 부교수 겸 부주임. 네덜란드 델프트 공과대학교에서 지능 시스템 학사, 길림대학교에서 패턴 인식 및 지능 시스템 석사. 여러 국가 프로젝트의 주요 연구원, 국제 학회의 프로그램 위원회 위원, 국제 저널의 편집 위원회 위원.",
+        research: "연구 분야: 복잡 네트워크의 이론 및 응용",
+        areas: [
+          "네트워크 특성 및 성능 분석, 네트워크 역학, 네트워크 설계",
+          "인간 집단 행동 분석, 소셜 네트워크 분석 등",
+          "빅데이터 마이닝 및 분석, 그래프 임베딩 (그래프 신경망: 커뮤니티 발견, 링크 예측) 등"
+        ]
+      },
+      academic: {
+        positions: {
+          title: "학술 직책",
+          society: {
+            title: "학회 직책",
+            items: [
+              { position: "이사, 상하이 비선형 과학 연구회", period: "2024년 11월부터" },
+              { position: "상임이사, 중국 중의약 정보학회 중의 진단 정보 분과", period: "2018년 11월부터" },
+              { position: "사무총장, 국제 네트워크 과학 협회 중국 지부", period: "2018년 1월부터" },
+              { position: "위원, 중국 산업 응용 수학회 복잡 시스템·복잡 네트워크 전문위원회", period: "2016년 10월부터" },
+              { position: "위원, 중국 지휘 통제학회 네트워크 과학·공학 전문위원회", period: "2016년 4월부터" },
+              { position: "비서, 상하이 자동화학회 자동화 이론 전문위원회", period: "2015년 8월~2019년 7월" }
+            ]
+          },
+          conference: {
+            title: "회의 직책",
+            items: [
+              { position: "NetSciX 2018, 프로그램 위원회", period: "2017-2018년" },
+              { position: "프로그램 위원회 위원, 전국 복잡 네트워크 대회", period: "2017년부터" },
+              { position: "프로그램 위원회 위원, 중국 네트워크 과학 포럼", period: "2016년부터" }
+            ]
+          },
+          journal: {
+            title: "저널 심사",
+            content: "Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) 등"
+          }
+        }
+      },
+      courses: {
+        undergraduateBasic: "학부 기초 과목",
+        undergraduateElective: "학부 전공 선택 과목",
+        graduateFoundation: "대학원 전공 기초 과목",
+        networkScienceSeries: "네트워크 과학 시리즈",
+        linearAlgebra: "선형대수",
+        networkScienceIntro: "네트워크 과학 입문",
+        networkDynamics: "네트워크 역학",
+        networkPropagation: "네트워크 과학: 네트워크 전파",
+        shanghaiExcellent: "상하이 우수 과목",
+        fudanExcellent: "푸단대학교 우수 과목",
+        swarmaOnline: "집치학원 온라인 과목"
+      },
+      publications: {
+        books: "도서",
+        journals: "저널 논문",
+        amazon: "Amazon",
+        jd: "JD.com",
+        googleScholar: "Google Scholar"
+      },
+      news: {
+        title: "학술 뉴스",
+        items: [
+          {
+            title: "이총 교수, 2024년도 상하이 오픈소스 혁신 우수성과상 특별상 수상",
+            source: "푸단대학교 적응 네트워크 및 제어 연구실",
+            year: "2024",
+            link: "더 읽기"
+          },
+          {
+            title: "이총 교수, 복잡 네트워크 고차 역학 연구 새로운 진전 학술 교류회 주재",
+            source: "푸단대학교 적응 네트워크 및 제어 연구실",
+            year: "2024",
+            link: "더 읽기"
+          },
+          {
+            title: "이총 교수, 2022년도 상하이 컴퓨터학회 교학 성과상 3등상 수상",
+            source: "상하이 컴퓨터학회",
+            year: "2022",
+            link: "더 읽기"
+          },
+          {
+            title: "이총 교수, 2020년도 정보과학기술학원 원장상 수상",
+            source: "정보과학기술학원",
+            year: "2020",
+            link: "더 읽기"
+          }
+        ]
+      },
+      links: {
+        title: "관련 링크",
+        items: [
+          { name: "정보과학기술학원", href: "https://www.it.fudan.edu.cn/" },
+          { name: "푸단 연구 홈페이지", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "적응 네트워크 및 제어 연구실", href: "https://can.fudan.edu.cn/welcome_cn/" },
+          { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
+          { name: "연구실 홈페이지", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "집치 반도 홈페이지", href: "https://pattern.swarma.org/user/52054" },
+          { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
+        ]
+      },
+      footer: {
+        copyright: "© 2025 이총, 푸단대학교",
+        email: "이메일",
+        phone: "전화",
+        emailAddress: "cong_li@fudan.edu.cn",
+        phoneNumber: "021-31242510"
+      },
+      menu: {
+        fudanLibrary: "푸단 도서관",
+        complexSystemsBooks: "복잡 시스템 도서",
+        publishedBooks: "출간 도서",
+        academicPapers: "학술 논문집"
+      }
+    },
+    hk: {
+      title: "李聰",
+      subtitle: "副教授、電子工程系副主任",
+      university: "復旦大學信息科學與技術學院",
+      nav: {
+        books: "推薦書籍",
+        works: "我的作品"
+      },
+      sections: {
+        profile: "個人簡介",
+        positions: "學術任職",
+        courses: "主導課程",
+        publications: "發表論文",
+        news: "學術動態",
+        links: "相關連結"
+      },
+      profile: {
+        title: "個人簡介",
+        content: "李聰，女，復旦大學信息科學與技術學院，電子工程系副主任。荷蘭代爾夫特理工大學智能系統哲學博士，吉林大學模式識別與智能系統碩士。主持多項國家級項目，擔任多個國際會議程序委員會委員及國際期刊編委。",
+        research: "研究方向：複雜網絡的理論及應用",
+        areas: [
+          "網絡描述及性能分析、網絡動力學過程分析、網絡設計",
+          "人類集群行為分析、社交網絡分析等",
+          "大數據挖掘與分析、圖嵌入（圖神經網絡：社團挖掘、鏈路預測）等"
+        ]
+      },
+      academic: {
+        positions: {
+          title: "學術任職",
+          society: {
+            title: "學會任職",
+            items: [
+              { position: "理事、上海市非線性科學研究會", period: "2024年11月至今" },
+              { position: "常務理事、中國中醫藥信息學會中醫診斷信息分會", period: "2018年11月至今" },
+              { position: "國際網絡(NetSci)科學協會中國分會秘書長", period: "2018年1月至今" },
+              { position: "中國工業與應用數學學會複雜系統與複雜網絡專委會委員", period: "2016年10月至今" },
+              { position: "中國指揮與控制學會網絡科學與工程專委會委員", period: "2016年4月至今" },
+              { position: "上海市自動化學會自動化理論專委會秘書", period: "2015年8月至2019年7月" }
+            ]
+          },
+          conference: {
+            title: "會議任職",
+            items: [
+              { position: "NetSciX 2018, Program Committee", period: "2017-2018年" },
+              { position: "全國複雜網絡大會，程序委員會委員", period: "2017年至今" },
+              { position: "中國網絡科學論壇，程序委員會委員", period: "2016年至今" }
+            ]
+          },
+          journal: {
+            title: "期刊審稿",
+            content: "Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) 等"
+          }
+        }
+      },
+      courses: {
+        undergraduateBasic: "本科基礎課",
+        undergraduateElective: "本科專業選修課",
+        graduateFoundation: "碩士生專業基礎課",
+        networkScienceSeries: "網絡科學系列課程",
+        linearAlgebra: "線性代數",
+        networkScienceIntro: "網絡科學導論",
+        networkDynamics: "網絡動力學",
+        networkPropagation: "網絡科學導論：網絡傳播",
+        shanghaiExcellent: "上海市精品課程",
+        fudanExcellent: "復旦大學精品課程",
+        swarmaOnline: "集智學園在線課程"
+      },
+      publications: {
+        books: "專著",
+        journals: "期刊論文",
+        amazon: "Amazon",
+        jd: "京東",
+        googleScholar: "Google Scholar"
+      },
+      news: {
+        title: "學術動態",
+        items: [
+          {
+            title: "李聰老師榮獲24年度上海開源創新卓越成果獎特等獎",
+            source: "復旦大學自適應網絡與控制研究室",
+            year: "2024",
+            link: "查看全文"
+          },
+          {
+            title: "李聰老師主持複雜網絡高階動力學研究新進展學術交流會",
+            source: "復旦大學自適應網絡與控制研究室",
+            year: "2024",
+            link: "查看全文"
+          },
+          {
+            title: "李聰老師榮獲2022年度上海市計算機學會教學成果獎三等獎",
+            source: "上海市計算機學會",
+            year: "2022",
+            link: "查看全文"
+          },
+          {
+            title: "李聰老師榮獲2020年度信息學院院長獎",
+            source: "信息科學與技術學院",
+            year: "2020",
+            link: "查看全文"
+          }
+        ]
+      },
+      links: {
+        title: "相關連結",
+        items: [
+          { name: "信息科學與技術學院", href: "https://www.it.fudan.edu.cn/" },
+          { name: "復旦科研主頁", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "自適應網絡與控制研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
+          { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
+          { name: "實驗室主頁", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "集智斑圖主頁", href: "https://pattern.swarma.org/user/52054" },
+          { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
+        ]
+      },
+      footer: {
+        copyright: "© 2025 李聰 復旦大學",
+        email: "郵箱",
+        phone: "電話",
+        emailAddress: "cong_li@fudan.edu.cn",
+        phoneNumber: "021-31242510"
+      },
+      menu: {
+        fudanLibrary: "復旦圖書館",
+        complexSystemsBooks: "複雜系統推薦讀物",
+        publishedBooks: "已出版專著",
+        academicPapers: "學術論文集"
+      }
+    },
+    es: {
+      title: "Cong Li",
+      subtitle: "Profesora Asociada, Subdirectora de Ingeniería Electrónica",
+      university: "Facultad de Ciencia y Tecnología de la Información, Universidad de Fudan",
+      nav: {
+        books: "Libros Recomendados",
+        works: "Mis Obras"
+      },
+      sections: {
+        profile: "Perfil",
+        positions: "Cargos Académicos",
+        courses: "Cursos",
+        publications: "Publicaciones",
+        news: "Noticias Académicas",
+        links: "Enlaces Relacionados"
+      },
+      profile: {
+        title: "Perfil",
+        content: "Cong Li, Profesora Asociada y Subdirectora de Ingeniería Electrónica en la Facultad de Ciencia y Tecnología de la Información de la Universidad de Fudan. PhD en Sistemas Inteligentes de la Universidad Tecnológica de Delft, Países Bajos. MS en Reconocimiento de Patrones y Sistemas Inteligentes de la Universidad de Jilin. Investigadora principal de múltiples proyectos nacionales, miembro del comité de programa de conferencias internacionales y miembro del comité editorial de revistas internacionales.",
+        research: "Áreas de investigación: Teoría y aplicaciones de redes complejas",
+        areas: [
+          "Caracterización y análisis de rendimiento de redes, dinámica de redes, diseño de redes",
+          "Análisis del comportamiento colectivo humano, análisis de redes sociales",
+          "Minería y análisis de big data, incrustación de grafos (redes neuronales de grafos: detección de comunidades, predicción de enlaces)"
+        ]
+      },
+      academic: {
+        positions: {
+          title: "Cargos Académicos",
+          society: {
+            title: "Cargos en Sociedades",
+            items: [
+              { position: "Miembro del Consejo, Sociedad de Ciencia No Lineal de Shanghai", period: "Nov. 2024 - presente" },
+              { position: "Director Ejecutivo, Sociedad de Información de Diagnóstico TCM de la Asociación de Información de Medicina Tradicional China", period: "Nov. 2018 - presente" },
+              { position: "Secretaria General, Capítulo Chino de la Sociedad de Ciencia de Redes Internacional (NetSci)", period: "Ene. 2018 - presente" },
+              { position: "Miembro del Comité, Comité de Sistemas Complejos y Redes Complejas, Sociedad China de Matemática Industrial y Aplicada", period: "Oct. 2016 - presente" },
+              { position: "Miembro del Comité, Comité de Ciencia y Tecnología de Redes, Instituto Chino de Comando y Control", period: "Abr. 2016 - presente" },
+              { position: "Secretaria, Comité de Teoría de Automatización, Sociedad de Automatización de Shanghai", period: "Ago. 2015 - Jul. 2019" }
+            ]
+          },
+          conference: {
+            title: "Cargos en Conferencias",
+            items: [
+              { position: "NetSciX 2018, Comité de Programa", period: "2017-2018" },
+              { position: "Miembro del Comité de Programa, Conferencia Nacional de Redes Complejas", period: "2017 - presente" },
+              { position: "Miembro del Comité de Programa, Foro de Ciencia de Redes de China", period: "2016 - presente" }
+            ]
+          },
+          journal: {
+            title: "Revisión de Revistas",
+            content: "Scientific Reports (NPG), IEEE Trans on Systems, Man and Cybernetics (IEEE SMC), IEEE Trans on network Science and Engineering (IEEE TNSE), IEEE Trans on Control of Network Systems (IEEE CNS), IEEE Trans on Computational Social Systems (IEEE CSS), IEEE Journal of Biomedical and Health Informatics (IEEE BHI), Chaos, European Physical Journal B (Springer), Computer Communications (Elsevier), Journal of Combinatorial Optimization (Springer), Journal of Complex Networks (Oxford Journals) etc."
+          }
+        }
+      },
+      courses: {
+        undergraduateBasic: "Cursos Básicos de Pregrado",
+        undergraduateElective: "Cursos Electivos de Pregrado",
+        graduateFoundation: "Cursos Fundamentales de Maestría",
+        networkScienceSeries: "Serie de Ciencia de Redes",
+        linearAlgebra: "Álgebra Lineal",
+        networkScienceIntro: "Introducción a la Ciencia de Redes",
+        networkDynamics: "Dinámica de Redes",
+        networkPropagation: "Ciencia de Redes: Propagación en Redes",
+        shanghaiExcellent: "Cursos Excelentes de Shanghai",
+        fudanExcellent: "Cursos Excelentes Universidad de Fudan",
+        swarmaOnline: "Cursos en Línea de Swarma"
+      },
+      publications: {
+        books: "Libros",
+        journals: "Artículos de Revistas",
+        amazon: "Amazon",
+        jd: "JD.com",
+        googleScholar: "Google Scholar"
+      },
+      news: {
+        title: "Noticias Académicas",
+        items: [
+          {
+            title: "Prof. Cong Li gana Premio Especial en los Premios de Excelencia de Innovación de Código Abierto de Shanghai 2024",
+            source: "Laboratorio de Redes Adaptativas y Control, Universidad de Fudan",
+            year: "2024",
+            link: "Leer más"
+          },
+          {
+            title: "Prof. Cong Li preside el intercambio académico sobre nuevos avances en dinámica de orden superior de redes complejas",
+            source: "Laboratorio de Redes Adaptativas y Control, Universidad de Fudan",
+            year: "2024",
+            link: "Leer más"
+          },
+          {
+            title: "Prof. Cong Li gana tercer premio en los Premios de Logros Docentes 2022 de la Sociedad de Computación de Shanghai",
+            source: "Sociedad de Computación de Shanghai",
+            year: "2022",
+            link: "Leer más"
+          },
+          {
+            title: "Prof. Cong Li gana el Premio del Decano de la Facultad 2020",
+            source: "Facultad de Ciencia y Tecnología de la Información",
+            year: "2020",
+            link: "Leer más"
+          }
+        ]
+      },
+      links: {
+        title: "Enlaces Relacionados",
+        items: [
+          { name: "Facultad de Ciencia y Tecnología de la Información", href: "https://www.it.fudan.edu.cn/" },
+          { name: "Página de Investigación de Fudan", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "Laboratorio de Redes Adaptativas y Control", href: "https://can.fudan.edu.cn/welcome_cn/" },
+          { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
+          { name: "Página del Laboratorio", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "Página de Swarma Pattern", href: "https://pattern.swarma.org/user/52054" },
+          { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
+        ]
+      },
+      footer: {
+        copyright: "© 2025 Cong Li, Universidad de Fudan",
+        email: "Correo",
+        phone: "Teléfono",
+        emailAddress: "cong_li@fudan.edu.cn",
+        phoneNumber: "021-31242510"
+      },
+      menu: {
+        fudanLibrary: "Biblioteca de Fudan",
+        complexSystemsBooks: "Libros de Sistemas Complejos",
+        publishedBooks: "Libros Publicados",
+        academicPapers: "Artículos Académicos"
+      }
     }
   };
 
   const seoKeywords = [
-    { zh: "复杂网络", en: "Complex Networks", ja: "複雑ネットワーク", category: "primary" },
-    { zh: "网络科学", en: "Network Science", ja: "ネットワーク科学", category: "primary" },
-    { zh: "网络动力学", en: "Network Dynamics", ja: "ネットワークダイナミクス", category: "primary" },
-    { zh: "传播理论", en: "Spreading Theory", ja: "伝播理論", category: "primary" },
-    { zh: "链路预测", en: "Link Prediction", ja: "リンク予測", category: "primary" },
-    { zh: "社区发现", en: "Community Detection", ja: "コミュニティ発見", category: "primary" },
-    { zh: "网络嵌入", en: "Network Embedding", ja: "ネットワーク埋め込み", category: "primary" },
-    { zh: "图神经网络", en: "Graph Neural Networks", ja: "グラフニューラルネットワーク", category: "primary" },
-    { zh: "时态网络", en: "Temporal Networks", ja: "時系列ネットワーク", category: "secondary" },
-    { zh: "多层网络", en: "Multilayer Networks", ja: "多層ネットワーク", category: "secondary" },
-    { zh: "网络控制", en: "Network Control", ja: "ネットワーク制御", category: "secondary" },
-    { zh: "网络鲁棒性", en: "Network Robustness", ja: "ネットワーク頑健性", category: "secondary" },
-    { zh: "网络渗透", en: "Network Percolation", ja: "ネットワーク浸透", category: "secondary" },
-    { zh: "影响最大化", en: "Influence Maximization", ja: "影響最大化", category: "secondary" },
-    { zh: "随机游走", en: "Random Walks", ja: "ランダムウォーク", category: "secondary" },
-    { zh: "社交网络分析", en: "Social Network Analysis", ja: "ソーシャルネットワーク解析", category: "application" },
-    { zh: "大数据挖掘", en: "Big Data Mining", ja: "ビッグデータマイニング", category: "application" },
-    { zh: "人工智能", en: "Artificial Intelligence", ja: "人工知能", category: "application" },
-    { zh: "机器学习", en: "Machine Learning", ja: "機械学習", category: "application" },
-    { zh: "数据科学", en: "Data Science", ja: "データサイエンス", category: "application" },
-    { zh: "系统科学", en: "Systems Science", ja: "システム科学", category: "application" },
-    { zh: "统计物理", en: "Statistical Physics", ja: "統計物理学", category: "theory" },
-    { zh: "非线性动力学", en: "Nonlinear Dynamics", ja: "非線形ダイナミクス", category: "theory" },
-    { zh: "优化理论", en: "Optimization Theory", ja: "最適化理論", category: "theory" },
-    { zh: "信息论", en: "Information Theory", ja: "情報理論", category: "theory" },
-    { zh: "复旦大学", en: "Fudan University", ja: "復旦大学", category: "institution" },
-    { zh: "电子工程", en: "Electronic Engineering", ja: "電子工学", category: "institution" },
-    { zh: "副教授", en: "Associate Professor", ja: "准教授", category: "position" },
-    { zh: "学术任职", en: "Academic Positions", ja: "学術役職", category: "position" },
-    { zh: "科研成果", en: "Research Achievements", ja: "研究成果", category: "academic" },
-    { zh: "学术论文", en: "Academic Papers", ja: "学術論文", category: "academic" }
+    { zh: "复杂网络", en: "Complex Networks", ja: "複雑ネットワーク", de: "Komplexe Netzwerke", ko: "복잡 네트워크", hk: "複雜網絡", es: "Redes Complejas", category: "primary" },
+    { zh: "网络科学", en: "Network Science", ja: "ネットワーク科学", de: "Netzwerk-Wissenschaft", ko: "네트워크 과학", hk: "網絡科學", es: "Ciencia de Redes", category: "primary" },
+    { zh: "网络动力学", en: "Network Dynamics", ja: "ネットワークダイナミクス", de: "Netzwerk-Dynamik", ko: "네트워크 역학", hk: "網絡動力學", es: "Dinámica de Redes", category: "primary" },
+    { zh: "传播理论", en: "Spreading Theory", ja: "伝播理論", de: "Ausbreitungstheorie", ko: "전파 이론", hk: "傳播理論", es: "Teoría de Propagación", category: "primary" },
+    { zh: "链路预测", en: "Link Prediction", ja: "リンク予測", de: "Link-Vorhersage", ko: "링크 예측", hk: "鏈路預測", es: "Predicción de Enlaces", category: "primary" },
+    { zh: "社区发现", en: "Community Detection", ja: "コミュニティ発見", de: "Community-Erkennung", ko: "커뮤니티 발견", hk: "社區發現", es: "Detección de Comunidades", category: "primary" },
+    { zh: "网络嵌入", en: "Network Embedding", ja: "ネットワーク埋め込み", de: "Netzwerk-Einbettung", ko: "네트워크 임베딩", hk: "網絡嵌入", es: "Incrustación de Redes", category: "primary" },
+    { zh: "图神经网络", en: "Graph Neural Networks", ja: "グラフニューラルネットワーク", de: "Graph-Neuronale Netzwerke", ko: "그래프 신경망", hk: "圖神經網絡", es: "Redes Neuronales de Grafos", category: "primary" },
+    { zh: "时态网络", en: "Temporal Networks", ja: "時系列ネットワーク", de: "Temporäre Netzwerke", ko: "시계열 네트워크", hk: "時態網絡", es: "Redes Temporales", category: "secondary" },
+    { zh: "多层网络", en: "Multilayer Networks", ja: "多層ネットワーク", de: "Mehrschichtige Netzwerke", ko: "다층 네트워크", hk: "多層網絡", es: "Redes Multicapa", category: "secondary" },
+    { zh: "网络控制", en: "Network Control", ja: "ネットワーク制御", de: "Netzwerk-Kontrolle", ko: "네트워크 제어", hk: "網絡控制", es: "Control de Redes", category: "secondary" },
+    { zh: "网络鲁棒性", en: "Network Robustness", ja: "ネットワーク頑健性", de: "Netzwerk-Robustheit", ko: "네트워크 견고성", hk: "網絡魯棒性", es: "Robustez de Redes", category: "secondary" },
+    { zh: "网络渗透", en: "Network Percolation", ja: "ネットワーク浸透", de: "Netzwerk-Perkolation", ko: "네트워크 침투", hk: "網絡滲透", es: "Percolación de Redes", category: "secondary" },
+    { zh: "影响最大化", en: "Influence Maximization", ja: "影響最大化", de: "Einfluss-Maximierung", ko: "영향력 최대화", hk: "影響最大化", es: "Maximización de Influencia", category: "secondary" },
+    { zh: "随机游走", en: "Random Walks", ja: "ランダムウォーク", de: "Zufällige Wege", ko: "랜덤 워크", hk: "隨機游走", es: "Caminatas Aleatorias", category: "secondary" },
+    { zh: "社交网络分析", en: "Social Network Analysis", ja: "ソーシャルネットワーク解析", de: "Soziale Netzwerkanalyse", ko: "소셜 네트워크 분석", hk: "社交網絡分析", es: "Análisis de Redes Sociales", category: "application" },
+    { zh: "大数据挖掘", en: "Big Data Mining", ja: "ビッグデータマイニング", de: "Big-Data-Mining", ko: "빅데이터 마이닝", hk: "大數據挖掘", es: "Minería de Datos Masivos", category: "application" },
+    { zh: "人工智能", en: "Artificial Intelligence", ja: "人工知能", de: "Künstliche Intelligenz", ko: "인공지능", hk: "人工智能", es: "Inteligencia Artificial", category: "application" },
+    { zh: "机器学习", en: "Machine Learning", ja: "機械学習", de: "Maschinelles Lernen", ko: "기계학습", hk: "機器學習", es: "Aprendizaje Automático", category: "application" },
+    { zh: "数据科学", en: "Data Science", ja: "データサイエンス", de: "Datenwissenschaft", ko: "데이터 과학", hk: "數據科學", es: "Ciencia de Datos", category: "application" },
+    { zh: "系统科学", en: "Systems Science", ja: "システム科学", de: "Systemwissenschaft", ko: "시스템 과학", hk: "系統科學", es: "Ciencia de Sistemas", category: "application" },
+    { zh: "统计物理", en: "Statistical Physics", ja: "統計物理学", de: "Statistische Physik", ko: "통계 물리학", hk: "統計物理", es: "Física Estadística", category: "theory" },
+    { zh: "非线性动力学", en: "Nonlinear Dynamics", ja: "非線形ダイナミクス", de: "Nichtlineare Dynamik", ko: "비선형 역학", hk: "非線性動力學", es: "Dinámica No Lineal", category: "theory" },
+    { zh: "优化理论", en: "Optimization Theory", ja: "最適化理論", de: "Optimierungstheorie", ko: "최적화 이론", hk: "優化理論", es: "Teoría de Optimización", category: "theory" },
+    { zh: "信息论", en: "Information Theory", ja: "情報理論", de: "Informationstheorie", ko: "정보 이론", hk: "信息論", es: "Teoría de la Información", category: "theory" },
+    { zh: "复旦大学", en: "Fudan University", ja: "復旦大学", de: "Fudan-Universität", ko: "푸단대학교", hk: "復旦大學", es: "Universidad de Fudan", category: "institution" },
+    { zh: "电子工程", en: "Electronic Engineering", ja: "電子工学", de: "Elektrotechnik", ko: "전자공학", hk: "電子工程", es: "Ingeniería Electrónica", category: "institution" },
+    { zh: "副教授", en: "Associate Professor", ja: "准教授", de: "Professorin", ko: "부교수", hk: "副教授", es: "Profesora Asociada", category: "position" },
+    { zh: "学术任职", en: "Academic Positions", ja: "学術役職", de: "Akademische Positionen", ko: "학술 직책", hk: "學術任職", es: "Cargos Académicos", category: "position" },
+    { zh: "科研成果", en: "Research Achievements", ja: "研究成果", de: "Forschungsergebnisse", ko: "연구 성과", hk: "科研成果", es: "Logros de Investigación", category: "academic" },
+    { zh: "学术论文", en: "Academic Papers", ja: "学術論文", de: "Akademische Arbeiten", ko: "학술 논문", hk: "學術論文", es: "Artículos Académicos", category: "academic" }
   ];
 
   return (
@@ -810,10 +1332,24 @@ function App() {
               <button
                 onClick={toggleLanguage}
                 className="fixed top-4 right-4 z-50 inline-flex items-center gap-2 px-3 py-2 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition text-sm font-medium shadow-lg"
-                title={language === 'zh' ? 'Switch to English' : language === 'en' ? '日本語に切り替える' : '切换到中文'}
+                title={
+                  language === 'zh' ? 'Switch to English' :
+                  language === 'en' ? '日本語に切り替える' :
+                  language === 'ja' ? 'Deutsch' :
+                  language === 'de' ? '한국어' :
+                  language === 'ko' ? '繁體中文' :
+                  language === 'hk' ? 'Español' :
+                  '切换到中文'
+                }
               >
                 <Globe className="w-4 h-4" />
-                {language === 'zh' ? 'EN' : language === 'en' ? '日本語' : '中文'}
+                {language === 'zh' ? 'EN' :
+                 language === 'en' ? '日本語' :
+                 language === 'ja' ? 'DE' :
+                 language === 'de' ? '한국어' :
+                 language === 'ko' ? '繁體' :
+                 language === 'hk' ? 'ES' :
+                 '中文'}
               </button>
               
               <Menu as="div" className="relative">
@@ -1195,24 +1731,7 @@ function App() {
             
           </section>
 
-          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30 mt-12">
-            <div className="mb-6">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-400 mb-4">
-                <p className="flex items-center gap-2">
-                  <Mail className="w-4 h-4" />
-                  {content[language].footer.email}: <a href="mailto:cong_li@fudan.edu.cn" className="text-blue-400 hover:underline">{content[language].footer.emailAddress}</a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  {content[language].footer.phone}: {content[language].footer.phoneNumber}
-                </p>
-              </div>
-              
-              </div>
-            
-            <p className="text-gray-300">{content[language].footer.copyright}</p>
-            
-          </footer>
+
         </main>
       </div>
     </div>
