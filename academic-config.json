@@ -1,0 +1,19 @@
+{
+  "storage": {
+    "dataFile": "data/academic-updates.json",
+    "maxEntries": 50
+  },
+  "monitoring": {
+    "fudanUrls": [
+      "https://cs.fudan.edu.cn/news/notice.htm",
+      "https://cs.fudan.edu.cn/news/research.htm",
+      "https://can.fudan.edu.cn/news/index.html"
+    ],
+    "scholarQuery": "author:\"C+Li\"+Fudan",
+    "checkInterval": 86400000
+  },
+  "notifications": {
+    "enabled": true,
+    "channels": ["github"]
+  }
+}
