@@ -24,11 +24,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install axios cheerio fs-extra
+        npm install axios cheerio
 
-    - name: Run academic agent
+    - name: Run academic agent final
       run: |
-        node academic-agent-fixed.js
+        node academic-agent-final.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SERP_API_KEY: ${{ secrets.SERP_API_KEY }}

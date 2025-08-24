@@ -1,0 +1,104 @@
+{
+  "news": [],
+  "papers": [
+    {
+      "title": "An Energy Harvesting Interface Based on Reconfigurable Piezoelectric Harvester Array",
+      "journal": "IEEE Transactions on Power Electronics",
+      "year": 2025,
+      "authors": [
+        "Zhiyuan Chen",
+        "Xianren Hao",
+        "Zhen Li",
+        "Yan Ma",
+        "Jing Wang"
+      ],
+      "url": "https://doi.org/10.1109/tpel.2025.3577696",
+      "date": "2025-10",
+      "citations": 0,
+      "source": "CrossRef",
+      "fetchedAt": "2025-08-24T12:46:37.634Z"
+    },
+    {
+      "title": "PAPL-SLAM: Principal Axis-Anchored Monocular Point-Line SLAM",
+      "journal": "IEEE Robotics and Automation Letters",
+      "year": 2025,
+      "authors": [
+        "Guanghao Li",
+        "Yu Cao",
+        "Qi Chen",
+        "Xin Gao",
+        "Yifan Yang"
+      ],
+      "url": "https://doi.org/10.1109/lra.2025.3592057",
+      "date": "2025-9",
+      "citations": 0,
+      "source": "CrossRef",
+      "fetchedAt": "2025-08-24T12:46:37.634Z"
+    },
+    {
+      "title": "Unifying Lane-Level Traffic Prediction From a Graph Structural Perspective: Benchmark and Baseline",
+      "journal": "IEEE Transactions on Knowledge and Data Engineering",
+      "year": 2025,
+      "authors": [
+        "Shuhao Li",
+        "Yue Cui",
+        "Jingyi Xu",
+        "Libin Li",
+        "Lingkai Meng"
+      ],
+      "url": "https://doi.org/10.1109/tkde.2025.3580465",
+      "date": "2025-9",
+      "citations": 0,
+      "source": "CrossRef",
+      "fetchedAt": "2025-08-24T12:46:37.634Z"
+    },
+    {
+      "title": "Reinforcement Learning-Based Accurate Worm Detection for Smart Grids",
+      "journal": "IEEE Internet of Things Journal",
+      "year": 2025,
+      "authors": [
+        "Liang Xiao",
+        "Jieling Li",
+        "Yilin Xiao",
+        "Zefang Lv",
+        "Chuxuan Wang"
+      ],
+      "url": "https://doi.org/10.1109/jiot.2025.3583379",
+      "date": "2025-9-1",
+      "citations": 0,
+      "source": "CrossRef",
+      "fetchedAt": "2025-08-24T12:46:37.634Z"
+    },
+    {
+      "title": "COFFA: A <u>Co</u>-Design <u>F</u>ramework for <u>F</u>used-Grained Reconfigurable <u>A</u>rchitecture Towards Efficient Irregular Loop Handling",
+      "journal": "IEEE Transactions on Computers",
+      "year": 2025,
+      "authors": [
+        "Yuan Dai",
+        "Xuchen Gao",
+        "Yunhui Qiu",
+        "Jingyuan Li",
+        "Yuhang Cao"
+      ],
+      "url": "https://doi.org/10.1109/tc.2025.3585345",
+      "date": "2025-9",
+      "citations": 0,
+      "source": "CrossRef",
+      "fetchedAt": "2025-08-24T12:46:37.634Z"
+    }
+  ],
+  "awards": [],
+  "lastUpdate": "2025-08-24T12:46:37.635Z",
+  "searchHistory": [
+    {
+      "timestamp": "2025-08-24T12:46:37.635Z",
+      "stats": {
+        "newsFound": 0,
+        "papersFound": 15,
+        "newsUnique": 0,
+        "papersUnique": 15,
+        "awardsFound": 0
+      }
+    }
+  ]
+}
