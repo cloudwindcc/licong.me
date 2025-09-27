@@ -29,7 +29,7 @@ function App() {
     const metaAuthor = document.querySelector('meta[name="author"]');
     
     const descriptionText = {
-      zh: "李聪教授 - 复旦大学电子工程系副教授，复杂网络科学专家。研究网络动力学、传播理论、链路预测、社区发现等领域，发表多篇高水平学术论文。",
+      zh: "李聪教授 - 复旦大学未来信息创新学院副教授，复杂网络科学专家。研究网络动力学、传播理论、链路预测、社区发现等领域，发表多篇高水平学术论文。",
       en: "Prof. Cong Li - Associate Professor at Fudan University Electronic Engineering, expert in complex network science. Research areas include network dynamics, spreading theory, link prediction, community detection with numerous high-impact publications.",
       ja: "李聰教授 - 復旦大学電子工学部准教授、複雑ネットワーク科学の専門家。ネットワークダイナミクス、伝播理論、リンク予測、コミュニティ発見などの分野で研究し、多数の高インパクトな学術論文を発表。",
       de: "Prof. Dr. Cong Li - Professorin an der Fakultät für Elektrotechnik der Fudan-Universität, Expertin für komplexe Netzwerke. Forschungsbereiche: Netzwerk-Dynamik, Ausbreitungstheorie, Link-Vorhersage, Community-Erkennung mit zahlreichen hochrangigen Publikationen.",
@@ -263,10 +263,10 @@ function App() {
     zh: {
       title: "李聪",
       subtitle: "副教授，电子工程系副主任",
-      university: "复旦大学信息科学与工程学院",
+      university: "复旦大学未来信息创新学院",
       nav: {
         books: "推荐书单",
-        works: "我的作品"
+        works: "学术研究"
       },
       sections: {
         profile: "个人简介",
@@ -278,7 +278,7 @@ function App() {
       },
       profile: {
         title: "个人简介",
-        content: "李聪，女，复旦大学信息科学与工程学院，电子工程系副主任。荷兰代尔夫特理工大学智能系统哲学博士，吉林大学模式识别与智能系统硕士。主持多项国家级项目，担任多个国际会议程序委员会委员及国际期刊编委。",
+        content: "李聪，女，复旦大学未来信息创新学院，电子工程系副主任。荷兰代尔夫特理工大学智能系统哲学博士，吉林大学模式识别与智能系统硕士。主持多项国家级项目，担任多个国际会议程序委员会委员及国际期刊编委。",
         research: "研究方向：复杂网络的理论及应用",
         areas: [
           "网络描述及性能分析、网络动力学过程分析、网络设计",
@@ -292,7 +292,9 @@ function App() {
           society: {
             title: "学会任职",
             items: [
-              { position: "上海市非线性科学研究会 理事", period: "2024年11月至今" },
+              { position: "Journal of Social Computing 编委", period: "2025年3月至今" },
+              { position: "IEEE  Senior Member", period: "2025年4月至今" },
+              { position: "Frontiers in Physics  客座副编辑", period: "2022年至今" },
               { position: "中国中医药信息学会中医诊断信息分会常务理事", period: "2018年11月至今" },
               { position: "国际网络(NetSci)科学协会中国分会秘书长", period: "2018年1月至今" },
               { position: "中国工业与应用数学学会复杂系统与复杂网络专委会委员", period: "2016年10月至今" },
@@ -366,7 +368,7 @@ function App() {
       links: {
         title: "相关链接",
         items: [
-          { name: "信息科学与工程学院", href: "https://www.it.fudan.edu.cn/" },
+          { name: "复旦大学未来信息创新学院", href: "https://www.it.fudan.edu.cn/" },
           { name: "复旦科研主页", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
           { name: "自适应网络与控制研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
