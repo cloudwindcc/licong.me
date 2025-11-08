@@ -383,6 +383,7 @@ function App() {
         phone: "电话",
         emailAddress: "cong_li@fudan.edu.cn",
         phoneNumber: "021-31242510"
+        技術支持："www.CloudWindAI.com"
       },
       menu: {
         fudanLibrary: "复旦图书馆",
@@ -512,6 +513,7 @@ function App() {
         phone: "Phone",
         emailAddress: "cong_li@fudan.edu.cn",
         phoneNumber: "021-31242510"
+        TecSupport："www.CloudWindAI.com"
       },
       menu: {
         fudanLibrary: "Fudan Library",
