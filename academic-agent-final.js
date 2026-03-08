@@ -7,10 +7,33 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+function createDefaultConfig() {
+  return {
+    storage: {
+      dataFile: 'data/academic-updates.json',
+      publicDataFile: 'public/data/academic-updates.json',
+      maxNews: 30,
+      maxPapers: 50,
+      maxAwards: 20
+    }
+  };
+}
+
+function isDirectRun(modulePath) {
+  if (!process.argv[1]) {
+    return false;
+  }
+
+  return path.resolve(process.argv[1]) === modulePath;
+}
+
 class AcademicAgent {
-  constructor(config) {
+  constructor(config = createDefaultConfig()) {
     this.config = config;
     this.dataFile = path.join(__dirname, this.config.storage.dataFile);
+    this.publicDataFile = this.config.storage.publicDataFile
+      ? path.join(__dirname, this.config.storage.publicDataFile)
+      : null;
     this.retryConfig = { retries: 3, delay: 2000 };
     this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
   }
@@ -19,6 +42,10 @@ class AcademicAgent {
     try {
       await this.ensureDataDir();
       await this.loadExistingData();
+      if (this.didSanitizeExistingData) {
+        await this.saveData(this.existingData);
+        console.log('🧹 已清理不相关的历史论文数据');
+      }
       console.log('✅ 学术动态智能体初始化完成');
       return true;
     } catch (error) {
@@ -28,7 +55,14 @@ class AcademicAgent {
   }
 
   async ensureDataDir() {
-    const dir = path.dirname(this.dataFile);
+    await this.ensureDirForFile(this.dataFile);
+    if (this.publicDataFile) {
+      await this.ensureDirForFile(this.publicDataFile);
+    }
+  }
+
+  async ensureDirForFile(filePath) {
+    const dir = path.dirname(filePath);
     try {
       await fs.access(dir);
     } catch {
@@ -40,6 +74,10 @@ class AcademicAgent {
     try {
       const data = await fs.readFile(this.dataFile, 'utf8');
       this.existingData = JSON.parse(data);
+      const existingPapers = Array.isArray(this.existingData.papers) ? this.existingData.papers : [];
+      const filteredPapers = existingPapers.filter((paper) => this.shouldKeepPaper(paper));
+      this.didSanitizeExistingData = filteredPapers.length !== existingPapers.length;
+      this.existingData.papers = filteredPapers;
       console.log(`📊 已加载现有数据: ${this.existingData.papers?.length || 0} 篇论文, ${this.existingData.news?.length || 0} 条新闻`);
     } catch {
       this.existingData = { 
@@ -49,13 +87,18 @@ class AcademicAgent {
         lastUpdate: null,
         searchHistory: []
       };
+      this.didSanitizeExistingData = false;
       console.log('📁 创建新的数据文件');
     }
   }
 
   async saveData(data) {
     try {
-      await fs.writeFile(this.dataFile, JSON.stringify(data, null, 2));
+      const serializedData = JSON.stringify(data, null, 2);
+      await fs.writeFile(this.dataFile, serializedData);
+      if (this.publicDataFile) {
+        await fs.writeFile(this.publicDataFile, serializedData);
+      }
       console.log('💾 数据保存成功');
       return true;
     } catch (error) {
@@ -98,9 +141,9 @@ class AcademicAgent {
     console.log('🏫 开始监控复旦大学动态...');
     
     const fudanUrls = [
-      'https://cs.fudan.edu.cn/news/notice.htm',
-      'https://cs.fudan.edu.cn/news/research.htm',
-      'https://can.fudan.edu.cn/news/index.html'
+      'https://can.fudan.edu.cn/?s=%E6%9D%8E%E8%81%AA',
+      'https://can.fudan.edu.cn/?s=Cong+Li',
+      'https://can.fudan.edu.cn/author/licong/'
     ];
     
     const allNews = [];
@@ -111,18 +154,18 @@ class AcademicAgent {
         const $ = cheerio.load(response.data);
         
         const newsItems = [];
-        
-        // 多种选择器确保覆盖
-        $('.list-item, .news-item, li, .article-item').each((i, elem) => {
-          const title = $(elem).find('a').text().trim() || $(elem).text().trim();
-          const link = $(elem).find('a').attr('href');
-          const dateText = $(elem).find('.date, .time, .publish-date').text().trim();
-          
-          if (title && this.isRelevantToLiCong(title)) {
+
+        $('a').each((i, elem) => {
+          const title = $(elem).text().trim();
+          const link = $(elem).attr('href');
+          const container = $(elem).closest('article, li, .post, .entry, .news-item, .article-item');
+          const dateText = container.find('time, .date, .time, .publish-date').first().text().trim();
+
+          if (title && link && this.isRelevantToLiCong(title)) {
             const fullUrl = this.normalizeUrl(url, link);
             newsItems.push({
               title: title.replace(/\s+/g, ' ').trim(),
-              source: '复旦大学',
+              source: '复旦大学自适应网络与控制研究室',
               date: this.extractDate(dateText),
               url: fullUrl,
               type: 'news',
@@ -250,6 +293,7 @@ class AcademicAgent {
       );
       
       return papersResponse.data.data
+        .filter((paper) => this.hasTargetAuthor(paper.authors?.map((author) => author.name) || [], true))
         .filter(paper => paper.year >= 2020)
         .map(paper => ({
           title: paper.title,
@@ -284,7 +328,8 @@ class AcademicAgent {
       return response.data.message.items
         .filter(item => {
           const year = parseInt(item.published?.['date-parts']?.[0]?.[0]);
-          return year >= 2020;
+          const authors = item.author?.map(author => `${author.given || ''} ${author.family || ''}`.trim()) || [];
+          return year >= 2020 && this.hasTargetAuthor(authors, false);
         })
         .map(item => ({
           title: item.title?.[0] || 'Unknown Title',
@@ -369,8 +414,39 @@ class AcademicAgent {
       .split(/[,，]|and|&/)
       .map(a => a.trim())
       .filter(a => a.length > 0 && a !== '...');
-    
+
     return authors.length > 0 ? authors.slice(0, 5) : ['C. Li'];
+  }
+
+  isTargetAuthorName(name, allowInitials = false) {
+    if (!name) return false;
+
+    const normalized = name.toLowerCase().replace(/[^a-z]/g, '');
+    if (normalized.includes('congli') || normalized.includes('licong')) {
+      return true;
+    }
+
+    return allowInitials && normalized === 'cli';
+  }
+
+  hasTargetAuthor(authors, allowInitials = false) {
+    if (!Array.isArray(authors)) {
+      return false;
+    }
+
+    return authors.some((author) => this.isTargetAuthorName(author, allowInitials));
+  }
+
+  shouldKeepPaper(paper) {
+    if (!paper) {
+      return false;
+    }
+
+    if (paper.source === 'CrossRef') {
+      return this.hasTargetAuthor(paper.authors, false);
+    }
+
+    return true;
   }
 
   deduplicateByTitle(items) {
@@ -482,39 +558,28 @@ class AcademicAgent {
 }
 
 // 主程序
-async function main() {
+export async function runAcademicAgent(config = createDefaultConfig()) {
   console.log('🎯 启动学术动态智能体 - 最终版');
-  
-  const config = {
-    storage: {
-      dataFile: 'data/academic-updates.json',
-      maxNews: 30,
-      maxPapers: 50,
-      maxAwards: 20
-    }
-  };
-  
-  try {
-    const agent = new AcademicAgent(config);
-    await agent.initialize();
-    const result = await agent.performCheck();
-    
-    if (result.success) {
-      console.log(`\n🎉 任务完成！${result.hasNewContent ? '已发现并保存新内容' : '暂无更新'}`);
-    } else {
-      console.error('\n💥 任务失败:', result.error);
-      process.exit(1);
-    }
-    
-  } catch (error) {
-    console.error('\n💥 致命错误:', error.message);
-    process.exit(1);
+
+  const agent = new AcademicAgent(config);
+  await agent.initialize();
+
+  const result = await agent.performCheck();
+  if (!result.success) {
+    throw new Error(result.error);
   }
+
+  console.log(`\n🎉 任务完成！${result.hasNewContent ? '已发现并保存新内容' : '暂无更新'}`);
+  return result;
 }
 
 // 导出或执行
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main();
+if (isDirectRun(__filename)) {
+  runAcademicAgent().catch((error) => {
+    console.error('\n💥 致命错误:', error.message);
+    process.exit(1);
+  });
 }
 
+export { createDefaultConfig };
 export default AcademicAgent;

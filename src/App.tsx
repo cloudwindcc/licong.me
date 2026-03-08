@@ -1,12 +1,59 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import type { Container, Engine } from "tsparticles-engine";
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import type { Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { ExternalLink, FileText, GraduationCap, Link as LinkIcon, Mail, User, Award, Phone, ChevronDown, ChevronUp, Book, ShoppingCart, BookOpen, Palette, Globe } from 'lucide-react';
 import { Disclosure, Menu } from '@headlessui/react';
 
+type SiteLanguage = 'zh' | 'en' | 'ja' | 'de' | 'ko' | 'hk' | 'es';
+
+type DynamicNewsItem = {
+  title: string;
+  source: string;
+  date?: string;
+  year?: string | number;
+  url?: string;
+  link?: string;
+};
+
+type DisplayNewsItem = {
+  title: string;
+  source: string;
+  year: string;
+  href: string;
+  link: string;
+};
+
+type AcademicUpdatesPayload = {
+  news?: DynamicNewsItem[];
+};
+
+const fallbackNewsLinks = [
+  "https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b724%e5%b9%b4%e5%ba%a6%e4%b8%8a%e6%b5%b7%e5%bc%80%e6%ba%90%e5%88%9b%e6%96%b0%e5%8d%93%e8%b6%8a%e6%88%90%e6%9e%9c%e5%a5%96%e7%89%b9%e7%ad%89%e5%a5%96/",
+  "https://can.fudan.edu.cn/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E9%AB%98%E9%98%B6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%96%B0%E8%BF%9B%E5%B1%95%E5%AD%A6%E6%9C%AF%E4%BA%A4%E6%B5%81%E4%BC%9A/",
+  "https://can.fudan.edu.cn/%E7%A0%94%E7%A9%B6%E5%AE%A4%E6%9D%8E%E8%81%AA%E8%80%81%E5%B8%88%E8%8D%A3%E8%8E%B72022%E5%B9%B4%E5%BA%A6%E4%B8%8A%E6%B5%B7%E5%B8%82%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%95%99%E5%AD%A6/",
+  "https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b72020%e5%b9%b4%e5%ba%a6%e4%bf%a1%e6%81%af%e5%ad%a6%e9%99%a2%e9%99%a2%e9%95%bf%e5%a5%96/"
+] as const;
+
+function toDisplayNewsItems(items: DynamicNewsItem[], fallbackLabel = 'Open'): DisplayNewsItem[] {
+  return items
+    .filter((item) => item.title && item.source && item.url)
+    .sort((left, right) =>
+      String(right.date ?? right.year ?? '').localeCompare(String(left.date ?? left.year ?? ''))
+    )
+    .slice(0, 4)
+    .map((item) => ({
+      title: item.title,
+      source: item.source,
+      year: String(item.year ?? item.date?.slice(0, 4) ?? ''),
+      href: item.url ?? '#',
+      link: item.link ?? fallbackLabel
+    }));
+}
+
 function App() {
-  const [language, setLanguage] = useState<'zh' | 'en' | 'ja' | 'de' | 'ko' | 'hk' | 'es'>('zh');
+  const [language, setLanguage] = useState<SiteLanguage>('zh');
+  const [dynamicNewsItems, setDynamicNewsItems] = useState<DisplayNewsItem[]>([]);
   
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
@@ -19,6 +66,37 @@ function App() {
       return languages[(currentIndex + 1) % languages.length];
     });
   };
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadAcademicUpdates() {
+      try {
+        const response = await fetch('data/academic-updates.json', {
+          cache: 'no-store'
+        });
+
+        if (!response.ok) {
+          return;
+        }
+
+        const payload = (await response.json()) as AcademicUpdatesPayload;
+        if (!cancelled) {
+          setDynamicNewsItems(toDisplayNewsItems(payload.news ?? []));
+        }
+      } catch {
+        if (!cancelled) {
+          setDynamicNewsItems([]);
+        }
+      }
+    }
+
+    void loadAcademicUpdates();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -66,7 +144,7 @@ function App() {
       newMeta.setAttribute('content', 'Cong Li, Fudan University');
       document.head.appendChild(newMeta);
     }
-  }, [language]);
+  }, [language, seoKeywords]);
 
   const publications = {
     books: [
@@ -1168,7 +1246,7 @@ function App() {
     }
   };
 
-  const seoKeywords = [
+  const seoKeywords = useMemo(() => [
     { zh: "复杂网络", en: "Complex Networks", ja: "複雑ネットワーク", de: "Komplexe Netzwerke", ko: "복잡 네트워크", hk: "複雜網絡", es: "Redes Complejas", category: "primary" },
     { zh: "网络科学", en: "Network Science", ja: "ネットワーク科学", de: "Netzwerk-Wissenschaft", ko: "네트워크 과학", hk: "網絡科學", es: "Ciencia de Redes", category: "primary" },
     { zh: "网络动力学", en: "Network Dynamics", ja: "ネットワークダイナミクス", de: "Netzwerk-Dynamik", ko: "네트워크 역학", hk: "網絡動力學", es: "Dinámica de Redes", category: "primary" },
@@ -1200,7 +1278,16 @@ function App() {
     { zh: "学术任职", en: "Academic Positions", ja: "学術役職", de: "Akademische Positionen", ko: "학술 직책", hk: "學術任職", es: "Cargos Académicos", category: "position" },
     { zh: "科研成果", en: "Research Achievements", ja: "研究成果", de: "Forschungsergebnisse", ko: "연구 성과", hk: "科研成果", es: "Logros de Investigación", category: "academic" },
     { zh: "学术论文", en: "Academic Papers", ja: "学術論文", de: "Akademische Arbeiten", ko: "학술 논문", hk: "學術論文", es: "Artículos Académicos", category: "academic" }
-  ];
+  ], []);
+
+  const fallbackNewsItems: DisplayNewsItem[] = content[language].news.items.map((item, index) => ({
+    title: item.title,
+    source: item.source,
+    year: item.year,
+    href: fallbackNewsLinks[index] ?? '#',
+    link: item.link
+  }));
+  const newsItems = dynamicNewsItems.length > 0 ? dynamicNewsItems : fallbackNewsItems;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900 text-white relative">
@@ -1650,16 +1737,13 @@ function App() {
     <ExternalLink className="w-6 h-6" />
     {content[language].news.title}
   </h2>
-  <div className="grid grid-cols-2 gap-4">
-    {content[language].news.items.map((item, index) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {newsItems.map((item, index) => (
       <a 
-        key={index}
-        href={[
-          "https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b724%e5%b9%b4%e5%ba%a6%e4%b8%8a%e6%b5%b7%e5%bc%80%e6%ba%90%e5%88%9b%e6%96%b0%e5%8d%93%e8%b6%8a%e6%88%90%e6%9e%9c%e5%a5%96%e7%89%b9%e7%ad%89%e5%a5%96/",
-          "https://can.fudan.edu.cn/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E9%AB%98%E9%98%B6%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%A0%94%E7%A9%B6%E6%96%B0%E8%BF%9B%E5%B1%95%E5%AD%A6%E6%9C%AF%E4%BA%A4%E6%B5%81%E4%BC%9A/",
-          "https://can.fudan.edu.cn/%E7%A0%94%E7%A9%B6%E5%AE%A4%E6%9D%8E%E8%81%AA%E8%80%81%E5%B8%88%E8%8D%A3%E8%8E%B72022%E5%B9%B4%E5%BA%A6%E4%B8%8A%E6%B5%B7%E5%B8%82%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%95%99%E5%AD%A6/",
-          "https://can.fudan.edu.cn/%e6%9d%8e%e8%81%aa%e8%80%81%e5%b8%88%e8%8d%a3%e8%8e%b72020%e5%b9%b4%e5%ba%a6%e4%bf%a1%e6%81%af%e5%ad%a6%e9%99%a2%e9%99%a2%e9%95%bf%e5%a5%96/"
-        ][index]}
+        key={`${item.href}-${index}`}
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
         className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
         <h3 className="font-semibold mb-2">{item.title}</h3>
         <p className="text-sm text-gray-300">— {item.source}, {item.year} [{item.link}]</p>
