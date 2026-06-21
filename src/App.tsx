@@ -98,6 +98,39 @@ function App() {
     };
   }, []);
 
+  const seoKeywords = useMemo(() => [
+    { zh: "复杂网络", en: "Complex Networks", ja: "複雑ネットワーク", de: "Komplexe Netzwerke", ko: "복잡 네트워크", hk: "複雜網絡", es: "Redes Complejas", category: "primary" },
+    { zh: "网络科学", en: "Network Science", ja: "ネットワーク科学", de: "Netzwerk-Wissenschaft", ko: "네트워크 과학", hk: "網絡科學", es: "Ciencia de Redes", category: "primary" },
+    { zh: "网络动力学", en: "Network Dynamics", ja: "ネットワークダイナミクス", de: "Netzwerk-Dynamik", ko: "네트워크 역학", hk: "網絡動力學", es: "Dinámica de Redes", category: "primary" },
+    { zh: "传播理论", en: "Spreading Theory", ja: "伝播理論", de: "Ausbreitungstheorie", ko: "전파 이론", hk: "傳播理論", es: "Teoría de Propagación", category: "primary" },
+    { zh: "链路预测", en: "Link Prediction", ja: "リンク予測", de: "Link-Vorhersage", ko: "링크 예측", hk: "鏈路預測", es: "Predicción de Enlaces", category: "primary" },
+    { zh: "社区发现", en: "Community Detection", ja: "コミュニティ発見", de: "Community-Erkennung", ko: "커뮤니티 발견", hk: "社區發現", es: "Detección de Comunidades", category: "primary" },
+    { zh: "网络嵌入", en: "Network Embedding", ja: "ネットワーク埋め込み", de: "Netzwerk-Einbettung", ko: "네트워크 임베딩", hk: "網絡嵌入", es: "Incrustación de Redes", category: "primary" },
+    { zh: "图神经网络", en: "Graph Neural Networks", ja: "グラフニューラルネットワーク", de: "Graph-Neuronale Netzwerke", ko: "그래프 신경망", hk: "圖神經網絡", es: "Redes Neuronales de Grafos", category: "primary" },
+    { zh: "时态网络", en: "Temporal Networks", ja: "時系列ネットワーク", de: "Temporäre Netzwerke", ko: "시계열 네트워크", hk: "時態網絡", es: "Redes Temporales", category: "secondary" },
+    { zh: "多层网络", en: "Multilayer Networks", ja: "多層ネットワーク", de: "Mehrschichtige Netzwerke", ko: "다층 네트워크", hk: "多層網絡", es: "Redes Multicapa", category: "secondary" },
+    { zh: "网络控制", en: "Network Control", ja: "ネットワーク制御", de: "Netzwerk-Kontrolle", ko: "네트워크 제어", hk: "網絡控制", es: "Control de Redes", category: "secondary" },
+    { zh: "网络鲁棒性", en: "Network Robustness", ja: "ネットワーク頑健性", de: "Netzwerk-Robustheit", ko: "네트워크 견고성", hk: "網絡魯棒性", es: "Robustez de Redes", category: "secondary" },
+    { zh: "网络渗透", en: "Network Percolation", ja: "ネットワーク浸透", de: "Netzwerk-Perkolation", ko: "네트워크 침투", hk: "網絡滲透", es: "Percolación de Redes", category: "secondary" },
+    { zh: "影响最大化", en: "Influence Maximization", ja: "影響最大化", de: "Einfluss-Maximierung", ko: "영향력 최대화", hk: "影響最大化", es: "Maximización de Influencia", category: "secondary" },
+    { zh: "随机游走", en: "Random Walks", ja: "ランダムウォーク", de: "Zufällige Wege", ko: "랜덤 워크", hk: "隨機游走", es: "Caminatas Aleatorias", category: "secondary" },
+    { zh: "社交网络分析", en: "Social Network Analysis", ja: "ソーシャルネットワーク解析", de: "Soziale Netzwerkanalyse", ko: "소셜 네트워크 분석", hk: "社交網絡分析", es: "Análisis de Redes Sociales", category: "application" },
+    { zh: "大数据挖掘", en: "Big Data Mining", ja: "ビッグデータマイニング", de: "Big-Data-Mining", ko: "빅데이터 마이닝", hk: "大數據挖掘", es: "Minería de Datos Masivos", category: "application" },
+    { zh: "人工智能", en: "Artificial Intelligence", ja: "人工知能", de: "Künstliche Intelligenz", ko: "인공지능", hk: "人工智能", es: "Inteligencia Artificial", category: "application" },
+    { zh: "机器学习", en: "Machine Learning", ja: "機械学習", de: "Maschinelles Lernen", ko: "기계학습", hk: "機器學習", es: "Aprendizaje Automático", category: "application" },
+    { zh: "数据科学", en: "Data Science", ja: "データサイエンス", de: "Datenwissenschaft", ko: "데이터 과학", hk: "數據科學", es: "Ciencia de Datos", category: "application" },
+    { zh: "系统科学", en: "Systems Science", ja: "システム科学", de: "Systemwissenschaft", ko: "시스템 과학", hk: "系統科學", es: "Ciencia de Sistemas", category: "application" },
+    { zh: "统计物理", en: "Statistical Physics", ja: "統計物理学", de: "Statistische Physik", ko: "통계 물리학", hk: "統計物理", es: "Física Estadística", category: "theory" },
+    { zh: "非线性动力学", en: "Nonlinear Dynamics", ja: "非線形ダイナミクス", de: "Nichtlineare Dynamik", ko: "비선형 역학", hk: "非線性動力學", es: "Dinámica No Lineal", category: "theory" },
+    { zh: "优化理论", en: "Optimization Theory", ja: "最適化理論", de: "Optimierungstheorie", ko: "최적화 이론", hk: "優化理論", es: "Teoría de Optimización", category: "theory" },
+    { zh: "信息论", en: "Information Theory", ja: "情報理論", de: "Informationstheorie", ko: "정보 이론", hk: "信息論", es: "Teoría de la Información", category: "theory" },
+    { zh: "复旦大学", en: "Fudan University", ja: "復旦大学", de: "Fudan-Universität", ko: "푸단대학교", hk: "復旦大學", es: "Universidad de Fudan", category: "institution" },
+    { zh: "电子工程", en: "Electronic Engineering", ja: "電子工学", de: "Elektrotechnik", ko: "전자공학", hk: "電子工程", es: "Ingeniería Electrónica", category: "institution" },
+    { zh: "副教授", en: "Associate Professor", ja: "准教授", de: "Professorin", ko: "부교수", hk: "副教授", es: "Profesora Asociada", category: "position" },
+    { zh: "学术任职", en: "Academic Positions", ja: "学術役職", de: "Akademische Positionen", ko: "학술 직책", hk: "學術任職", es: "Cargos Académicos", category: "position" },
+    { zh: "科研成果", en: "Research Achievements", ja: "研究成果", de: "Forschungsergebnisse", ko: "연구 성과", hk: "科研成果", es: "Logros de Investigación", category: "academic" },
+    { zh: "学术论文", en: "Academic Papers", ja: "学術論文", de: "Akademische Arbeiten", ko: "학술 논문", hk: "學術論文", es: "Artículos Académicos", category: "academic" }
+  ], []);
   useEffect(() => {
     document.documentElement.lang = language;
     
@@ -1245,40 +1278,6 @@ function App() {
       }
     }
   };
-
-  const seoKeywords = useMemo(() => [
-    { zh: "复杂网络", en: "Complex Networks", ja: "複雑ネットワーク", de: "Komplexe Netzwerke", ko: "복잡 네트워크", hk: "複雜網絡", es: "Redes Complejas", category: "primary" },
-    { zh: "网络科学", en: "Network Science", ja: "ネットワーク科学", de: "Netzwerk-Wissenschaft", ko: "네트워크 과학", hk: "網絡科學", es: "Ciencia de Redes", category: "primary" },
-    { zh: "网络动力学", en: "Network Dynamics", ja: "ネットワークダイナミクス", de: "Netzwerk-Dynamik", ko: "네트워크 역학", hk: "網絡動力學", es: "Dinámica de Redes", category: "primary" },
-    { zh: "传播理论", en: "Spreading Theory", ja: "伝播理論", de: "Ausbreitungstheorie", ko: "전파 이론", hk: "傳播理論", es: "Teoría de Propagación", category: "primary" },
-    { zh: "链路预测", en: "Link Prediction", ja: "リンク予測", de: "Link-Vorhersage", ko: "링크 예측", hk: "鏈路預測", es: "Predicción de Enlaces", category: "primary" },
-    { zh: "社区发现", en: "Community Detection", ja: "コミュニティ発見", de: "Community-Erkennung", ko: "커뮤니티 발견", hk: "社區發現", es: "Detección de Comunidades", category: "primary" },
-    { zh: "网络嵌入", en: "Network Embedding", ja: "ネットワーク埋め込み", de: "Netzwerk-Einbettung", ko: "네트워크 임베딩", hk: "網絡嵌入", es: "Incrustación de Redes", category: "primary" },
-    { zh: "图神经网络", en: "Graph Neural Networks", ja: "グラフニューラルネットワーク", de: "Graph-Neuronale Netzwerke", ko: "그래프 신경망", hk: "圖神經網絡", es: "Redes Neuronales de Grafos", category: "primary" },
-    { zh: "时态网络", en: "Temporal Networks", ja: "時系列ネットワーク", de: "Temporäre Netzwerke", ko: "시계열 네트워크", hk: "時態網絡", es: "Redes Temporales", category: "secondary" },
-    { zh: "多层网络", en: "Multilayer Networks", ja: "多層ネットワーク", de: "Mehrschichtige Netzwerke", ko: "다층 네트워크", hk: "多層網絡", es: "Redes Multicapa", category: "secondary" },
-    { zh: "网络控制", en: "Network Control", ja: "ネットワーク制御", de: "Netzwerk-Kontrolle", ko: "네트워크 제어", hk: "網絡控制", es: "Control de Redes", category: "secondary" },
-    { zh: "网络鲁棒性", en: "Network Robustness", ja: "ネットワーク頑健性", de: "Netzwerk-Robustheit", ko: "네트워크 견고성", hk: "網絡魯棒性", es: "Robustez de Redes", category: "secondary" },
-    { zh: "网络渗透", en: "Network Percolation", ja: "ネットワーク浸透", de: "Netzwerk-Perkolation", ko: "네트워크 침투", hk: "網絡滲透", es: "Percolación de Redes", category: "secondary" },
-    { zh: "影响最大化", en: "Influence Maximization", ja: "影響最大化", de: "Einfluss-Maximierung", ko: "영향력 최대화", hk: "影響最大化", es: "Maximización de Influencia", category: "secondary" },
-    { zh: "随机游走", en: "Random Walks", ja: "ランダムウォーク", de: "Zufällige Wege", ko: "랜덤 워크", hk: "隨機游走", es: "Caminatas Aleatorias", category: "secondary" },
-    { zh: "社交网络分析", en: "Social Network Analysis", ja: "ソーシャルネットワーク解析", de: "Soziale Netzwerkanalyse", ko: "소셜 네트워크 분석", hk: "社交網絡分析", es: "Análisis de Redes Sociales", category: "application" },
-    { zh: "大数据挖掘", en: "Big Data Mining", ja: "ビッグデータマイニング", de: "Big-Data-Mining", ko: "빅데이터 마이닝", hk: "大數據挖掘", es: "Minería de Datos Masivos", category: "application" },
-    { zh: "人工智能", en: "Artificial Intelligence", ja: "人工知能", de: "Künstliche Intelligenz", ko: "인공지능", hk: "人工智能", es: "Inteligencia Artificial", category: "application" },
-    { zh: "机器学习", en: "Machine Learning", ja: "機械学習", de: "Maschinelles Lernen", ko: "기계학습", hk: "機器學習", es: "Aprendizaje Automático", category: "application" },
-    { zh: "数据科学", en: "Data Science", ja: "データサイエンス", de: "Datenwissenschaft", ko: "데이터 과학", hk: "數據科學", es: "Ciencia de Datos", category: "application" },
-    { zh: "系统科学", en: "Systems Science", ja: "システム科学", de: "Systemwissenschaft", ko: "시스템 과학", hk: "系統科學", es: "Ciencia de Sistemas", category: "application" },
-    { zh: "统计物理", en: "Statistical Physics", ja: "統計物理学", de: "Statistische Physik", ko: "통계 물리학", hk: "統計物理", es: "Física Estadística", category: "theory" },
-    { zh: "非线性动力学", en: "Nonlinear Dynamics", ja: "非線形ダイナミクス", de: "Nichtlineare Dynamik", ko: "비선형 역학", hk: "非線性動力學", es: "Dinámica No Lineal", category: "theory" },
-    { zh: "优化理论", en: "Optimization Theory", ja: "最適化理論", de: "Optimierungstheorie", ko: "최적화 이론", hk: "優化理論", es: "Teoría de Optimización", category: "theory" },
-    { zh: "信息论", en: "Information Theory", ja: "情報理論", de: "Informationstheorie", ko: "정보 이론", hk: "信息論", es: "Teoría de la Información", category: "theory" },
-    { zh: "复旦大学", en: "Fudan University", ja: "復旦大学", de: "Fudan-Universität", ko: "푸단대학교", hk: "復旦大學", es: "Universidad de Fudan", category: "institution" },
-    { zh: "电子工程", en: "Electronic Engineering", ja: "電子工学", de: "Elektrotechnik", ko: "전자공학", hk: "電子工程", es: "Ingeniería Electrónica", category: "institution" },
-    { zh: "副教授", en: "Associate Professor", ja: "准教授", de: "Professorin", ko: "부교수", hk: "副教授", es: "Profesora Asociada", category: "position" },
-    { zh: "学术任职", en: "Academic Positions", ja: "学術役職", de: "Akademische Positionen", ko: "학술 직책", hk: "學術任職", es: "Cargos Académicos", category: "position" },
-    { zh: "科研成果", en: "Research Achievements", ja: "研究成果", de: "Forschungsergebnisse", ko: "연구 성과", hk: "科研成果", es: "Logros de Investigación", category: "academic" },
-    { zh: "学术论文", en: "Academic Papers", ja: "学術論文", de: "Akademische Arbeiten", ko: "학술 논문", hk: "學術論文", es: "Artículos Académicos", category: "academic" }
-  ], []);
 
   const fallbackNewsItems: DisplayNewsItem[] = content[language].news.items.map((item, index) => ({
     title: item.title,
