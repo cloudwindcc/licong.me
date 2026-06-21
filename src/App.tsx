@@ -484,7 +484,6 @@ function App() {
           { name: "自适应网络与控制研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "实验室主页", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "集智斑图主页", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -614,7 +613,6 @@ function App() {
           { name: "Adaptive Networks and Control Laboratory", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "Lab Homepage", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "Swarma Pattern", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -743,7 +741,6 @@ function App() {
           { name: "適応ネットワーク・制御研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "研究室ホームページ", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "集智斑図ホームページ", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -872,7 +869,6 @@ function App() {
           { name: "Adaptive Netzwerke und Kontroll-Labor", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "Labor-Homepage", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "Swarma Pattern Homepage", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -1001,7 +997,6 @@ function App() {
           { name: "적응 네트워크 및 제어 연구실", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "연구실 홈페이지", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "집치 반도 홈페이지", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -1130,7 +1125,6 @@ function App() {
           { name: "自適應網絡與控制研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "實驗室主頁", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "集智斑圖主頁", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -1259,7 +1253,6 @@ function App() {
           { name: "Laboratorio de Redes Adaptativas y Control", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
           { name: "Página del Laboratorio", href: "https://can.fudan.edu.cn/author/licong/" },
-          { name: "Página de Swarma Pattern", href: "https://pattern.swarma.org/user/52054" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
