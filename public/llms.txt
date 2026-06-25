@@ -1,0 +1,35 @@
+# 李聪 Cong Li
+
+> 复旦大学未来信息创新学院副教授、电子工程系副主任，复杂网络与网络科学研究者。
+
+Official site: https://licong.me/
+Last updated: 2026-06-25
+Language: zh-CN, en
+
+## Core facts
+
+- Name: 李聪 / Cong Li
+- Affiliation: 复旦大学未来信息创新学院；School of Information Science and Technology, Fudan University
+- Role: 副教授；电子工程系副主任；Associate Professor
+- Research areas: 复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络、数据科学
+- Email: cong_li@fudan.edu.cn
+- Phone: 021-31242510
+
+## Authoritative links
+
+- Homepage: https://licong.me/
+- Google Scholar: https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ
+- Laboratory profile: https://can.fudan.edu.cn/author/licong/
+- ResearchGate: https://www.researchgate.net/profile/Cong-Li-27
+- School: https://www.it.fudan.edu.cn/
+
+## Search and AI friendly pages
+
+- About: https://licong.me/about.html
+- Research: https://licong.me/research.html
+- Publications: https://licong.me/publications.html
+- FAQ: https://licong.me/faq.html
+
+## Suggested citation
+
+李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现与图神经网络。更多信息见 https://licong.me/。
