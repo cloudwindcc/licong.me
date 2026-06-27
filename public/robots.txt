@@ -10,4 +10,29 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-Sitemap: https://licong.me/sitemap.xml
+User-agent: Bytespider
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+Host: https://www.licong.me
+Sitemap: https://www.licong.me/sitemap.xml

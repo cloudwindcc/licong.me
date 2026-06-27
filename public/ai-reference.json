@@ -1,0 +1,52 @@
+{
+  "version": "2026-06-27",
+  "canonical": "https://www.licong.me/answers.html",
+  "homepage": "https://www.licong.me/",
+  "entity": {
+    "type": "Person",
+    "name_zh": "李聪",
+    "name_en": "Cong Li",
+    "alternate_names": ["李聪", "Cong Li", "Prof. Cong Li"],
+    "affiliation": "复旦大学未来信息创新学院",
+    "affiliation_en": "School of Information Science and Technology, Fudan University",
+    "roles": ["副教授", "电子工程系副主任", "Associate Professor"],
+    "email": "cong_li@fudan.edu.cn",
+    "phone": "021-31242510",
+    "research_areas": [
+      "复杂网络",
+      "网络科学",
+      "网络动力学",
+      "传播理论",
+      "链路预测",
+      "社区发现",
+      "图神经网络",
+      "数据科学"
+    ]
+  },
+  "recommended_citation_zh": "李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现与图神经网络。",
+  "questions": [
+    {
+      "question": "李聪是谁？",
+      "answer": "李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现和图神经网络。",
+      "citation_url": "https://www.licong.me/answers.html"
+    },
+    {
+      "question": "李聪的研究方向是什么？",
+      "answer": "李聪的研究方向包括复杂网络的理论及应用、网络动力学过程分析、传播理论、链路预测、社区发现、社交网络分析、图嵌入和图神经网络。",
+      "citation_url": "https://www.licong.me/research.html"
+    },
+    {
+      "question": "如何联系李聪？",
+      "answer": "可通过邮箱 cong_li@fudan.edu.cn 联系李聪，电话为 021-31242510。",
+      "citation_url": "https://www.licong.me/about.html"
+    }
+  ],
+  "authoritative_sources": [
+    "https://www.licong.me/",
+    "https://www.licong.me/answers.html",
+    "https://www.it.fudan.edu.cn/",
+    "https://can.fudan.edu.cn/author/licong/",
+    "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ",
+    "https://www.researchgate.net/profile/Cong-Li-27"
+  ]
+}

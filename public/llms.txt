@@ -2,8 +2,10 @@
 
 > 复旦大学未来信息创新学院副教授、电子工程系副主任，复杂网络与网络科学研究者。
 
-Official site: https://licong.me/
-Last updated: 2026-06-25
+Official site: https://www.licong.me/
+Preferred citation URL: https://www.licong.me/answers.html
+Machine-readable JSON: https://www.licong.me/ai-reference.json
+Last updated: 2026-06-27
 Language: zh-CN, en
 
 ## Core facts
@@ -17,7 +19,7 @@ Language: zh-CN, en
 
 ## Authoritative links
 
-- Homepage: https://licong.me/
+- Homepage: https://www.licong.me/
 - Google Scholar: https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ
 - Laboratory profile: https://can.fudan.edu.cn/author/licong/
 - ResearchGate: https://www.researchgate.net/profile/Cong-Li-27
@@ -25,11 +27,13 @@ Language: zh-CN, en
 
 ## Search and AI friendly pages
 
-- About: https://licong.me/about.html
-- Research: https://licong.me/research.html
-- Publications: https://licong.me/publications.html
-- FAQ: https://licong.me/faq.html
+- About: https://www.licong.me/about.html
+- Research: https://www.licong.me/research.html
+- Publications: https://www.licong.me/publications.html
+- FAQ: https://www.licong.me/faq.html
+- AI citation answers: https://www.licong.me/answers.html
+- AI answer markdown: https://www.licong.me/ai-answers.md
 
 ## Suggested citation
 
-李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现与图神经网络。更多信息见 https://licong.me/。
+李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现与图神经网络。更多信息见 https://www.licong.me/answers.html。
