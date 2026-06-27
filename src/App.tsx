@@ -1280,6 +1280,22 @@ function App() {
     link: item.link
   }));
   const newsItems = dynamicNewsItems.length > 0 ? dynamicNewsItems : fallbackNewsItems;
+  const heroKeywords = seoKeywords.filter((keyword) => keyword.category === 'primary').slice(0, 3);
+  const researchLabel = content[language].profile.research.replace(/[:：].*/, '');
+  const heroStats = [
+    {
+      value: String(publications.journals.length),
+      label: content[language].publications.journals
+    },
+    {
+      value: String(publications.books.length),
+      label: content[language].publications.books
+    },
+    {
+      value: String(content[language].profile.areas.length),
+      label: researchLabel
+    }
+  ];
 
   return (
     <div className="site-shell min-h-screen text-white relative overflow-hidden">
@@ -1400,16 +1416,22 @@ function App() {
                     alt="pic"
                     className="site-avatar"
                 />
-                <div className="min-w-0 text-center md:text-left">
+                <div className="site-profile-copy min-w-0 text-center md:text-left">
                     <h1 className="site-title">{content[language].title}</h1>
                     <div className="site-subtitle-group">
                         <p className="site-subtitle">{content[language].subtitle}</p>
                         <p className="site-affiliation">{content[language].university}</p>
                     </div>
+                    <div className="site-hero-keywords">
+                      {heroKeywords.map((keyword) => (
+                        <span key={keyword.en}>{keyword[language]}</span>
+                      ))}
+                    </div>
                 </div>
             </div>
 
             
+            <div className="site-hero-side">
             <div className="site-hero-actions">
               <button
                 onClick={toggleLanguage}
@@ -1508,11 +1530,27 @@ function App() {
                 </Menu.Items>
               </Menu>
             </div>
+            <dl className="site-hero-stats" aria-label="Profile summary">
+              {heroStats.map((stat) => (
+                <div key={stat.label}>
+                  <dt>{stat.label}</dt>
+                  <dd>{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
+            </div>
           </div>
+          <nav className="site-anchor-nav" aria-label="Page sections">
+            <a href="#profile">{content[language].profile.title}</a>
+            <a href="#positions">{content[language].sections.positions}</a>
+            <a href="#courses">{content[language].sections.courses}</a>
+            <a href="#publications">{content[language].sections.publications}</a>
+            <a href="#news">{content[language].news.title}</a>
+          </nav>
         </header>
 
         <main className="site-main max-w-6xl mx-auto px-4 sm:px-6 pb-12 space-y-8 md:space-y-10">
-          <section className="site-section">
+          <section id="profile" className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <User className="w-6 h-6" />
               {content[language].profile.title}
@@ -1536,7 +1574,7 @@ function App() {
             </div>
           </section>
 
-          <section className="site-section">
+          <section id="positions" className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Award className="w-6 h-6" />
               {content[language].sections.positions}
@@ -1575,7 +1613,7 @@ function App() {
             </div>
           </section>
 
-          <section className="site-section">
+          <section id="courses" className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <GraduationCap className="w-6 h-6" />
               {content[language].sections.courses}
@@ -1610,13 +1648,13 @@ function App() {
             </div>
           </section>
 
-          <section className="site-section">
+          <section id="publications" className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <FileText className="w-6 h-6" />
               {content[language].sections.publications}
             </h2>
             
-            <div className="mb-8">
+            <div id="books" className="mb-8 scroll-mt-24">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Book className="w-5 h-5" />
                 {content[language].publications.books}
@@ -1724,7 +1762,7 @@ function App() {
             </div>
           </section>
 
-<section className="site-section">
+<section id="news" className="site-section">
   <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
     <ExternalLink className="w-6 h-6" />
     {content[language].news.title}
@@ -1744,7 +1782,7 @@ function App() {
   </div>
 </section>
 
-          <section className="site-section">
+          <section id="links" className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <LinkIcon className="w-6 h-6" />
               {content[language].links.title}
