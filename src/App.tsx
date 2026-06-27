@@ -1282,7 +1282,7 @@ function App() {
   const newsItems = dynamicNewsItems.length > 0 ? dynamicNewsItems : fallbackNewsItems;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900 text-white relative">
+    <div className="site-shell min-h-screen text-white relative overflow-hidden">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -1388,32 +1388,32 @@ function App() {
           },
           detectRetina: true
         }}
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-70"
       />
 
 <div className="relative z-10">
-    <header className="max-w-6xl mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-8">
+    <header className="site-hero max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-6 md:pt-10 md:pb-8">
+        <div className="site-hero-card">
+            <div className="site-profile-lockup">
                 <img
                     src="https://qiniu.swarma.org//master/image/2a98d4e3d7567f756229659196055d30.png"
                     alt="pic"
-                    className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-xl object-cover"
+                    className="site-avatar"
                 />
-                <div>
-                    <h1 className="text-3xl md:text-4xl font-bold mb-2">{content[language].title}</h1>
-                    <div className="space-y-1">
-                        <p className="text-lg md:text-xl text-gray-200">{content[language].subtitle}</p>
-                        <p className="text-lg md:text-xl font-bold text-emerald-300">{content[language].university}</p>
+                <div className="min-w-0 text-center md:text-left">
+                    <h1 className="site-title">{content[language].title}</h1>
+                    <div className="site-subtitle-group">
+                        <p className="site-subtitle">{content[language].subtitle}</p>
+                        <p className="site-affiliation">{content[language].university}</p>
                     </div>
                 </div>
             </div>
 
             
-            <div className="flex gap-4">
+            <div className="site-hero-actions">
               <button
                 onClick={toggleLanguage}
-                className="fixed top-4 right-4 z-50 inline-flex items-center gap-2 px-3 py-2 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition text-sm font-medium shadow-lg"
+                className="site-toolbar-button"
                 title={
                   language === 'zh' ? 'Switch to English' :
                   language === 'en' ? '日本語に切り替える' :
@@ -1435,20 +1435,20 @@ function App() {
               </button>
               
               <Menu as="div" className="relative">
-                <Menu.Button className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition">
+                <Menu.Button className="site-toolbar-button">
                   <BookOpen className="w-5 h-5" />
                   {content[language].nav.books}
                   <ChevronDown className="w-4 h-4" />
                 </Menu.Button>
-                <Menu.Items className="absolute right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="site-menu absolute right-0 mt-2 w-56 focus:outline-none">
                   <div className="p-2">
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="https://fudan.newbook.pro/sortList"
                           className={`${
-                            active ? 'bg-gray-700' : ''
-                          } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
+                            active ? 'site-menu-link-active' : ''
+                          } site-menu-link`}
                         >
                           {content[language].menu.fudanLibrary}
                         </a>
@@ -1459,8 +1459,8 @@ function App() {
                         <a
                           href="https://fudan.newbook.pro/sortList"
                           className={`${
-                            active ? 'bg-gray-700' : ''
-                          } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
+                            active ? 'site-menu-link-active' : ''
+                          } site-menu-link`}
                         >
                           {content[language].menu.complexSystemsBooks}
                         </a>
@@ -1472,20 +1472,20 @@ function App() {
               </Menu>
 
               <Menu as="div" className="relative">
-                <Menu.Button className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition">
+                <Menu.Button className="site-toolbar-button">
                   <Palette className="w-5 h-5" />
                   {content[language].nav.works}
                   <ChevronDown className="w-4 h-4" />
                 </Menu.Button>
-                <Menu.Items className="absolute right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="site-menu absolute right-0 mt-2 w-56 focus:outline-none">
                   <div className="p-2">
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="#books"
                           className={`${
-                            active ? 'bg-gray-700' : ''
-                          } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
+                            active ? 'site-menu-link-active' : ''
+                          } site-menu-link`}
                         >
                           {content[language].menu.publishedBooks}
                         </a>
@@ -1496,8 +1496,8 @@ function App() {
                         <a
                           href="https://www.researchgate.net/profile/Cong-Li-27/research"
                           className={`${
-                            active ? 'bg-gray-700' : ''
-                          } group flex items-center px-4 py-2 rounded-lg text-sm transition-colors`}
+                            active ? 'site-menu-link-active' : ''
+                          } site-menu-link`}
                         >
                           {content[language].menu.academicPapers}
                         </a>
@@ -1511,8 +1511,8 @@ function App() {
           </div>
         </header>
 
-        <main className="max-w-6xl mx-auto px-4 py-8 space-y-12">
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+        <main className="site-main max-w-6xl mx-auto px-4 sm:px-6 pb-12 space-y-8 md:space-y-10">
+          <section className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <User className="w-6 h-6" />
               {content[language].profile.title}
@@ -1536,7 +1536,7 @@ function App() {
             </div>
           </section>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+          <section className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Award className="w-6 h-6" />
               {content[language].sections.positions}
@@ -1575,34 +1575,34 @@ function App() {
             </div>
           </section>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+          <section className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <GraduationCap className="w-6 h-6" />
               {content[language].sections.courses}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                 className="site-card">
                 <h3 className="font-semibold mb-2">{content[language].courses.undergraduateBasic}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.linearAlgebra}</h4>
                 <p className="text-sm text-gray-300 mt-1">{content[language].courses.shanghaiExcellent}</p>
               </a>
               
               <a href="" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                 className="site-card">
                 <h3 className="font-semibold mb-2">{content[language].courses.undergraduateElective}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.networkScienceIntro}</h4>
                 <p className="text-sm text-gray-300 mt-1">{content[language].courses.fudanExcellent}</p>
               </a>
               
               <a href="" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                 className="site-card">
                 <h3 className="font-semibold mb-2">{content[language].courses.graduateFoundation}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.networkDynamics}</h4>
               </a>
 
               <a href="https://campus.swarma.org/course/2336" 
-                 className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                 className="site-card">
                 <h3 className="font-semibold mb-2">{content[language].courses.networkScienceSeries}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.networkPropagation}</h4>
                 <p className="text-sm text-gray-300 mt-1">{content[language].courses.swarmaOnline}</p>
@@ -1610,7 +1610,7 @@ function App() {
             </div>
           </section>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+          <section className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <FileText className="w-6 h-6" />
               {content[language].sections.publications}
@@ -1626,7 +1626,7 @@ function App() {
                   <Disclosure key={index}>
                     {({ open }) => (
                       <>
-                        <Disclosure.Button className="flex w-full justify-between items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                        <Disclosure.Button className="site-disclosure-button">
                           <div className="text-left">
                             <h4 className="font-semibold">{book[language]}</h4>
                             <p className="text-sm text-gray-300">{book.authors}, {book.year}</p>
@@ -1637,7 +1637,7 @@ function App() {
                             <ChevronDown className="w-5 h-5 text-gray-400" />
                           )}
                         </Disclosure.Button>
-                        <Disclosure.Panel className="px-4 py-3 bg-gray-800/30 rounded-lg mt-2">
+                        <Disclosure.Panel className="site-disclosure-panel">
                           <div className="flex gap-6">
                             <img 
                               src={book.cover} 
@@ -1684,7 +1684,7 @@ function App() {
                   <Disclosure key={index}>
                     {({ open }) => (
                       <>
-                        <Disclosure.Button className="flex w-full justify-between items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+                        <Disclosure.Button className="site-disclosure-button">
                           <div className="text-left">
                             <h4 className="font-semibold">{paper[language]}</h4>
                             <p className="text-sm text-gray-300">
@@ -1697,7 +1697,7 @@ function App() {
                             <ChevronDown className="w-5 h-5 text-gray-400" />
                           )}
                         </Disclosure.Button>
-                        <Disclosure.Panel className="px-4 py-3 bg-gray-800/30 rounded-lg mt-2">
+                        <Disclosure.Panel className="site-disclosure-panel">
                           <div className="space-y-2">
                             <p className="text-purple-300">{paper[language === 'zh' ? 'en' : 'zh']}</p>
                             <p className="text-sm text-gray-300">
@@ -1724,7 +1724,7 @@ function App() {
             </div>
           </section>
 
-<section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+<section className="site-section">
   <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
     <ExternalLink className="w-6 h-6" />
     {content[language].news.title}
@@ -1736,7 +1736,7 @@ function App() {
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition">
+        className="site-card">
         <h3 className="font-semibold mb-2">{item.title}</h3>
         <p className="text-sm text-gray-300">— {item.source}, {item.year} [{item.link}]</p>
       </a>
@@ -1744,7 +1744,7 @@ function App() {
   </div>
 </section>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700/30">
+          <section className="site-section">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <LinkIcon className="w-6 h-6" />
               {content[language].links.title}
@@ -1754,14 +1754,14 @@ function App() {
                 <a 
                   key={index}
                   href={link.href} 
-                  className="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition text-center">
+                  className="site-card text-center">
                   {link.name}
                 </a>
               ))}
             </div>
           </section>
 
-          <footer className="max-w-6xl mx-auto px-4 py-8 text-center border-t border-gray-700/30">
+          <footer className="site-footer">
             <p className="text-gray-300">{content[language].footer.copyright}</p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-2 text-gray-400">
               <p className="flex items-center gap-2">
@@ -1775,13 +1775,13 @@ function App() {
             </div>
           </footer>
 
-          <section className="bg-gray-900/50 backdrop-blur-lg rounded-xl p-4 border border-gray-700/30 mt-12">
+          <section className="site-section site-keyword-section">
             <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center max-w-4xl mx-auto">
               {seoKeywords.map((keyword, index) => (
                 <button
                   key={index}
                   className={`
-                    px-2 py-1 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-900
+                    site-keyword-button
                     ${keyword.category === 'primary' 
                       ? 'bg-purple-600 hover:bg-purple-500 text-white focus:ring-purple-400' 
                       : keyword.category === 'secondary'
