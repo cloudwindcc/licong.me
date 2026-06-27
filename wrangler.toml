@@ -1,9 +1,2 @@
-# Cloudflare Pages configuration
+name = "licong-me"
 pages_build_output_dir = "dist"
-
-[build]
-command = "npm run build"
-output_dir = "dist"
-
-[build.environment]
-NODE_VERSION = "18"
