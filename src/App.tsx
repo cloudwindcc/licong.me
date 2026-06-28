@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import type { Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import { ExternalLink, FileText, GraduationCap, Link as LinkIcon, Mail, User, Award, Phone, ChevronDown, ChevronUp, Book, ShoppingCart, BookOpen, Palette, Globe } from 'lucide-react';
+import { ArrowRight, ExternalLink, FileText, GraduationCap, Link as LinkIcon, Mail, User, Award, Phone, ChevronDown, ChevronUp, Book, ShoppingCart, BookOpen, Palette, Globe } from 'lucide-react';
 import { Disclosure, Menu } from '@headlessui/react';
 
 type SiteLanguage = 'zh' | 'en' | 'ja' | 'de' | 'ko' | 'hk' | 'es';
@@ -1469,6 +1469,11 @@ function App() {
 
             
             <div className="site-hero-side">
+            <a href="/papers/index.html" className="site-hero-primary-link">
+              <FileText className="w-5 h-5" />
+              <span>{paperGuide[language].cta}</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
             <div className="site-hero-actions">
               <button
                 onClick={toggleLanguage}
@@ -1593,16 +1598,17 @@ function App() {
               {content[language].profile.title}
             </h2>
             <div className="space-y-6">
-              <p className="text-gray-200 leading-relaxed">
+              <p className="site-lead-copy">
                 {content[language].profile.content}
               </p>
               
-              <div>
+              <div className="site-research-panel">
                 <h3 className="text-xl font-semibold mb-3">{content[language].profile.research}</h3>
-                <ul className="space-y-4 text-gray-200">
+                <ul className="site-research-list">
                   {content[language].profile.areas.map((area, index) => (
-                    <li key={index} className="flex gap-0.2">
-                      <span>{index + 1}. {area}</span>
+                    <li key={index} className="site-research-item">
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                      <p>{area}</p>
                     </li>
                   ))}
                 </ul>
@@ -1657,27 +1663,31 @@ function App() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a href="" 
-                 className="site-card">
+                 className="site-card site-course-card">
+                <span className="site-card-index">01</span>
                 <h3 className="font-semibold mb-2">{content[language].courses.undergraduateBasic}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.linearAlgebra}</h4>
                 <p className="text-sm text-gray-300 mt-1">{content[language].courses.shanghaiExcellent}</p>
               </a>
               
               <a href="" 
-                 className="site-card">
+                 className="site-card site-course-card">
+                <span className="site-card-index">02</span>
                 <h3 className="font-semibold mb-2">{content[language].courses.undergraduateElective}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.networkScienceIntro}</h4>
                 <p className="text-sm text-gray-300 mt-1">{content[language].courses.fudanExcellent}</p>
               </a>
               
               <a href="" 
-                 className="site-card">
+                 className="site-card site-course-card">
+                <span className="site-card-index">03</span>
                 <h3 className="font-semibold mb-2">{content[language].courses.graduateFoundation}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.networkDynamics}</h4>
               </a>
 
               <a href="https://campus.swarma.org/course/2336" 
-                 className="site-card">
+                 className="site-card site-course-card">
+                <span className="site-card-index">04</span>
                 <h3 className="font-semibold mb-2">{content[language].courses.networkScienceSeries}</h3>
                 <h4 className="font-semibold text-purple-300">{content[language].courses.networkPropagation}</h4>
                 <p className="text-sm text-gray-300 mt-1">{content[language].courses.swarmaOnline}</p>
@@ -1697,7 +1707,7 @@ function App() {
                 <h3 className="font-semibold mb-2">{paperGuide[language].title}</h3>
                 <p className="text-sm text-gray-300">{paperGuide[language].body}</p>
               </div>
-              <span>{paperGuide[language].cta}</span>
+              <span>{paperGuide[language].cta}<ArrowRight className="w-4 h-4" /></span>
             </a>
             
             <div id="books" className="mb-8 scroll-mt-24">
@@ -1820,7 +1830,7 @@ function App() {
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="site-card">
+        className="site-card site-news-card">
         <h3 className="font-semibold mb-2">{item.title}</h3>
         <p className="text-sm text-gray-300">— {item.source}, {item.year} [{item.link}]</p>
       </a>
@@ -1833,12 +1843,12 @@ function App() {
               <LinkIcon className="w-6 h-6" />
               {content[language].links.title}
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="site-link-grid">
               {content[language].links.items.map((link, index) => (
                 <a 
                   key={index}
                   href={link.href} 
-                  className="site-card text-center">
+                  className="site-card site-link-card">
                   {link.name}
                 </a>
               ))}
