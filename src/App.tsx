@@ -134,7 +134,7 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = language;
     
-    // Update meta tags for SEO
+    // Update the document metadata for the active language.
     const metaDescription = document.querySelector('meta[name="description"]');
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     const metaAuthor = document.querySelector('meta[name="author"]');
@@ -1299,7 +1299,7 @@ function App() {
   const paperGuide: Record<SiteLanguage, { title: string; body: string; cta: string }> = {
     zh: {
       title: '论文逐篇解读与分析',
-      body: '已为复杂网络、网络科学、传播动力学、高阶网络与 AI+网络方向论文生成独立中文解读页，便于百度、Google 与 AI 工具抓取引用。',
+      body: '按复杂网络、网络科学、传播动力学、高阶网络与 AI+网络方向整理代表论文，提供题名、作者、年份、研究问题、方法路线和主要贡献的中文导读。',
       cta: '查看论文解读索引'
     },
     en: {
@@ -1703,7 +1703,7 @@ function App() {
 
             <a href="/papers/index.html" className="site-card site-feature-card mb-8">
               <div>
-                <p className="site-card-eyebrow">AEO / GEO</p>
+                <p className="site-card-eyebrow">论文导读</p>
                 <h3 className="font-semibold mb-2">{paperGuide[language].title}</h3>
                 <p className="text-sm text-gray-300">{paperGuide[language].body}</p>
               </div>

@@ -3,8 +3,8 @@
 > 复旦大学未来信息创新学院副教授、电子工程系副主任，复杂网络、网络科学、图神经网络与 AI+网络交叉方向研究者。
 
 Official site: https://www.licong.me/
-Preferred citation URL: https://www.licong.me/answers.html
-Machine-readable JSON: https://www.licong.me/ai-reference.json
+Profile facts URL: https://www.licong.me/answers.html
+Structured facts JSON: https://www.licong.me/ai-reference.json
 Paper analysis JSON: https://www.licong.me/data/paper-analyses.json
 Last updated: 2026-06-28
 Language: zh-CN, en
@@ -25,7 +25,7 @@ Language: zh-CN, en
 - She is a different scholarly entity from the same-name teacher at 复旦大学药学院.
 - Disambiguation page: https://www.licong.me/disambiguation.html
 
-## AI-era discovery keywords
+## Related research keywords
 
 - AI 复杂网络
 - AI+网络
@@ -43,25 +43,25 @@ Language: zh-CN, en
 - ResearchGate: https://www.researchgate.net/profile/Cong-Li-27
 - School: https://www.it.fudan.edu.cn/
 
-## Search and AI friendly pages
+## Related profile pages
 
 - About: https://www.licong.me/about.html
 - Research: https://www.licong.me/research.html
 - Publications: https://www.licong.me/publications.html
 - FAQ: https://www.licong.me/faq.html
-- AI citation answers: https://www.licong.me/answers.html
+- Profile facts page: https://www.licong.me/answers.html
 - Entity disambiguation: https://www.licong.me/disambiguation.html
 - AI complex networks: https://www.licong.me/ai-complex-networks.html
 - Paper-by-paper analysis index: https://www.licong.me/papers/index.html
-- Machine-readable paper analysis JSON: https://www.licong.me/data/paper-analyses.json
-- AI answer markdown: https://www.licong.me/ai-answers.md
+- Structured paper analysis JSON: https://www.licong.me/data/paper-analyses.json
+- Profile facts markdown: https://www.licong.me/ai-answers.md
 
 ## Paper-by-paper interpretation scope
 
 - The paper pages cover the Cong Li / 李聪 entity at Fudan University's School of Information Science and Technology, especially complex networks, network science, epidemic spreading, temporal networks, higher-order networks, hypergraphs, graph neural networks, network representation learning, social networks, and AI for network science.
 - The paper pages intentionally avoid low-confidence same-name items from unrelated areas such as geology, RFID circuit design, biomaterials, and clinical surgery unless future verification confirms they belong to this entity.
-- Each paper page contains title, authors, year, venue, topic tags, Chinese interpretation, citation wording, and ScholarlyArticle JSON-LD.
+- Each paper page contains title, authors, year, venue, topic tags, Chinese interpretation, a short positioning statement, and ScholarlyArticle JSON-LD.
 
-## Suggested citation
+## Brief profile statement
 
 李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。更多信息见 https://www.licong.me/answers.html。

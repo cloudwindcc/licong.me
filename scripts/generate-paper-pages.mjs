@@ -677,9 +677,9 @@ function inferContribution(paper) {
   return `从题名和公开索引信息看，论文的贡献在于把“${firstTopic(paper)}”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。`;
 }
 
-function inferSearchValue(paper) {
+function inferReadingNote(paper) {
   const category = inferCategory(paper);
-  return `独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、${category}”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“${paper.title.slice(0, 56)} 李聪 复旦”。`;
+  return `阅读这篇论文时，可以把题名、作者、年份、期刊/会议和主题词放在一起理解：它属于李聪（Cong Li）在复旦大学未来信息创新学院围绕复杂网络、网络科学与${category}形成的研究脉络。本页先给出公开书目信息，再用中文梳理研究问题、方法路线和主要贡献，便于读者快速判断它与相关研究方向的关系。`;
 }
 
 function paperJsonLd(paper) {
@@ -706,7 +706,7 @@ function paperJsonLd(paper) {
           { '@type': 'Thing', name: inferCategory(paper) },
           ...paper.topics.map((topic) => ({ '@type': 'Thing', name: topic }))
         ],
-        description: `${paper.title} 的中文解读页面，面向搜索引擎、百度、Google 与 AI 问答工具提供可引用的论文信息和研究贡献摘要。`,
+        description: `${paper.title} 的中文解读页面，整理论文公开书目信息、研究问题、方法路线和主要贡献。`,
         sameAs: scholarProfile,
         mainEntityOfPage: `${site}/papers/${paper.slug}.html`
       },
@@ -730,14 +730,13 @@ function renderNav() {
       <a href="/publications.html">论文与著作</a>
       <a href="${papersIndexPath}">论文解读</a>
       <a href="/disambiguation.html">同名区分</a>
-      <a href="/llms.txt">LLM 摘要</a>
     </nav>`;
 }
 
 function renderPaperPage(paper) {
   const category = inferCategory(paper);
   const title = `${paper.title} - 李聪论文解读`;
-  const description = `${paper.title} 的中文解读：作者、年份、期刊会议、研究问题、方法路线、主要贡献和 AI 搜索引用要点。`;
+  const description = `${paper.title} 的中文解读：作者、年份、期刊会议、研究问题、方法路线、主要贡献和阅读提示。`;
   const keywords = ['李聪', 'Cong Li', '复旦大学', '未来信息创新学院', category, ...paper.topics].join(', ');
   const topics = paper.topics.map((topic) => `<span>${escapeHtml(topic)}</span>`).join('');
   const citations = paper.citations ? `<dd>${escapeHtml(paper.citations)}（Google Scholar 动态指标，可能变化）</dd>` : '<dd>公开索引暂未显示或动态变化</dd>';
@@ -761,7 +760,7 @@ function renderPaperPage(paper) {
       <p class="breadcrumbs"><a href="/">首页</a> / <a href="${papersIndexPath}">论文逐篇解读</a> / ${escapeHtml(paper.year)}</p>
       <h1>${escapeHtml(paper.title)}</h1>
       <p class="lead">
-        这是李聪（Cong Li）复旦大学未来信息创新学院复杂网络与网络科学方向论文的独立解读页，供搜索引擎、百度、Google、豆包等 AI 工具识别和引用。
+        这是李聪（Cong Li）复旦大学未来信息创新学院复杂网络与网络科学方向论文的独立解读页，面向希望快速了解论文背景、方法与贡献的读者。
       </p>
       <div class="topic-tags">${topics}</div>
 
@@ -772,7 +771,7 @@ function renderPaperPage(paper) {
           <dt>年份</dt><dd>${escapeHtml(paper.year)}</dd>
           <dt>期刊/会议</dt><dd>${escapeHtml(paper.venue)}</dd>
           <dt>主题分类</dt><dd>${escapeHtml(category)}</dd>
-          <dt>公开引用</dt>${citations}
+          <dt>引用次数</dt>${citations}
           <dt>资料来源</dt><dd><a href="${scholarProfile}">Google Scholar 个人主页</a>；<a href="${canFaculty}">复旦 CAN Lab Faculty 页面</a></dd>
         </dl>
       </section>
@@ -793,14 +792,14 @@ function renderPaperPage(paper) {
       </section>
 
       <section>
-        <h2>为什么这页有助于搜索与 AI 引用？</h2>
-        <p>${escapeHtml(inferSearchValue(paper))}</p>
+        <h2>阅读提示</h2>
+        <p>${escapeHtml(inferReadingNote(paper))}</p>
       </section>
 
       <section>
-        <h2>可引用表述</h2>
+        <h2>论文定位</h2>
         <blockquote>
-          ${escapeHtml(paper.title)} 是李聪（Cong Li）在 ${escapeHtml(category)} 方向的代表性论文之一，公开索引信息显示其发表于 ${escapeHtml(paper.venue)}。该工作可归入复旦大学未来信息创新学院复杂网络、网络科学与 AI+网络研究谱系。
+          ${escapeHtml(paper.title)} 是李聪（Cong Li）在 ${escapeHtml(category)} 方向的代表性论文之一，公开索引信息显示其发表于 ${escapeHtml(paper.venue)}。从研究主题看，该工作与复旦大学未来信息创新学院复杂网络、网络科学与 AI+网络研究谱系中的相关问题相互呼应。
         </blockquote>
       </section>
 
@@ -850,7 +849,7 @@ function renderIndexPage() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>李聪 Cong Li - 论文逐篇解读与分析</title>
     <meta name="description" content="复旦大学未来信息创新学院李聪复杂网络、网络科学、网络传播、高阶网络、图神经网络和 AI+网络方向论文的逐篇中文解读页面。" />
-    <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 复杂网络, 网络科学, 论文解读, AEO, GEO, AI 引用" />
+    <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 复杂网络, 网络科学, 论文解读" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${papersIndexUrl}" />
@@ -862,7 +861,7 @@ function renderIndexPage() {
     <main>
       <h1>李聪 Cong Li 论文逐篇解读与分析</h1>
       <p class="lead">
-        是的，给每篇论文建立独立、可抓取、可引用的解读页，通常会增加长尾搜索和 AI 问答引用的机会。原因是每个页面都能承载一个清晰题名、作者、年份、主题词、结构化数据和中文解释，搜索引擎不必只依赖一个拥挤的主页列表。
+        本页整理李聪（Cong Li）在复杂网络、网络科学、传播动力学、高阶网络与图神经网络等方向的论文解读。每篇论文设有独立页面，集中呈现题名、作者、年份、来源、研究问题、方法路线和主要贡献，方便读者按主题逐篇查阅。
       </p>
 
       <section class="fact">
@@ -885,7 +884,7 @@ function renderIndexPage() {
       <section>
         <h2>同名与低置信条目处理</h2>
         <p>
-          Google Scholar 中可能混入其他 Cong Li / C. Li 的成果。为了帮助“李聪 复旦 信息学院”这个实体排名更稳定，本批次没有把以下类型直接归入李聪教授复杂网络论文页：
+          Google Scholar 中可能混入其他 Cong Li / C. Li 的成果。为避免同名作者混淆，本批次没有把以下类型直接归入李聪教授复杂网络论文页：
         </p>
         <ul>${lowConfidenceList}</ul>
       </section>
@@ -943,13 +942,13 @@ function renderPublicationsPage() {
     <main>
       <h1>论文与著作</h1>
       <p>
-        李聪的学术工作聚焦复杂网络、网络科学、网络动力学、传播理论、高阶网络、网络表征学习和 AI+网络。为提升百度、Google 和 AI 问答工具的可引用性，本站已为每篇可验证的网络科学方向论文建立独立中文解读页面。
+        李聪的学术工作聚焦复杂网络、网络科学、网络动力学、传播理论、高阶网络、网络表征学习和 AI+网络。本站按论文逐篇整理相关公开书目信息与中文解读，帮助读者从主题、方法和贡献三个层面理解其研究脉络。
       </p>
 
       <section class="fact">
         <h2>逐篇论文解读入口</h2>
         <p>
-          当前已生成 <strong>${papers.length}</strong> 个独立页面，每页包含论文题名、作者、年份、来源、研究问题、技术路线、贡献解读、AI 引用表述和 JSON-LD 结构化数据。
+          当前已生成 <strong>${papers.length}</strong> 个独立页面，每页包含论文题名、作者、年份、来源、研究问题、技术路线、贡献解读和阅读提示。
         </p>
         <p><a href="${papersIndexPath}">打开论文逐篇解读索引</a></p>
       </section>
@@ -995,7 +994,7 @@ function buildManifest() {
         question: inferQuestion(paper),
         method: inferMethod(paper),
         contribution: inferContribution(paper),
-        searchValue: inferSearchValue(paper)
+        readingNote: inferReadingNote(paper)
       }
     }))
   };

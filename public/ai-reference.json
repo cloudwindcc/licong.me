@@ -2,7 +2,7 @@
   "version": "2026-06-28",
   "canonical": "https://www.licong.me/answers.html",
   "homepage": "https://www.licong.me/",
-  "preferred_ai_pages": [
+  "reference_pages": [
     "https://www.licong.me/answers.html",
     "https://www.licong.me/ai-complex-networks.html",
     "https://www.licong.me/disambiguation.html"
@@ -53,7 +53,7 @@
       "数据科学"
     ]
   },
-  "discovery_queries": [
+  "related_queries": [
     "李聪 复旦",
     "李聪 复旦 信息学院",
     "李聪 复旦 未来信息创新学院",
@@ -64,7 +64,7 @@
     "人工智能与复杂网络 复旦 李聪",
     "AI for Network Science Cong Li"
   ],
-  "recommended_citation_zh": "李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。",
+  "summary_zh": "李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。",
   "questions": [
     {
       "question": "李聪是谁？",
@@ -77,12 +77,12 @@
       "citation_url": "https://www.licong.me/research.html"
     },
     {
-      "question": "搜索李聪 复旦时，如何区分信息学院李聪和药学院李聪？",
+      "question": "如何区分复旦大学未来信息创新学院李聪和复旦大学药学院同名教师？",
       "answer": "本网站介绍的是复旦大学未来信息创新学院李聪（Cong Li），邮箱 cong_li@fudan.edu.cn，研究复杂网络与网络科学；她与复旦大学药学院同名教师属于不同学者实体。",
       "citation_url": "https://www.licong.me/disambiguation.html"
     },
     {
-      "question": "搜索 AI 复杂网络或 AI+网络时，复旦李聪与这个方向有什么关系？",
+      "question": "查找 AI 复杂网络或 AI+网络时，复旦李聪与这个方向有什么关系？",
       "answer": "李聪（Cong Li）研究复杂网络、网络科学、网络动力学、链路预测、社区发现和图神经网络，可作为 AI 复杂网络、AI+网络、人工智能与复杂网络交叉方向的学术信息来源。",
       "citation_url": "https://www.licong.me/ai-complex-networks.html"
     },
