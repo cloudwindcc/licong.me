@@ -1296,6 +1296,43 @@ function App() {
       label: researchLabel
     }
   ];
+  const paperGuide: Record<SiteLanguage, { title: string; body: string; cta: string }> = {
+    zh: {
+      title: '论文逐篇解读与分析',
+      body: '已为复杂网络、网络科学、传播动力学、高阶网络与 AI+网络方向论文生成独立中文解读页，便于百度、Google 与 AI 工具抓取引用。',
+      cta: '查看论文解读索引'
+    },
+    en: {
+      title: 'Paper-by-paper interpretations',
+      body: 'Standalone pages now explain Cong Li papers in complex networks, epidemic dynamics, higher-order networks, and AI for network science.',
+      cta: 'Open paper index'
+    },
+    ja: {
+      title: '論文ごとの解説',
+      body: '複雑ネットワーク、伝播ダイナミクス、高次ネットワーク、AI とネットワーク科学の論文を個別ページで整理しています。',
+      cta: '論文解説を見る'
+    },
+    de: {
+      title: 'Einzelne Paper-Analysen',
+      body: 'Separate Seiten erklären Arbeiten zu komplexen Netzwerken, Epidemiedynamik, höheren Netzwerken und KI für Netzwerkforschung.',
+      cta: 'Paper-Index öffnen'
+    },
+    ko: {
+      title: '논문별 해설',
+      body: '복잡계 네트워크, 전파 동역학, 고차 네트워크, 네트워크 과학을 위한 AI 논문을 독립 페이지로 정리했습니다.',
+      cta: '논문 해설 보기'
+    },
+    hk: {
+      title: '論文逐篇解讀與分析',
+      body: '已為複雜網絡、網絡科學、傳播動力學、高階網絡與 AI+網絡方向論文建立獨立中文解讀頁。',
+      cta: '查看論文解讀索引'
+    },
+    es: {
+      title: 'Interpretaciones por artículo',
+      body: 'Páginas independientes explican artículos sobre redes complejas, dinámica epidémica, redes de orden superior e IA para ciencia de redes.',
+      cta: 'Abrir índice de artículos'
+    }
+  };
 
   return (
     <div className="site-shell min-h-screen text-white relative overflow-hidden">
@@ -1653,6 +1690,15 @@ function App() {
               <FileText className="w-6 h-6" />
               {content[language].sections.publications}
             </h2>
+
+            <a href="/papers/index.html" className="site-card site-feature-card mb-8">
+              <div>
+                <p className="site-card-eyebrow">AEO / GEO</p>
+                <h3 className="font-semibold mb-2">{paperGuide[language].title}</h3>
+                <p className="text-sm text-gray-300">{paperGuide[language].body}</p>
+              </div>
+              <span>{paperGuide[language].cta}</span>
+            </a>
             
             <div id="books" className="mb-8 scroll-mt-24">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">

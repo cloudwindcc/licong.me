@@ -391,6 +391,36 @@ html:lang(en) {
   outline: none;
 }
 
+.site-feature-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-color: rgba(244, 190, 92, 0.22);
+  background:
+    linear-gradient(135deg, rgba(244, 190, 92, 0.12), rgba(115, 226, 194, 0.08)),
+    rgba(13, 18, 22, 0.54);
+}
+
+.site-feature-card h3 {
+  margin: 0 0 6px;
+}
+
+.site-feature-card > span {
+  flex: 0 0 auto;
+  color: #fff0c2;
+  font-size: 0.92rem;
+  font-weight: 760;
+}
+
+.site-card-eyebrow {
+  margin: 0 0 6px;
+  color: #73e2c2;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
 .site-disclosure-button {
   display: flex;
   width: 100%;
@@ -544,5 +574,10 @@ html:lang(en) {
 
   .site-disclosure-button {
     align-items: flex-start;
+  }
+
+  .site-feature-card {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

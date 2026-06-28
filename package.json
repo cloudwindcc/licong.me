@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "generate:papers": "node scripts/generate-paper-pages.mjs",
     "deploy": "npm run build"
   },
   "dependencies": {

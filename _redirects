@@ -2,5 +2,8 @@
 https://licong.me/* https://www.licong.me/:splat 301
 http://licong.me/* https://www.licong.me/:splat 301
 
+# Static paper interpretation index.
+/papers/ /papers/index.html 200
+
 # Cloudflare Pages SPA fallback.
 /* /index.html 200

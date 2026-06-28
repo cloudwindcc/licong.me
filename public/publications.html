@@ -4,56 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>李聪 Cong Li - 论文与著作</title>
-    <meta name="description" content="李聪在复杂网络、网络科学、传播理论、链路预测、社区发现、图神经网络、AI 复杂网络和 AI+网络等方向发表学术论文并出版相关著作。" />
+    <meta name="description" content="李聪在复杂网络、网络科学、传播理论、高阶网络、链路预测、社区发现、图神经网络和 AI+网络方向的论文、著作与逐篇解读入口。" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://www.licong.me/publications.html" />
     <link rel="stylesheet" href="/static-pages.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Book",
-            "@id": "https://www.licong.me/publications.html#book-spreading-complex-networks",
-            "name": "Theory of Spreading on Complex Networks: Hidden Rules of Epidemics",
-            "inLanguage": ["zh-CN", "en"],
-            "isbn": "978-94-6186-364-5",
-            "datePublished": "2020",
-            "author": [
-              { "@type": "Person", "name": "Li Xiang" },
-              { "@type": "Person", "@id": "https://www.licong.me/#person", "name": "Cong Li" },
-              { "@type": "Person", "name": "Wang Jian Bo" }
-            ]
-          },
-          {
-            "@type": "CollectionPage",
-            "@id": "https://www.licong.me/publications.html#page",
-            "url": "https://www.licong.me/publications.html",
-            "name": "李聪 Cong Li - 论文与著作",
-            "about": { "@id": "https://www.licong.me/#person" },
-            "dateModified": "2026-06-28"
-          }
-        ]
-      }
-    </script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@graph": [
+            {
+                  "@type": "Book",
+                  "@id": "https://www.licong.me/publications.html#book-spreading-complex-networks",
+                  "name": "Theory of Spreading on Complex Networks: Hidden Rules of Epidemics",
+                  "inLanguage": [
+                        "zh-CN",
+                        "en"
+                  ],
+                  "isbn": "978-94-6186-364-5",
+                  "datePublished": "2020",
+                  "author": [
+                        {
+                              "@type": "Person",
+                              "name": "Li Xiang"
+                        },
+                        {
+                              "@type": "Person",
+                              "@id": "https://www.licong.me/#person",
+                              "name": "Cong Li"
+                        },
+                        {
+                              "@type": "Person",
+                              "name": "Wang Jian Bo"
+                        }
+                  ]
+            },
+            {
+                  "@type": "CollectionPage",
+                  "@id": "https://www.licong.me/publications.html#page",
+                  "url": "https://www.licong.me/publications.html",
+                  "name": "李聪 Cong Li - 论文与著作",
+                  "about": {
+                        "@id": "https://www.licong.me/#person"
+                  },
+                  "dateModified": "2026-06-28",
+                  "mainEntity": {
+                        "@id": "https://www.licong.me/papers/index.html#page"
+                  }
+            }
+      ]
+}</script>
   </head>
   <body>
     <nav>
       <a href="/">首页</a>
       <a href="/about.html">个人简介</a>
       <a href="/research.html">研究方向</a>
+      <a href="/publications.html">论文与著作</a>
+      <a href="/papers/index.html">论文解读</a>
       <a href="/disambiguation.html">同名区分</a>
-      <a href="/ai-complex-networks.html">AI 复杂网络</a>
-      <a href="/faq.html">常见问答</a>
       <a href="/llms.txt">LLM 摘要</a>
     </nav>
     <main>
       <h1>论文与著作</h1>
       <p>
-        李聪的学术工作聚焦复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络和 AI+网络。
-        最新和完整论文列表建议以 Google Scholar、ResearchGate 和实验室主页为准。
+        李聪的学术工作聚焦复杂网络、网络科学、网络动力学、传播理论、高阶网络、网络表征学习和 AI+网络。为提升百度、Google 和 AI 问答工具的可引用性，本站已为每篇可验证的网络科学方向论文建立独立中文解读页面。
       </p>
+
+      <section class="fact">
+        <h2>逐篇论文解读入口</h2>
+        <p>
+          当前已生成 <strong>65</strong> 个独立页面，每页包含论文题名、作者、年份、来源、研究问题、技术路线、贡献解读、AI 引用表述和 JSON-LD 结构化数据。
+        </p>
+        <p><a href="/papers/index.html">打开论文逐篇解读索引</a></p>
+      </section>
+
       <h2>著作</h2>
       <ul>
         <li>
@@ -61,11 +85,15 @@
           Li Xiang, Li Cong, Wang Jian Bo，2020，ISBN 978-94-6186-364-5。
         </li>
       </ul>
+
+      <h2>代表性论文解读</h2>
+      <ul><li><a href="/papers/decreasing-spectral-radius-link-removals.html">Decreasing the spectral radius of a graph by link removals</a>，P. Van Mieghem, D. Stevanovic, F. Kuipers, C. Li, R. Van De Bovenkamp, D. Liu, H. Wang，2011。</li><li><a href="/papers/centrality-metrics-opinion-model.html">Correlation between centrality metrics and their application to the opinion model</a>，C. Li, Q. Li, P. Van Mieghem, H. E. Stanley, H. Wang，2015。</li><li><a href="/papers/sis-model-n-intertwined-heterogeneous-mean-field.html">Susceptible-infected-susceptible model: A comparison of N-intertwined and heterogeneous mean-field approximations</a>，C. Li, R. van de Bovenkamp, P. Van Mieghem，2012。</li><li><a href="/papers/metrics-correlation-functional-brain-networks.html">The correlation of metrics in complex networks with applications in functional brain networks</a>，C. Li, H. Wang, W. De Haan, C. J. Stam, P. Van Mieghem，2011。</li><li><a href="/papers/epidemic-threshold-temporal-multiplex-layer-preference.html">Epidemic threshold in temporal multiplex networks with individual layer preference</a>，C. Li, Y. Zhang, X. Li，2021。</li><li><a href="/papers/epidemic-threshold-directed-networks.html">Epidemic threshold in directed networks</a>，C. Li, H. Wang, P. Van Mieghem，2013。</li><li><a href="/papers/minimizing-social-cost-vaccinating-network-sis-epidemics.html">Minimizing social cost of vaccinating network SIS epidemics</a>，X. J. Li, C. Li, X. Li，2017。</li><li><a href="/papers/information-dissemination-vaccination-multiplex-networks.html">The impact of information dissemination on vaccination in multiplex networks</a>，X. J. Li, C. Li, X. Li，2022。</li><li><a href="/papers/spectral-radius-when-nodes-removed.html">Bounds for the spectral radius of a graph when nodes are removed</a>，C. Li, H. Wang, P. Van Mieghem，2012。</li><li><a href="/papers/epidemic-spreading-coupling-network-higher-order-information-layer.html">Epidemic spreading on coupling network with higher-order information layer</a>，Y. Zhu, C. Li, X. Li，2023。</li></ul>
+
       <h2>论文索引</h2>
       <ul>
-        <li><a href="https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ">Google Scholar 个人主页</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=S7-6p4MAAAAJ">Google Scholar 个人主页</a></li>
         <li><a href="https://www.researchgate.net/profile/Cong-Li-27/research">ResearchGate 论文页</a></li>
-        <li><a href="https://can.fudan.edu.cn/author/licong/">实验室主页</a></li>
+        <li><a href="https://can.fudan.edu.cn/team/faculty/">复旦 CAN Lab Faculty 页面</a></li>
       </ul>
     </main>
   </body>

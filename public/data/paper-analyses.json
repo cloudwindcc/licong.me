@@ -1,0 +1,1383 @@
+{
+  "generatedAt": "2026-06-28",
+  "scope": "复旦大学未来信息创新学院李聪复杂网络、网络科学、传播动力学、高阶网络、图神经网络和 AI+网络方向论文",
+  "sources": [
+    "https://scholar.google.com/citations?hl=en&user=S7-6p4MAAAAJ",
+    "https://can.fudan.edu.cn/team/faculty/",
+    "https://www.researchgate.net/profile/Cong-Li-27/research"
+  ],
+  "excludedLowConfidenceExamples": [
+    "Engineering DNA-guided hydroxyapatite bulk materials with high stiffness and outstanding antimicrobial ability for dental inlay applications",
+    "Rise and fall of the Acadian altiplano: Evidence for a Paleozoic orogenic plateau in New England",
+    "A -20 dBm passive UHF RFID tag IC with MTP NVM in 0.13-micron standard CMOS process",
+    "Surgical options for proximal and distal transverse arch hypoplasia in infants with coarctation",
+    "Three-dimensional crustal channel flows beneath the southeastern Tibetan Plateau revealed by full-waveform ambient noise tomography"
+  ],
+  "papers": [
+    {
+      "slug": "decreasing-spectral-radius-link-removals",
+      "title": "Decreasing the spectral radius of a graph by link removals",
+      "authors": "P. Van Mieghem, D. Stevanovic, F. Kuipers, C. Li, R. Van De Bovenkamp, D. Liu, H. Wang",
+      "venue": "Physical Review E 84(1), 2011",
+      "year": "2011",
+      "citations": "237",
+      "topics": [
+        "spectral graph theory",
+        "network robustness",
+        "link removal"
+      ],
+      "url": "https://www.licong.me/papers/decreasing-spectral-radius-link-removals.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 spectral graph theory 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“spectral graph theory”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Decreasing the spectral radius of a graph by link remova 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "centrality-metrics-opinion-model",
+      "title": "Correlation between centrality metrics and their application to the opinion model",
+      "authors": "C. Li, Q. Li, P. Van Mieghem, H. E. Stanley, H. Wang",
+      "venue": "The European Physical Journal B 88(3), 65, 2015",
+      "year": "2015",
+      "citations": "167",
+      "topics": [
+        "centrality",
+        "opinion dynamics",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/centrality-metrics-opinion-model.html",
+      "category": "复杂网络理论与应用",
+      "analysis": {
+        "question": "这篇论文围绕 centrality 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“centrality”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络理论与应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Correlation between centrality metrics and their applica 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "sis-model-n-intertwined-heterogeneous-mean-field",
+      "title": "Susceptible-infected-susceptible model: A comparison of N-intertwined and heterogeneous mean-field approximations",
+      "authors": "C. Li, R. van de Bovenkamp, P. Van Mieghem",
+      "venue": "Physical Review E 86(2), 026116, 2012",
+      "year": "2012",
+      "citations": "150",
+      "topics": [
+        "SIS model",
+        "epidemic threshold",
+        "mean-field approximation"
+      ],
+      "url": "https://www.licong.me/papers/sis-model-n-intertwined-heterogeneous-mean-field.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 SIS model 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“SIS model”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Susceptible-infected-susceptible model: A comparison of  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "metrics-correlation-functional-brain-networks",
+      "title": "The correlation of metrics in complex networks with applications in functional brain networks",
+      "authors": "C. Li, H. Wang, W. De Haan, C. J. Stam, P. Van Mieghem",
+      "venue": "Journal of Statistical Mechanics: Theory and Experiment 2011(11), P11018, 2011",
+      "year": "2011",
+      "citations": "103",
+      "topics": [
+        "network metrics",
+        "functional brain networks",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/metrics-correlation-functional-brain-networks.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 network metrics 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“network metrics”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“The correlation of metrics in complex networks with appl 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "epidemic-threshold-temporal-multiplex-layer-preference",
+      "title": "Epidemic threshold in temporal multiplex networks with individual layer preference",
+      "authors": "C. Li, Y. Zhang, X. Li",
+      "venue": "IEEE Transactions on Network Science and Engineering 8(1), 814-824, 2021",
+      "year": "2021",
+      "citations": "67",
+      "topics": [
+        "temporal multiplex networks",
+        "epidemic threshold",
+        "layer preference"
+      ],
+      "url": "https://www.licong.me/papers/epidemic-threshold-temporal-multiplex-layer-preference.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 temporal multiplex networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“temporal multiplex networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Epidemic threshold in temporal multiplex networks with i 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "epidemic-threshold-directed-networks",
+      "title": "Epidemic threshold in directed networks",
+      "authors": "C. Li, H. Wang, P. Van Mieghem",
+      "venue": "Physical Review E / arXiv preprint arXiv:1303.0783, 2013",
+      "year": "2013",
+      "citations": "67",
+      "topics": [
+        "directed networks",
+        "epidemic threshold",
+        "spectral methods"
+      ],
+      "url": "https://www.licong.me/papers/epidemic-threshold-directed-networks.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 directed networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“directed networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Epidemic threshold in directed networks 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "minimizing-social-cost-vaccinating-network-sis-epidemics",
+      "title": "Minimizing social cost of vaccinating network SIS epidemics",
+      "authors": "X. J. Li, C. Li, X. Li",
+      "venue": "IEEE Transactions on Network Science and Engineering 5(4), 326-335, 2017",
+      "year": "2017",
+      "citations": "43",
+      "topics": [
+        "vaccination strategy",
+        "SIS epidemics",
+        "social cost"
+      ],
+      "url": "https://www.licong.me/papers/minimizing-social-cost-vaccinating-network-sis-epidemics.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 vaccination strategy 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“vaccination strategy”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Minimizing social cost of vaccinating network SIS epidem 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "information-dissemination-vaccination-multiplex-networks",
+      "title": "The impact of information dissemination on vaccination in multiplex networks",
+      "authors": "X. J. Li, C. Li, X. Li",
+      "venue": "Science China Information Sciences 65(7), 172202, 2022",
+      "year": "2022",
+      "citations": "33",
+      "topics": [
+        "information dissemination",
+        "vaccination",
+        "multiplex networks"
+      ],
+      "url": "https://www.licong.me/papers/information-dissemination-vaccination-multiplex-networks.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 information dissemination 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“information dissemination”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“The impact of information dissemination on vaccination i 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "spectral-radius-when-nodes-removed",
+      "title": "Bounds for the spectral radius of a graph when nodes are removed",
+      "authors": "C. Li, H. Wang, P. Van Mieghem",
+      "venue": "Linear Algebra and its Applications 437(1), 319-323, 2012",
+      "year": "2012",
+      "citations": "32",
+      "topics": [
+        "spectral radius",
+        "node removal",
+        "graph theory"
+      ],
+      "url": "https://www.licong.me/papers/spectral-radius-when-nodes-removed.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 spectral radius 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“spectral radius”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Bounds for the spectral radius of a graph when nodes are 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "epidemic-spreading-coupling-network-higher-order-information-layer",
+      "title": "Epidemic spreading on coupling network with higher-order information layer",
+      "authors": "Y. Zhu, C. Li, X. Li",
+      "venue": "New Journal of Physics 25(11), 113043, 2023",
+      "year": "2023",
+      "citations": "22",
+      "topics": [
+        "higher-order networks",
+        "information layer",
+        "epidemic spreading"
+      ],
+      "url": "https://www.licong.me/papers/epidemic-spreading-coupling-network-higher-order-information-layer.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 higher-order networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“higher-order networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Epidemic spreading on coupling network with higher-order 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "degree-principal-eigenvectors-complex-networks",
+      "title": "Degree and principal eigenvectors in complex networks",
+      "authors": "C. Li, H. Wang, P. Van Mieghem",
+      "venue": "International Conference on Research in Networking, 149-160, 2012",
+      "year": "2012",
+      "citations": "22",
+      "topics": [
+        "degree",
+        "principal eigenvector",
+        "network metrics"
+      ],
+      "url": "https://www.licong.me/papers/degree-principal-eigenvectors-complex-networks.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 degree 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“degree”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Degree and principal eigenvectors in complex networks 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "ranking-cliques-higher-order-complex-networks",
+      "title": "Ranking cliques in higher-order complex networks",
+      "authors": "Y. Zhao, C. Li, D. Shi, G. Chen, X. Li",
+      "venue": "Chaos: An Interdisciplinary Journal of Nonlinear Science 33(7), 2023",
+      "year": "2023",
+      "citations": "21",
+      "topics": [
+        "clique ranking",
+        "higher-order networks",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/ranking-cliques-higher-order-complex-networks.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 clique ranking。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“clique ranking”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Ranking cliques in higher-order complex networks 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "imperfect-vaccination-evolutionary-game-social-difference",
+      "title": "Imperfect vaccination evolutionary game incorporating individual social difference and subjective perception",
+      "authors": "C. Li, J. Y. Dai, X. Li",
+      "venue": "IEEE Transactions on Computational Social Systems 11(2), 2369-2382, 2023",
+      "year": "2023",
+      "citations": "20",
+      "topics": [
+        "evolutionary game",
+        "imperfect vaccination",
+        "social difference"
+      ],
+      "url": "https://www.licong.me/papers/imperfect-vaccination-evolutionary-game-social-difference.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 evolutionary game 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“evolutionary game”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Imperfect vaccination evolutionary game incorporating in 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "nodal-infection-probability-ranking-sis",
+      "title": "Ranking of nodal infection probability in susceptible-infected-susceptible epidemic",
+      "authors": "B. Qu, C. Li, P. Van Mieghem, H. Wang",
+      "venue": "Scientific Reports 7(1), 9233, 2017",
+      "year": "2017",
+      "citations": "16",
+      "topics": [
+        "infection probability",
+        "node ranking",
+        "SIS epidemic"
+      ],
+      "url": "https://www.licong.me/papers/nodal-infection-probability-ranking-sis.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 infection probability 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“infection probability”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Ranking of nodal infection probability in susceptible-in 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "vaccinating-sis-epidemics-zero-determinant-strategy",
+      "title": "Vaccinating SIS epidemics in networks with zero-determinant strategy",
+      "authors": "X. Li, C. Li, X. Li",
+      "venue": "2017 IEEE International Symposium on Circuits and Systems, 1-4, 2017",
+      "year": "2017",
+      "citations": "14",
+      "topics": [
+        "zero-determinant strategy",
+        "vaccination",
+        "network epidemics"
+      ],
+      "url": "https://www.licong.me/papers/vaccinating-sis-epidemics-zero-determinant-strategy.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 zero-determinant strategy 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“zero-determinant strategy”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Vaccinating SIS epidemics in networks with zero-determin 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "robustness-higher-order-networks-synergistic-protection",
+      "title": "Robustness of higher-order networks with synergistic protection",
+      "authors": "Q. Chen, Y. Zhao, C. Li, X. Li",
+      "venue": "New Journal of Physics 25(11), 113045, 2023",
+      "year": "2023",
+      "citations": "13",
+      "topics": [
+        "higher-order networks",
+        "robustness",
+        "synergistic protection"
+      ],
+      "url": "https://www.licong.me/papers/robustness-higher-order-networks-synergistic-protection.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 higher-order networks。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“higher-order networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Robustness of higher-order networks with synergistic pro 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "deep-attributed-network-representation-learning",
+      "title": "Deep attributed network representation learning via attribute enhanced neighborhood",
+      "authors": "C. Li, M. Shi, B. Qu, X. Li",
+      "venue": "Neurocomputing 508, 170-181, 2022",
+      "year": "2022",
+      "citations": "13",
+      "topics": [
+        "network representation learning",
+        "attributed networks",
+        "deep learning"
+      ],
+      "url": "https://www.licong.me/papers/deep-attributed-network-representation-learning.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 network representation learning，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“network representation learning”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Deep attributed network representation learning via attr 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "mining-rank-universities-wikipedia",
+      "title": "Mining the rank of universities with Wikipedia",
+      "authors": "Z. Li, C. Li, X. Li",
+      "venue": "Science China Information Sciences 62(10), 209202, 2019",
+      "year": "2019",
+      "citations": "9",
+      "topics": [
+        "Wikipedia networks",
+        "ranking",
+        "data mining"
+      ],
+      "url": "https://www.licong.me/papers/mining-rank-universities-wikipedia.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 Wikipedia networks 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“Wikipedia networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Mining the rank of universities with Wikipedia 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "functional-regions-structural-controllability-brain-networks",
+      "title": "The functional regions in structural controllability of human functional brain networks",
+      "authors": "P. Yao, C. Li, X. Li",
+      "venue": "2017 IEEE International Conference on Systems, Man, and Cybernetics, 2017",
+      "year": "2017",
+      "citations": "9",
+      "topics": [
+        "structural controllability",
+        "brain networks",
+        "functional regions"
+      ],
+      "url": "https://www.licong.me/papers/functional-regions-structural-controllability-brain-networks.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 structural controllability 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“structural controllability”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“The functional regions in structural controllability of  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "higher-order-epidemic-spreading-simplicial-networks",
+      "title": "Higher order epidemic spreading in simplicial networks",
+      "authors": "Y. Zhao, C. Li, D. Shi, G. Chen, X. Li",
+      "venue": "IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2025",
+      "year": "2025",
+      "citations": "7",
+      "topics": [
+        "simplicial networks",
+        "higher-order contagion",
+        "epidemic spreading"
+      ],
+      "url": "https://www.licong.me/papers/higher-order-epidemic-spreading-simplicial-networks.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 simplicial networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“simplicial networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Higher order epidemic spreading in simplicial networks 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "predicting-epidemic-threshold-gnn",
+      "title": "Predicting epidemic threshold in complex networks by graph neural network",
+      "authors": "W. Wang, C. Li, B. Qu, X. Li",
+      "venue": "Chaos: An Interdisciplinary Journal of Nonlinear Science 34(6), 2024",
+      "year": "2024",
+      "citations": "7",
+      "topics": [
+        "graph neural networks",
+        "epidemic threshold",
+        "AI for network science"
+      ],
+      "url": "https://www.licong.me/papers/predicting-epidemic-threshold-gnn.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 graph neural networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“graph neural networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Predicting epidemic threshold in complex networks by gra 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "kronecker-clique-model-higher-order-clustering",
+      "title": "The Kronecker-clique model for higher-order clustering coefficients",
+      "authors": "J. Y. Li, X. Li, C. Li",
+      "venue": "Physica A: Statistical Mechanics and its Applications 582, 126269, 2021",
+      "year": "2021",
+      "citations": "6",
+      "topics": [
+        "Kronecker-clique model",
+        "higher-order clustering",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/kronecker-clique-model-higher-order-clustering.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 Kronecker-clique model。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“Kronecker-clique model”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“The Kronecker-clique model for higher-order clustering c 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "esnd-signed-network-dismantling",
+      "title": "ESND: An embedding-based framework for signed network dismantling",
+      "authors": "C. Xie, C. Liu, C. Li, X. X. Zhan, X. Li",
+      "venue": "Expert Systems with Applications 289, 128346, 2025",
+      "year": "2025",
+      "citations": "5",
+      "topics": [
+        "signed networks",
+        "network dismantling",
+        "embedding"
+      ],
+      "url": "https://www.licong.me/papers/esnd-signed-network-dismantling.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 signed networks，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“signed networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“ESND: An embedding-based framework for signed network di 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "gnn-for-network-science-mini-review",
+      "title": "Graph neural networks for network science: A mini review",
+      "authors": "J. Li, Y. Ji, Y. Zhang, J. Ding, C. Li, X. Li",
+      "venue": "Europhysics Letters 150(2), 21001, 2025",
+      "year": "2025",
+      "citations": "5",
+      "topics": [
+        "graph neural networks",
+        "network science",
+        "review"
+      ],
+      "url": "https://www.licong.me/papers/gnn-for-network-science-mini-review.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 graph neural networks，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“graph neural networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Graph neural networks for network science: A mini review 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "encrypted-traffic-higher-interaction-graph-neural-network",
+      "title": "An encrypted traffic classification framework based on higher-interaction-graph neural network",
+      "authors": "Z. Hu, B. Qu, X. Li, C. Li",
+      "venue": "Australasian Conference on Information Security and Privacy, 383-403, 2024",
+      "year": "2024",
+      "citations": "5",
+      "topics": [
+        "higher-interaction graph",
+        "traffic classification",
+        "graph neural networks"
+      ],
+      "url": "https://www.licong.me/papers/encrypted-traffic-higher-interaction-graph-neural-network.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 higher-interaction graph，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“higher-interaction graph”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“An encrypted traffic classification framework based on h 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "human-temporal-interaction-network-review",
+      "title": "人类时效交互网络的建模与传播研究综述",
+      "authors": "李靖, 李聪, 李翔",
+      "venue": "复杂系统与复杂性科学 16(3), 1-21, 2019",
+      "year": "2019",
+      "citations": "5",
+      "topics": [
+        "时效交互网络",
+        "传播研究",
+        "综述"
+      ],
+      "url": "https://www.licong.me/papers/human-temporal-interaction-network-review.html",
+      "category": "复杂网络理论与应用",
+      "analysis": {
+        "question": "这篇论文围绕 时效交互网络 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“时效交互网络”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络理论与应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“人类时效交互网络的建模与传播研究综述 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "predicting-higher-order-dynamics-unknown-hypergraph-topology",
+      "title": "Predicting higher-order dynamics with unknown hypergraph topology",
+      "authors": "Z. Zhou, C. Li, P. Van Mieghem, X. Li",
+      "venue": "IEEE Transactions on Circuits and Systems I: Regular Papers 72(4), 1693-1706, 2024",
+      "year": "2024",
+      "citations": "4",
+      "topics": [
+        "higher-order dynamics",
+        "hypergraph topology",
+        "prediction"
+      ],
+      "url": "https://www.licong.me/papers/predicting-higher-order-dynamics-unknown-hypergraph-topology.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 higher-order dynamics。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“higher-order dynamics”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Predicting higher-order dynamics with unknown hypergraph 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "botscan-unsupervised-bot-detection",
+      "title": "BotScan: an unsupervised bot detection based on adversarial learning and social perception",
+      "authors": "H. Lin, N. Chen, Y. Chen, X. Li, C. Li",
+      "venue": "2024 14th Asian Control Conference, 1872-1878, 2024",
+      "year": "2024",
+      "citations": "4",
+      "topics": [
+        "bot detection",
+        "social perception",
+        "adversarial learning"
+      ],
+      "url": "https://www.licong.me/papers/botscan-unsupervised-bot-detection.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 bot detection 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“bot detection”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“BotScan: an unsupervised bot detection based on adversar 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "heterogeneous-social-difference-epidemic-information-spreading",
+      "title": "Heterogeneous social difference in the interplay between epidemic and information spreading",
+      "authors": "J. Y. Dai, C. Li, X. Li",
+      "venue": "Europhysics Letters 140(5), 51001, 2022",
+      "year": "2022",
+      "citations": "4",
+      "topics": [
+        "epidemic spreading",
+        "information spreading",
+        "social difference"
+      ],
+      "url": "https://www.licong.me/papers/heterogeneous-social-difference-epidemic-information-spreading.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 epidemic spreading 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“epidemic spreading”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Heterogeneous social difference in the interplay between 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "privacy-settings-recommendation-online-social-networks",
+      "title": "Deep learning-based user privacy settings recommendation in online social networks",
+      "authors": "Q. Ye, Y. Cao, Y. Chen, C. Li, X. Li",
+      "venue": "2022 International Joint Conference on Neural Networks, 1-9, 2022",
+      "year": "2022",
+      "citations": "4",
+      "topics": [
+        "online social networks",
+        "privacy recommendation",
+        "deep learning"
+      ],
+      "url": "https://www.licong.me/papers/privacy-settings-recommendation-online-social-networks.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 online social networks，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“online social networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Deep learning-based user privacy settings recommendation 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "online-social-ties-epidemic-spreading-multiplex",
+      "title": "How online social ties influence the epidemic spreading of a multiplex network?",
+      "authors": "X. Tang, Y. Zhang, C. Li, X. Li",
+      "venue": "2020 IFIP Networking Conference, 46-54, 2020",
+      "year": "2020",
+      "citations": "4",
+      "topics": [
+        "online social ties",
+        "multiplex networks",
+        "epidemic spreading"
+      ],
+      "url": "https://www.licong.me/papers/online-social-ties-epidemic-spreading-multiplex.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 online social ties 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“online social ties”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“How online social ties influence the epidemic spreading  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "activity-driven-infectivity-time-varying-networks",
+      "title": "Epidemic spreading in time-varying networks with activity-driven infectivity",
+      "authors": "Y. Zhang, J. Wang, C. Li, X. Li",
+      "venue": "2019 IEEE Conference on Decision and Control, 3776-3781, 2019",
+      "year": "2019",
+      "citations": "4",
+      "topics": [
+        "time-varying networks",
+        "activity-driven infectivity",
+        "epidemic spreading"
+      ],
+      "url": "https://www.licong.me/papers/activity-driven-infectivity-time-varying-networks.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 time-varying networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“time-varying networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Epidemic spreading in time-varying networks with activit 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "multiple-social-ties-human-location-prediction",
+      "title": "Can multiple social ties help improve human location prediction?",
+      "authors": "C. Li, S. Zhang, X. Li",
+      "venue": "Physica A: Statistical Mechanics and its Applications 525, 1276-1288, 2019",
+      "year": "2019",
+      "citations": "4",
+      "topics": [
+        "social ties",
+        "human mobility",
+        "location prediction"
+      ],
+      "url": "https://www.licong.me/papers/multiple-social-ties-human-location-prediction.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 social ties 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“social ties”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Can multiple social ties help improve human location pre 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "average-hopcount-shortest-path-tree-like-components",
+      "title": "Average hopcount of the shortest path in tree-like components with finite size",
+      "authors": "D. Guo, H. Yin, C. Li, X. Zhang",
+      "venue": "Physica A: Statistical Mechanics and its Applications 519, 295-302, 2019",
+      "year": "2019",
+      "citations": "4",
+      "topics": [
+        "shortest path",
+        "tree-like components",
+        "network distance"
+      ],
+      "url": "https://www.licong.me/papers/average-hopcount-shortest-path-tree-like-components.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 shortest path 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“shortest path”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Average hopcount of the shortest path in tree-like compo 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "contact-memory-temporal-human-interactions",
+      "title": "Quantifying the contact memory in temporal human interactions",
+      "authors": "J. Li, C. Li, X. Li",
+      "venue": "2018 IEEE International Symposium on Circuits and Systems, 1-5, 2018",
+      "year": "2018",
+      "citations": "4",
+      "topics": [
+        "contact memory",
+        "temporal networks",
+        "human interactions"
+      ],
+      "url": "https://www.licong.me/papers/contact-memory-temporal-human-interactions.html",
+      "category": "复杂网络理论与应用",
+      "analysis": {
+        "question": "这篇论文围绕 contact memory 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“contact memory”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络理论与应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Quantifying the contact memory in temporal human interac 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "early-spatial-transmission-networked-metapopulation",
+      "title": "Predicting spatial transmission at the early stage of epidemics on a networked metapopulation",
+      "authors": "J. B. Wang, C. Li, X. Li",
+      "venue": "2016 12th IEEE International Conference on Control and Automation, 2016",
+      "year": "2016",
+      "citations": "4",
+      "topics": [
+        "spatial epidemics",
+        "metapopulation networks",
+        "early prediction"
+      ],
+      "url": "https://www.licong.me/papers/early-spatial-transmission-networked-metapopulation.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 spatial epidemics 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“spatial epidemics”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Predicting spatial transmission at the early stage of ep 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "lower-bounds-fundamental-weight-principal-eigenvector",
+      "title": "New lower bounds for the fundamental weight of the principal eigenvector in complex networks",
+      "authors": "C. Li, H. Wang, M. P. Van Mieghem",
+      "venue": "2014 Tenth International Conference on Signal-Image Technology and Internet-Based Systems, 2014",
+      "year": "2014",
+      "citations": "4",
+      "topics": [
+        "principal eigenvector",
+        "spectral graph theory",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/lower-bounds-fundamental-weight-principal-eigenvector.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 principal eigenvector 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“principal eigenvector”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“New lower bounds for the fundamental weight of the princ 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "evolving-human-contact-networks-epidemic-processes",
+      "title": "Evolving nature of human contact networks with its impact on epidemic processes",
+      "authors": "C. Li, J. Li, X. Li",
+      "venue": "Complexity 2021(1), 6643658, 2021",
+      "year": "2021",
+      "citations": "3",
+      "topics": [
+        "human contact networks",
+        "epidemic processes",
+        "temporal networks"
+      ],
+      "url": "https://www.licong.me/papers/evolving-human-contact-networks-epidemic-processes.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 human contact networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“human contact networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Evolving nature of human contact networks with its impac 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "symptom-networks-fatty-liver-disease",
+      "title": "Community detector on symptom networks with applications to fatty liver disease",
+      "authors": "C. Li, W. Wang, J. Li, J. Xu, X. Li",
+      "venue": "Physica A: Statistical Mechanics and Its Applications 527, 121328, 2019",
+      "year": "2019",
+      "citations": "3",
+      "topics": [
+        "symptom networks",
+        "community detection",
+        "fatty liver disease"
+      ],
+      "url": "https://www.licong.me/papers/symptom-networks-fatty-liver-disease.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 symptom networks 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“symptom networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Community detector on symptom networks with applications 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "spatial-epidemics-complex-metapopulation-networks",
+      "title": "Towards identifying and predicting spatial epidemics on complex meta-population networks",
+      "authors": "X. Li, J. B. Wang, C. Li",
+      "venue": "Temporal Network Epidemiology, 129-160, 2017",
+      "year": "2017",
+      "citations": "3",
+      "topics": [
+        "spatial epidemics",
+        "metapopulation networks",
+        "temporal epidemiology"
+      ],
+      "url": "https://www.licong.me/papers/spatial-epidemics-complex-metapopulation-networks.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 spatial epidemics 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“spatial epidemics”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Towards identifying and predicting spatial epidemics on  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "controlling-epidemics-information-dynamics-neural-ode",
+      "title": "Controlling epidemics with information dynamics: A neural ODE approach",
+      "authors": "D. Han, S. Jin, C. Li",
+      "venue": "IEEE Transactions on Computational Social Systems, 2025",
+      "year": "2025",
+      "citations": "2",
+      "topics": [
+        "neural ODE",
+        "information dynamics",
+        "epidemic control"
+      ],
+      "url": "https://www.licong.me/papers/controlling-epidemics-information-dynamics-neural-ode.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 neural ODE 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“neural ODE”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Controlling epidemics with information dynamics: A neura 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "botscout-social-bot-detection-semantics-attributes-neighborhoods",
+      "title": "BotScout: A Social Bot Detection Algorithm Based on Semantics, Attributes and Neighborhoods",
+      "authors": "H. Lin, N. Chen, Y. Chen, X. Li, C. Li",
+      "venue": "International Conference on Intelligent Computing, 343-355, 2024",
+      "year": "2024",
+      "citations": "2",
+      "topics": [
+        "social bot detection",
+        "semantics",
+        "network neighborhoods"
+      ],
+      "url": "https://www.licong.me/papers/botscout-social-bot-detection-semantics-attributes-neighborhoods.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 social bot detection 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“social bot detection”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“BotScout: A Social Bot Detection Algorithm Based on Sema 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "influential-nodes-neighbor-closeness",
+      "title": "Detection of influential nodes using neighbor closeness in complex networks",
+      "authors": "J. Dai, C. Li, X. Li",
+      "venue": "2021 40th Chinese Control Conference, 764-769, 2021",
+      "year": "2021",
+      "citations": "2",
+      "topics": [
+        "influential nodes",
+        "neighbor closeness",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/influential-nodes-neighbor-closeness.html",
+      "category": "复杂网络理论与应用",
+      "analysis": {
+        "question": "这篇论文围绕 influential nodes 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“influential nodes”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络理论与应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Detection of influential nodes using neighbor closeness  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "win-win-zero-determinant-vaccinate-sis-network-epidemics",
+      "title": "Win-win zero-determinant strategy to vaccinate the SIS network epidemics",
+      "authors": "X. Li, C. Li, X. Li",
+      "venue": "2018 IEEE International Conference on Systems, Man, and Cybernetics, 2018",
+      "year": "2018",
+      "citations": "2",
+      "topics": [
+        "zero-determinant strategy",
+        "vaccination",
+        "SIS epidemics"
+      ],
+      "url": "https://www.licong.me/papers/win-win-zero-determinant-vaccinate-sis-network-epidemics.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 zero-determinant strategy 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“zero-determinant strategy”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Win-win zero-determinant strategy to vaccinate the SIS n 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "interplay-complex-networks-human-populations-epidemics",
+      "title": "Towards identifying epidemic processes with interplay between complex networks and human populations",
+      "authors": "X. Li, J. B. Wang, C. Li",
+      "venue": "2016 IEEE Conference on Norbert Wiener in the 21st Century, 1-5, 2016",
+      "year": "2016",
+      "citations": "2",
+      "topics": [
+        "epidemic processes",
+        "human populations",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/interplay-complex-networks-human-populations-epidemics.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 epidemic processes 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“epidemic processes”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Towards identifying epidemic processes with interplay be 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "characterization-design-complex-networks",
+      "title": "Characterization and design of complex networks",
+      "authors": "C. Li",
+      "venue": "Doctoral thesis / scholarly work indexed by Google Scholar",
+      "year": "2014",
+      "citations": "2",
+      "topics": [
+        "complex network characterization",
+        "network design",
+        "doctoral research"
+      ],
+      "url": "https://www.licong.me/papers/characterization-design-complex-networks.html",
+      "category": "复杂网络理论与应用",
+      "analysis": {
+        "question": "这篇论文围绕 complex network characterization 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“complex network characterization”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络理论与应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Characterization and design of complex networks 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "adaptive-overlap-penalization-hypergraph-influence-maximization",
+      "title": "Adaptive overlap penalization and probabilistic modeling in hypergraph influence maximization",
+      "authors": "L. Wu, C. Li, B. Qu, X. Li",
+      "venue": "Information Processing & Management 63(4), 104594, 2026",
+      "year": "2026",
+      "citations": "1",
+      "topics": [
+        "hypergraph",
+        "influence maximization",
+        "probabilistic modeling"
+      ],
+      "url": "https://www.licong.me/papers/adaptive-overlap-penalization-hypergraph-influence-maximization.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 hypergraph。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“hypergraph”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Adaptive overlap penalization and probabilistic modeling 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "balancer-temporal-knowledge-graph-embedding",
+      "title": "Balancer: Temporal Knowledge Graph Embedding for Novel Events Reasoning with Contrastive Learning",
+      "authors": "Z. Kuang, B. Qu, X. Li, C. Li",
+      "venue": "Knowledge-Based Systems, 114984, 2025",
+      "year": "2025",
+      "citations": "1",
+      "topics": [
+        "temporal knowledge graph",
+        "embedding",
+        "contrastive learning"
+      ],
+      "url": "https://www.licong.me/papers/balancer-temporal-knowledge-graph-embedding.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 temporal knowledge graph，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“temporal knowledge graph”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Balancer: Temporal Knowledge Graph Embedding for Novel E 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "higher-order-dynamics-without-topology-ridge-regression",
+      "title": "Predicting higher-order dynamics without network topology by ridge regression",
+      "authors": "Z. Zhou, C. Li, B. Qu, X. Li",
+      "venue": "2024 IEEE International Symposium on Circuits and Systems, 1-5, 2024",
+      "year": "2024",
+      "citations": "1",
+      "topics": [
+        "higher-order dynamics",
+        "ridge regression",
+        "unknown topology"
+      ],
+      "url": "https://www.licong.me/papers/higher-order-dynamics-without-topology-ridge-regression.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 higher-order dynamics。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“higher-order dynamics”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Predicting higher-order dynamics without network topolog 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "vaccination-strategies-disease-behavior-evolution",
+      "title": "Vaccination strategies in the disease-behavior evolution model",
+      "authors": "L. Zhou, J. Dai, B. Qu, C. Li",
+      "venue": "Frontiers in Physics 12, 1387267, 2024",
+      "year": "2024",
+      "citations": "1",
+      "topics": [
+        "vaccination strategies",
+        "disease-behavior evolution",
+        "network epidemics"
+      ],
+      "url": "https://www.licong.me/papers/vaccination-strategies-disease-behavior-evolution.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 vaccination strategies 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“vaccination strategies”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Vaccination strategies in the disease-behavior evolution 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "social-computing-development-dblp",
+      "title": "Characterizing and understanding development of social computing through DBLP: a data-driven analysis",
+      "authors": "J. Wu, B. Ye, Q. Gong, A. Oksanen, C. Li, J. Qu, F. F. Tian, X. Li, Y. Chen",
+      "venue": "Journal of Social Computing 3(4), 287-302, 2022",
+      "year": "2022",
+      "citations": "1",
+      "topics": [
+        "social computing",
+        "DBLP",
+        "data-driven analysis"
+      ],
+      "url": "https://www.licong.me/papers/social-computing-development-dblp.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 social computing 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“social computing”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Characterizing and understanding development of social c 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "reporting-rate-epidemic-control-sixar",
+      "title": "Influence of reporting rate on epidemic control based on SIXAR model",
+      "authors": "L. Wu, Q. Sun, C. Li, X. Li",
+      "venue": "2022 41st Chinese Control Conference, 715-720, 2022",
+      "year": "2022",
+      "citations": "1",
+      "topics": [
+        "reporting rate",
+        "SIXAR model",
+        "epidemic control"
+      ],
+      "url": "https://www.licong.me/papers/reporting-rate-epidemic-control-sixar.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 reporting rate 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“reporting rate”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Influence of reporting rate on epidemic control based on 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "public-goods-game-hypergraph-win-stay-lose-shift",
+      "title": "Public goods game on hypergraph with gentle win-stay, lose-shift strategy",
+      "authors": "J. Li, C. Li, X. Li",
+      "venue": "2022 41st Chinese Control Conference, 6916-6921, 2022",
+      "year": "2022",
+      "citations": "1",
+      "topics": [
+        "public goods game",
+        "hypergraph",
+        "evolutionary dynamics"
+      ],
+      "url": "https://www.licong.me/papers/public-goods-game-hypergraph-win-stay-lose-shift.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 public goods game。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“public goods game”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Public goods game on hypergraph with gentle win-stay, lo 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "network-representation-community-awareness-brain-networks",
+      "title": "Network Representation Learning With Community Awareness and Its Applications in Brain Networks",
+      "authors": "M. Shi, B. Qu, X. Li, C. Li",
+      "venue": "Frontiers in Physiology 13, 910873, 2022",
+      "year": "2022",
+      "citations": "1",
+      "topics": [
+        "network representation learning",
+        "community awareness",
+        "brain networks"
+      ],
+      "url": "https://www.licong.me/papers/network-representation-community-awareness-brain-networks.html",
+      "category": "AI 与网络科学",
+      "analysis": {
+        "question": "这篇论文面向 network representation learning，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“network representation learning”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、AI 与网络科学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Network Representation Learning With Community Awareness 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "social-power-convergence-duplex-influence-networks",
+      "title": "Social power convergence on duplex influence networks with self-appraisals",
+      "authors": "R. Kang, C. Li, X. Li",
+      "venue": "2019 IEEE Conference on Decision and Control, 5611-5612, 2019",
+      "year": "2019",
+      "citations": "1",
+      "topics": [
+        "duplex influence networks",
+        "social power",
+        "self-appraisals"
+      ],
+      "url": "https://www.licong.me/papers/social-power-convergence-duplex-influence-networks.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 duplex influence networks 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“duplex influence networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Social power convergence on duplex influence networks wi 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "fatty-liver-tcm-complex-network-approach",
+      "title": "Bridging Fatty Liver Disease and Traditional Chinese Medicine: A Complex Network Approach",
+      "authors": "W. Wang, C. Li, J. Xu, X. Li",
+      "venue": "2019 IEEE International Symposium on Circuits and Systems, 1-5, 2019",
+      "year": "2019",
+      "citations": "1",
+      "topics": [
+        "complex network applications",
+        "traditional Chinese medicine",
+        "fatty liver disease"
+      ],
+      "url": "https://www.licong.me/papers/fatty-liver-tcm-complex-network-approach.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 complex network applications 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“complex network applications”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Bridging Fatty Liver Disease and Traditional Chinese Med 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "human-location-trajectories-diverse-social-ties",
+      "title": "Predicting Location Trajectories of Humans by Their Diverse Social Ties",
+      "authors": "S. Zhang, C. Li, X. Li",
+      "venue": "2018 IEEE International Conference on Systems, Man, and Cybernetics, 2018",
+      "year": "2018",
+      "citations": "1",
+      "topics": [
+        "human mobility",
+        "social ties",
+        "trajectory prediction"
+      ],
+      "url": "https://www.licong.me/papers/human-location-trajectories-diverse-social-ties.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 human mobility 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“human mobility”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Predicting Location Trajectories of Humans by Their Dive 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "hip-hypergraph-influence-prediction-neural-odes",
+      "title": "HIP: Model-agnostic hypergraph influence prediction via distance-centrality fusion and neural ODEs",
+      "authors": "S. S. Zhang, J. Xie, Y. Chen, M. Gao, C. Li, C. Liu, X. X. Zhan",
+      "venue": "Expert Systems with Applications, 132357, 2026",
+      "year": "2026",
+      "citations": "",
+      "topics": [
+        "hypergraph influence prediction",
+        "neural ODEs",
+        "distance centrality"
+      ],
+      "url": "https://www.licong.me/papers/hip-hypergraph-influence-prediction-neural-odes.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 hypergraph influence prediction。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“hypergraph influence prediction”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“HIP: Model-agnostic hypergraph influence prediction via  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "human-spatio-temporal-behaviors-functionality-social-networks",
+      "title": "How Human Spatio-Temporal Behaviors Facilitate Epidemics in Functionality Social Networks",
+      "authors": "H. Lin, Z. Jin, X. Li, C. Li",
+      "venue": "IEEE Transactions on Network Science and Engineering 13, 3240-3255, 2025",
+      "year": "2025",
+      "citations": "",
+      "topics": [
+        "spatio-temporal behavior",
+        "functionality social networks",
+        "epidemics"
+      ],
+      "url": "https://www.licong.me/papers/human-spatio-temporal-behaviors-functionality-social-networks.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 spatio-temporal behavior 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“spatio-temporal behavior”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“How Human Spatio-Temporal Behaviors Facilitate Epidemics 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "effective-resistance-temporal-networks",
+      "title": "Formulating effective resistance in temporal networks: Models and empirical insights",
+      "authors": "Z. He, W. Du, C. Li",
+      "venue": "Physica A: Statistical Mechanics and its Applications, 130991, 2025",
+      "year": "2025",
+      "citations": "",
+      "topics": [
+        "effective resistance",
+        "temporal networks",
+        "empirical networks"
+      ],
+      "url": "https://www.licong.me/papers/effective-resistance-temporal-networks.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 effective resistance 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“effective resistance”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Formulating effective resistance in temporal networks: M 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "predicting-dynamics-on-hypergraphs-gat",
+      "title": "Predicting Dynamics on Hypergraphs with Graph Attention Networks",
+      "authors": "B. Qu, W. Wang, C. Li, X. Li",
+      "venue": "2025 International Conference on Big Data and Artificial Intelligence, 2025",
+      "year": "2025",
+      "citations": "",
+      "topics": [
+        "hypergraph dynamics",
+        "graph attention networks",
+        "AI for network science"
+      ],
+      "url": "https://www.licong.me/papers/predicting-dynamics-on-hypergraphs-gat.html",
+      "category": "高阶网络与超图",
+      "analysis": {
+        "question": "这篇论文把研究对象从普通边关系推进到 hypergraph dynamics。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。",
+        "method": "方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“hypergraph dynamics”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、高阶网络与超图”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Predicting Dynamics on Hypergraphs with Graph Attention  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "target-controllability-complex-networks-greedy-optimization",
+      "title": "Target Controllability of Complex Networks Based on Greedy Optimization",
+      "authors": "J. Ding, Y. Zhuo, X. Hu, Y. Zhao, C. Li, X. Li",
+      "venue": "IEEE Transactions on Control of Network Systems, 2025",
+      "year": "2025",
+      "citations": "",
+      "topics": [
+        "target controllability",
+        "greedy optimization",
+        "complex networks"
+      ],
+      "url": "https://www.licong.me/papers/target-controllability-complex-networks-greedy-optimization.html",
+      "category": "网络结构与控制",
+      "analysis": {
+        "question": "这篇论文围绕 target controllability 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“target controllability”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络结构与控制”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Target Controllability of Complex Networks Based on Gree 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "eggpu-efficient-large-scale-network-analysis",
+      "title": "EGGPU: Enabling Efficient Large-Scale Network Analysis with Consumer-Grade GPUs",
+      "authors": "J. Tang, M. Gao, Y. Xiao, C. Li, Y. Chen",
+      "venue": "Proceedings of the Third International Workshop on Social and Metaverse Computing, 2024",
+      "year": "2024",
+      "citations": "",
+      "topics": [
+        "large-scale network analysis",
+        "GPU computing",
+        "network systems"
+      ],
+      "url": "https://www.licong.me/papers/eggpu-efficient-large-scale-network-analysis.html",
+      "category": "复杂网络理论与应用",
+      "analysis": {
+        "question": "这篇论文围绕 large-scale network analysis 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“large-scale network analysis”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络理论与应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“EGGPU: Enabling Efficient Large-Scale Network Analysis w 李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "complexity-structural-functional-brain-networks-comment",
+      "title": "Complexity in structural and functional brain networks. Comment on \"Structure and function in artificial, zebrafish and human neural networks\" by Ji et al.",
+      "authors": "C. Li, C. Hens",
+      "venue": "Physics of Life Reviews 47, 131-132, 2023",
+      "year": "2023",
+      "citations": "",
+      "topics": [
+        "brain networks",
+        "structural networks",
+        "functional networks"
+      ],
+      "url": "https://www.licong.me/papers/complexity-structural-functional-brain-networks-comment.html",
+      "category": "复杂网络应用",
+      "analysis": {
+        "question": "这篇论文把复杂网络方法用于 brain networks 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“brain networks”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、复杂网络应用”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“Complexity in structural and functional brain networks.  李聪 复旦”。"
+      }
+    },
+    {
+      "slug": "improved-solution-spatial-invasion-metapopulation-si",
+      "title": "An Improved Solution to Identify Spatial Invasion on Metapopulation Networks with SI model",
+      "authors": "Y. Peng, B. Hu, H. Feng, X. Li, C. Li",
+      "venue": "2021 40th Chinese Control Conference, 730-735, 2021",
+      "year": "2021",
+      "citations": "",
+      "topics": [
+        "spatial invasion",
+        "metapopulation networks",
+        "SI model"
+      ],
+      "url": "https://www.licong.me/papers/improved-solution-spatial-invasion-metapopulation-si.html",
+      "category": "网络传播与流行病动力学",
+      "analysis": {
+        "question": "这篇论文关注 spatial invasion 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。",
+        "method": "方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。",
+        "contribution": "从题名和公开索引信息看，论文的贡献在于把“spatial invasion”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。",
+        "searchValue": "独立页面保留论文题名、作者、年份、期刊/会议、主题词和中文解读，有助于搜索引擎与 AI 工具把“李聪、复旦、信息学院、复杂网络、网络传播与流行病动力学”这些实体信号连接起来。比只在主页列表中出现一次更容易覆盖长尾检索，例如“An Improved Solution to Identify Spatial Invasion on Met 李聪 复旦”。"
+      }
+    }
+  ]
+}
