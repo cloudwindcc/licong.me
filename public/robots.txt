@@ -10,6 +10,18 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+User-agent: Sogou Pic Spider
+Allow: /
+
+User-agent: Sogou News Spider
+Allow: /
+
 User-agent: Bytespider
 Allow: /
 
