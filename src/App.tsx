@@ -1,9 +1,9 @@
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import type { Engine } from "tsparticles-engine";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import React, { useState, useEffect, useMemo } from 'react';
 import { ArrowRight, ExternalLink, FileText, GraduationCap, Link as LinkIcon, Mail, User, Award, Phone, ChevronDown, ChevronUp, Book, ShoppingCart, BookOpen, Palette, Globe } from 'lucide-react';
 import { Disclosure, Menu } from '@headlessui/react';
+import verifiedPublications from './data/verified-publications.json';
+
+const NetworkBackground = React.lazy(() => import('./NetworkBackground'));
 
 type SiteLanguage = 'zh' | 'en' | 'ja' | 'de' | 'ko' | 'hk' | 'es';
 
@@ -55,8 +55,12 @@ function App() {
   const [language, setLanguage] = useState<SiteLanguage>('zh');
   const [dynamicNewsItems, setDynamicNewsItems] = useState<DisplayNewsItem[]>([]);
   
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
+  const [showBackground, setShowBackground] = useState(false);
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setShowBackground(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }, 1500);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const toggleLanguage = () => {
@@ -126,13 +130,13 @@ function App() {
     { zh: "信息论", en: "Information Theory", ja: "情報理論", de: "Informationstheorie", ko: "정보 이론", hk: "信息論", es: "Teoría de la Información", category: "theory" },
     { zh: "复旦大学", en: "Fudan University", ja: "復旦大学", de: "Fudan-Universität", ko: "푸단대학교", hk: "復旦大學", es: "Universidad de Fudan", category: "institution" },
     { zh: "电子工程", en: "Electronic Engineering", ja: "電子工学", de: "Elektrotechnik", ko: "전자공학", hk: "電子工程", es: "Ingeniería Electrónica", category: "institution" },
-    { zh: "副教授", en: "Associate Professor", ja: "准教授", de: "Professorin", ko: "부교수", hk: "副教授", es: "Profesora Asociada", category: "position" },
+    { zh: "副研究员", en: "Associate Research Professor", ja: "副研究員", de: "Associate Research Professor", ko: "부연구원", hk: "副研究員", es: "Profesora asociada de investigación", category: "position" },
     { zh: "学术任职", en: "Academic Positions", ja: "学術役職", de: "Akademische Positionen", ko: "학술 직책", hk: "學術任職", es: "Cargos Académicos", category: "position" },
     { zh: "科研成果", en: "Research Achievements", ja: "研究成果", de: "Forschungsergebnisse", ko: "연구 성과", hk: "科研成果", es: "Logros de Investigación", category: "academic" },
     { zh: "学术论文", en: "Academic Papers", ja: "学術論文", de: "Akademische Arbeiten", ko: "학술 논문", hk: "學術論文", es: "Artículos Académicos", category: "academic" }
   ], []);
   useEffect(() => {
-    document.documentElement.lang = language;
+    document.documentElement.lang = { zh: 'zh-CN', hk: 'zh-Hant', en: 'en', ja: 'ja', de: 'de', ko: 'ko', es: 'es' }[language];
     
     // Update the document metadata for the active language.
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -140,13 +144,13 @@ function App() {
     const metaAuthor = document.querySelector('meta[name="author"]');
     
     const descriptionText = {
-      zh: "李聪教授 - 复旦大学未来信息创新学院副教授，复杂网络科学专家。研究网络动力学、传播理论、链路预测、社区发现等领域，发表多篇高水平学术论文。",
-      en: "Prof. Cong Li - Associate Professor at Fudan University Electronic Engineering, expert in complex network science. Research areas include network dynamics, spreading theory, link prediction, community detection with numerous high-impact publications.",
-      ja: "李聰教授 - 復旦大学電子工学部准教授、複雑ネットワーク科学の専門家。ネットワークダイナミクス、伝播理論、リンク予測、コミュニティ発見などの分野で研究し、多数の高インパクトな学術論文を発表。",
-      de: "Prof. Dr. Cong Li - Professorin an der Fakultät für Elektrotechnik der Fudan-Universität, Expertin für komplexe Netzwerke. Forschungsbereiche: Netzwerk-Dynamik, Ausbreitungstheorie, Link-Vorhersage, Community-Erkennung mit zahlreichen hochrangigen Publikationen.",
-      ko: "이총 교수 - 푸단대학교 전자공학부 부교수, 복잡 네트워크 과학 전문가. 네트워크 역학, 전파 이론, 링크 예측, 커뮤니티 발견 등 분야에서 연구하며 다수의 높은 임팩트 학술 논문을 발표.",
-      hk: "李聰教授 - 復旦大學電子工程系副教授，複雜網絡科學專家。研究網絡動力學、傳播理論、鏈路預測、社區發現等領域，發表多篇高水平學術論文。",
-      es: "Prof. Dra. Cong Li - Profesora Asociada de Ingeniería Electrónica en la Universidad de Fudan, experta en ciencia de redes complejas. Áreas de investigación: dinámica de redes, teoría de propagación, predicción de enlaces, detección de comunidades con numerosas publicaciones de alto impacto."
+      zh: "李聪（Cong Li），复旦大学未来信息创新学院副研究员、信息学院人才中心副主任，研究复杂网络、网络动力学与图神经网络。",
+      en: "Cong Li, Fudan University. Research in complex networks, network dynamics and graph neural networks. Publications, academic profile and contact information.",
+      ja: "李聡（Cong Li）、復旦大学。複雑ネットワーク、ネットワーク動力学、グラフニューラルネットワークの研究と論文情報。",
+      de: "Cong Li, Fudan-Universität. Forschung zu komplexen Netzwerken, Netzwerkdynamik und Graph-Neuronalen Netzen. Publikationen und Kontakt.",
+      ko: "리충(Cong Li), 푸단대학교. 복잡계 네트워크, 네트워크 동역학, 그래프 신경망 연구와 논문 및 연락처.",
+      hk: "李聰（Cong Li），復旦大學未來信息創新學院副研究員、信息學院人才中心副主任，研究複雜網絡、網絡動力學與圖神經網絡。",
+      es: "Cong Li, Universidad de Fudan. Investigación en redes complejas, dinámica de redes y redes neuronales de grafos. Publicaciones y contacto."
     }[language];
     
     const keywordsText = seoKeywords.map(k => k[language]).join(', ');
@@ -184,7 +188,7 @@ function App() {
       {
         en: "Theory of Spreading on Complex Networks: Hidden Rules of Epidemics",
         zh: "复杂网络传播理论——流行的隐秩序",
-        isbn: "978-94-6186-364-5",
+        isbn: "978-7-04-054605-7",
         year: "2020",
         authors: "Li Xiang; Li Cong; Wang Jian Bo",
         cover: "https://m.media-amazon.com/images/I/61wIe+aPBbL._SY522_.jpg",
@@ -195,185 +199,21 @@ function App() {
       }
     ],
  
-    journals: [
-      {
-        en: "Higher-order interactions in temporal networks: The impact of triadic closure on epidemic spreading",
-        zh: "时态网络中的高阶交互：三元闭对流行传播的影响",
-        journal: "Nature Communications",
-        details: "vol. 15, Article ID 2347",
-        year: "2024",
-        authors: "C. Li, X. Li, Y. Zhang, J. Wang",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Dynamic community detection in temporal networks with memory effects",
-        zh: "具有记忆效应的时态网络动态社区发现",
-        journal: "Physical Review E",
-        details: "vol. 108, no. 4, pp. 044301",
-        year: "2023",
-        authors: "C. Li, M. Tang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Optimal control strategies for epidemic spreading in multilayer networks",
-        zh: "多层网络中流行传播的最优控制策略",
-        journal: "Chaos, Solitons & Fractals",
-        details: "vol. 168, Article ID 113194",
-        year: "2023",
-        authors: "C. Li, Y. Zhang, L. Wang",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Network embedding for link prediction in complex systems",
-        zh: "复杂系统链路预测的网络嵌入方法",
-        journal: "Applied Mathematics and Computation",
-        details: "vol. 437, Article ID 127561",
-        year: "2023",
-        authors: "C. Li, Z. Liu, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Epidemic threshold in temporal multiplex networks with individual layer preference",
-        zh: "具有个体层偏好的时态多重网络中的流行阈值",
-        journal: "IEEE Transactions on Network Science and Engineering",
-        details: "vol. 8, no. 1, pp. 814-824",
-        year: "2021",
-        authors: "C. Li, Y. Zhang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Evolving nature of human contact networks with its impact on epidemic processes",
-        zh: "人类接触网络的演化特性及其对流行过程的影响",
-        journal: "Complexity",
-        details: "Article ID 6643658",
-        year: "2021",
-        authors: "C. Li, J. Li, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Optimal control of epidemic spreading in heterogeneous temporal networks",
-        zh: "异质时态网络中流行传播的最优控制",
-        journal: "Chaos",
-        details: "vol. 31, no. 3, pp. 033104",
-        year: "2021",
-        authors: "C. Li, X. Li, J. Chen",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Influence maximization in complex networks through optimal percolation",
-        zh: "复杂网络中通过最优渗透的影响最大化",
-        journal: "New Journal of Physics",
-        details: "vol. 22, Article ID 093045",
-        year: "2020",
-        authors: "C. Li, X. Li, Y. Liu",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Link prediction in complex networks based on local naïve Bayes model",
-        zh: "基于局部朴素贝叶斯模型的复杂网络链路预测",
-        journal: "EPL (Europhysics Letters)",
-        details: "vol. 129, no. 4, pp. 48003",
-        year: "2020",
-        authors: "C. Li, R. Wang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Identifying influential nodes in complex networks based on network embedding",
-        zh: "基于网络嵌入的复杂网络影响力节点识别",
-        journal: "IEEE Transactions on Network Science and Engineering",
-        details: "vol. 7, no. 3, pp. 1512-1524",
-        year: "2020",
-        authors: "C. Li, Z. Wang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Community detection in temporal networks using tensor decomposition",
-        zh: "基于张量分解的时态网络社区发现",
-        journal: "Scientific Reports",
-        details: "vol. 9, Article ID 18234",
-        year: "2019",
-        authors: "C. Li, H. Wang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Controllability of complex networks with community structure",
-        zh: "具有社区结构的复杂网络可控性研究",
-        journal: "Physical Review E",
-        details: "vol. 99, no. 2, pp. 022312",
-        year: "2019",
-        authors: "C. Li, J. Zhang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Robustness analysis of network controllability under cascading failures",
-        zh: "级联故障下网络可控性的鲁棒性分析",
-        journal: "Physica A: Statistical Mechanics and its Applications",
-        details: "vol. 513, pp. 450-459",
-        year: "2019",
-        authors: "C. Li, Y. Liu, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Percolation on interacting networks with feedback dependence",
-        zh: "具有反馈依赖的交互网络渗透研究",
-        journal: "Chaos",
-        details: "vol. 28, no. 8, pp. 083106",
-        year: "2018",
-        authors: "C. Li, X. Li, S. Wang",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Spreading dynamics in complex networks with community structure",
-        zh: "具有社区结构的复杂网络传播动力学",
-        journal: "Journal of Statistical Mechanics: Theory and Experiment",
-        details: "Article ID 083403",
-        year: "2018",
-        authors: "C. Li, X. Li, Y. Chen",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Identifying influential spreaders in complex networks based on gravity model",
-        zh: "基于引力模型的复杂网络影响力传播者识别",
-        journal: "Scientific Reports",
-        details: "vol. 7, Article ID 46424",
-        year: "2017",
-        authors: "C. Li, Q. Wang, X. Li",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "The effect of network topology on the stability of discrete state dynamics",
-        zh: "网络拓扑结构对离散状态动力学稳定性的影响",
-        journal: "Chaos",
-        details: "vol. 27, no. 10, pp. 103102",
-        year: "2017",
-        authors: "C. Li, X. Li, J. Wang",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "Analysis of random walks on networks with second-order neighbors",
-        zh: "具有二阶邻居的网络随机游走分析",
-        journal: "European Physical Journal B",
-        details: "vol. 88, Article ID 266",
-        year: "2015",
-        authors: "C. Li, X. Li, Y. Tang",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      },
-      {
-        en: "The influence of network structure on the dynamics of random walks",
-        zh: "网络结构对随机游走动力学的影响",
-        journal: "Physica A: Statistical Mechanics and its Applications",
-        details: "vol. 428, pp. 180-188",
-        year: "2015",
-        authors: "C. Li, X. Li, Z. Zhang",
-        href: "https://scholar.google.com/citations?user=S7-6p4MAAAAJ"
-      }
-    ]
+    journals: verifiedPublications.papers.map((paper) => ({
+      en: paper.title,
+      zh: paper.titleZh,
+      journal: paper.journal,
+      details: paper.details,
+      year: paper.year,
+      authors: paper.authors,
+      href: `https://doi.org/${paper.doi}`
+    }))
   };
 
   const content = {
     zh: {
       title: "李聪",
-      subtitle: "副教授，电子工程系副主任",
+      subtitle: "副研究员，信息学院人才中心副主任",
       university: "复旦大学未来信息创新学院",
       nav: {
         books: "推荐书单",
@@ -389,7 +229,7 @@ function App() {
       },
       profile: {
         title: "个人简介",
-        content: "李聪，女，复旦大学未来信息创新学院，电子工程系副主任。荷兰代尔夫特理工大学智能系统哲学博士，吉林大学模式识别与智能系统硕士。主持多项国家级项目，担任多个国际会议程序委员会委员及国际期刊编委。",
+        content: "李聪（Cong Li），复旦大学未来信息创新学院副研究员、信息学院人才中心副主任。2009 年获吉林大学通信工程学士学位，2014 年获代尔夫特理工大学智能系统博士学位。研究复杂网络、网络动力学、图神经网络与智慧系统。",
         research: "研究方向：复杂网络的理论及应用",
         areas: [
           "网络描述及性能分析、网络动力学过程分析、网络设计",
@@ -479,11 +319,11 @@ function App() {
       links: {
         title: "相关链接",
         items: [
-          { name: "复旦大学未来信息创新学院", href: "https://www.it.fudan.edu.cn/" },
-          { name: "复旦科研主页", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "复旦大学未来信息创新学院", href: "https://fit.fudan.edu.cn/" },
+          { name: "复旦科研主页", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "自适应网络与控制研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "实验室主页", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "实验室主页", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -504,8 +344,8 @@ function App() {
     },
     en: {
       title: "Cong Li",
-      subtitle: "Associate Professor, Deputy Director of Electronic Engineering",
-      university: "School of Information Science and Technology, Fudan University",
+      subtitle: "Associate Research Professor, Deputy Director of the School Talent Center",
+      university: "School of Future Information Technology, Fudan University",
       nav: {
         books: "Recommended Books",
         works: "My Works"
@@ -520,7 +360,7 @@ function App() {
       },
       profile: {
         title: "Profile",
-        content: "Cong Li, Associate Professor and Deputy Director of Electronic Engineering at Fudan University's School of Information Science and Technology. PhD in Intelligent Systems from Delft University of Technology, Netherlands. MS in Pattern Recognition and Intelligent Systems from Jilin University. Principal investigator for multiple national projects, program committee member for international conferences, and editorial board member for international journals.",
+        content: "Cong Li is an associate research professor at Fudan University. She received her B.E. in Telecommunication Engineering from Jilin University in 2009 and Ph.D. in Intelligent Systems from Delft University of Technology in 2014. Her research covers complex networks, network dynamics, graph neural networks and intelligent systems.",
         research: "Research Interests: Theory and Applications of Complex Networks",
         areas: [
           "Network characterization and performance analysis, network dynamics, network design",
@@ -580,26 +420,26 @@ function App() {
         title: "Academic News",
         items: [
           {
-            title: "Prof. Cong Li Wins Special Prize at 2024 Shanghai Open Source Innovation Excellence Awards",
+            title: "Cong Li Wins Special Prize at 2024 Shanghai Open Source Innovation Excellence Awards",
             source: "Adaptive Networks and Control Laboratory, Fudan University",
             year: "2024",
             link: "Read More"
           },
           {
-            title: "Prof. Cong Li Chairs Academic Exchange on New Progress in Higher-order Dynamics of Complex Networks",
+            title: "Cong Li Chairs Academic Exchange on New Progress in Higher-order Dynamics of Complex Networks",
             source: "Adaptive Networks and Control Laboratory, Fudan University",
             year: "2024",
             link: "Read More"
           },
           {
-            title: "Prof. Cong Li Wins Third Prize at 2022 Shanghai Computer Society Teaching Achievement Awards",
+            title: "Cong Li Wins Third Prize at 2022 Shanghai Computer Society Teaching Achievement Awards",
             source: "Shanghai Computer Society",
             year: "2022",
             link: "Read More"
           },
           {
-            title: "Prof. Cong Li Wins 2020 School of Information Science Dean's Award",
-            source: "School of Information Science and Technology",
+            title: "Cong Li Wins 2020 School of Information Science Dean's Award",
+            source: "School of Future Information Technology",
             year: "2020",
             link: "Read More"
           }
@@ -608,11 +448,11 @@ function App() {
       links: {
         title: "Related Links",
         items: [
-          { name: "School of Information Science and Technology", href: "https://www.it.fudan.edu.cn/" },
-          { name: "Fudan Research Homepage", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "School of Future Information Technology", href: "https://fit.fudan.edu.cn/" },
+          { name: "Fudan Research Homepage", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "Adaptive Networks and Control Laboratory", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "Lab Homepage", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "Lab Homepage", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -632,8 +472,8 @@ function App() {
     },
     ja: {
       title: "李聰",
-      subtitle: "准教授、電子工学部副主任",
-      university: "復旦大学情報科学技術学院",
+      subtitle: "副研究員・情報学院人材センター副主任",
+      university: "復旦大学未来情報イノベーション学院",
       nav: {
         books: "おすすめ書籍",
         works: "私の作品"
@@ -648,7 +488,7 @@ function App() {
       },
       profile: {
         title: "プロフィール",
-        content: "李聰、復旦大学情報科学技術学院電子工学部准教授兼副主任。オランダ・デルフト工科大学より知的システム哲学博士号を取得、吉林大学よりパターン認識と知的システム修士号を取得。複数の国家プロジェクトの主要研究者、国際会議のプログラム委員会メンバー、国際ジャーナルの編集委員会メンバー。",
+        content: "李聡（Cong Li）は復旦大学の研究者です。2009年に吉林大学で通信工学の学士号、2014年にデルフト工科大学で知的システムの博士号を取得。複雑ネットワーク、ネットワーク動力学、グラフニューラルネットワークを研究しています。",
         research: "研究分野：複雑ネットワークの理論と応用",
         areas: [
           "ネットワーク特性と性能解析、ネットワークダイナミクス、ネットワーク設計",
@@ -736,11 +576,11 @@ function App() {
       links: {
         title: "関連リンク",
         items: [
-          { name: "情報科学技術学院", href: "https://www.it.fudan.edu.cn/" },
-          { name: "復旦研究ホームページ", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "情報科学技術学院", href: "https://fit.fudan.edu.cn/" },
+          { name: "復旦研究ホームページ", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "適応ネットワーク・制御研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "研究室ホームページ", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "研究室ホームページ", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -760,8 +600,8 @@ function App() {
     },
     de: {
       title: "Cong Li",
-      subtitle: "Professorin, Stellvertretende Direktorin der Elektrotechnik",
-      university: "Fakultät für Informationswissenschaft und Technologie, Fudan-Universität",
+      subtitle: "Associate Research Professor, stellvertretende Leitung des Talentzentrums",
+      university: "School of Future Information Technology, Fudan University",
       nav: {
         books: "Empfohlene Bücher",
         works: "Meine Werke"
@@ -776,7 +616,7 @@ function App() {
       },
       profile: {
         title: "Profil",
-        content: "Cong Li, Professorin und stellvertretende Direktorin der Elektrotechnik an der Fakultät für Informationswissenschaft und Technologie der Fudan-Universität. PhD in Intelligenten Systemen von der Technischen Universität Delft, Niederlande. MS in Mustererkennung und Intelligente Systeme von der Jilin-Universität. Hauptforscherin für mehrere nationale Projekte, Mitglied des Programmkomitees internationaler Konferenzen und Mitglied der Redaktionskommission internationaler Fachzeitschriften.",
+        content: "Cong Li forscht an der Fudan-Universität zu komplexen Netzwerken, Netzwerkdynamik und Graph-Neuronalen Netzen. Sie erhielt 2009 ihren Bachelorabschluss in Telekommunikation an der Jilin-Universität und promovierte 2014 in Intelligenten Systemen an der Technischen Universität Delft.",
         research: "Forschungsgebiet: Theorie und Anwendungen komplexer Netzwerke",
         areas: [
           "Netzwerkcharakterisierung und Leistungsanalyse, Netzwerk-Dynamik, Netzwerk-Design",
@@ -836,25 +676,25 @@ function App() {
         title: "Akademische Nachrichten",
         items: [
           {
-            title: "Prof. Cong Li gewinnt Sonderpreis bei den Shanghai Open Source Innovation Excellence Awards 2024",
+            title: "Cong Li gewinnt Sonderpreis bei den Shanghai Open Source Innovation Excellence Awards 2024",
             source: "Adaptive Netzwerke und Kontroll-Labor, Fudan-Universität",
             year: "2024",
             link: "Mehr lesen"
           },
           {
-            title: "Prof. Cong Li leitet den akademischen Austausch über Fortschritte in der höheren Ordnungsdynamik komplexer Netzwerke",
+            title: "Cong Li leitet den akademischen Austausch über Fortschritte in der höheren Ordnungsdynamik komplexer Netzwerke",
             source: "Adaptive Netzwerke und Kontroll-Labor, Fudan-Universität",
             year: "2024",
             link: "Mehr lesen"
           },
           {
-            title: "Prof. Cong Li gewinnt dritten Preis bei den Shanghai Computer Society Teaching Achievement Awards 2022",
+            title: "Cong Li gewinnt dritten Preis bei den Shanghai Computer Society Teaching Achievement Awards 2022",
             source: "Shanghai Computer Society",
             year: "2022",
             link: "Mehr lesen"
           },
           {
-            title: "Prof. Cong Li gewinnt den Dekanpreis der Fakultät 2020",
+            title: "Cong Li gewinnt den Dekanpreis der Fakultät 2020",
             source: "Fakultät für Informationswissenschaft und Technologie",
             year: "2020",
             link: "Mehr lesen"
@@ -864,11 +704,11 @@ function App() {
       links: {
         title: "Verwandte Links",
         items: [
-          { name: "Fakultät für Informationswissenschaft und Technologie", href: "https://www.it.fudan.edu.cn/" },
-          { name: "Fudan Forschungs-Homepage", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "Fakultät für Informationswissenschaft und Technologie", href: "https://fit.fudan.edu.cn/" },
+          { name: "Fudan Forschungs-Homepage", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "Adaptive Netzwerke und Kontroll-Labor", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "Labor-Homepage", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "Labor-Homepage", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -888,8 +728,8 @@ function App() {
     },
     ko: {
       title: "이총",
-      subtitle: "부교수, 전자공학부 부주임",
-      university: "푸단대학교 정보과학기술학원",
+      subtitle: "부연구원, 정보학원 인재센터 부주임",
+      university: "푸단대학교 미래정보혁신학원",
       nav: {
         books: "추천 도서",
         works: "나의 저작"
@@ -904,7 +744,7 @@ function App() {
       },
       profile: {
         title: "프로필",
-        content: "이총, 푸단대학교 정보과학기술학원 전자공학부 부교수 겸 부주임. 네덜란드 델프트 공과대학교에서 지능 시스템 학사, 길림대학교에서 패턴 인식 및 지능 시스템 석사. 여러 국가 프로젝트의 주요 연구원, 국제 학회의 프로그램 위원회 위원, 국제 저널의 편집 위원회 위원.",
+        content: "리충(Cong Li)은 푸단대학교에서 복잡계 네트워크, 네트워크 동역학, 그래프 신경망을 연구합니다. 2009년 지린대학교에서 통신공학 학사 학위를, 2014년 델프트 공과대학교에서 지능 시스템 박사 학위를 받았습니다.",
         research: "연구 분야: 복잡 네트워크의 이론 및 응용",
         areas: [
           "네트워크 특성 및 성능 분석, 네트워크 역학, 네트워크 설계",
@@ -992,11 +832,11 @@ function App() {
       links: {
         title: "관련 링크",
         items: [
-          { name: "정보과학기술학원", href: "https://www.it.fudan.edu.cn/" },
-          { name: "푸단 연구 홈페이지", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "정보과학기술학원", href: "https://fit.fudan.edu.cn/" },
+          { name: "푸단 연구 홈페이지", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "적응 네트워크 및 제어 연구실", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "연구실 홈페이지", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "연구실 홈페이지", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -1016,8 +856,8 @@ function App() {
     },
     hk: {
       title: "李聰",
-      subtitle: "副教授、電子工程系副主任",
-      university: "復旦大學信息科學與技術學院",
+      subtitle: "副研究員、信息學院人才中心副主任",
+      university: "復旦大學未來信息創新學院",
       nav: {
         books: "推薦書籍",
         works: "我的作品"
@@ -1032,7 +872,7 @@ function App() {
       },
       profile: {
         title: "個人簡介",
-        content: "李聰，女，復旦大學信息科學與技術學院，電子工程系副主任。荷蘭代爾夫特理工大學智能系統哲學博士，吉林大學模式識別與智能系統碩士。主持多項國家級項目，擔任多個國際會議程序委員會委員及國際期刊編委。",
+        content: "李聰（Cong Li），復旦大學未來信息創新學院副研究員、信息學院人才中心副主任。2009 年獲吉林大學通信工程學士學位，2014 年獲代爾夫特理工大學智能系統博士學位。研究複雜網絡、網絡動力學、圖神經網絡與智慧系統。",
         research: "研究方向：複雜網絡的理論及應用",
         areas: [
           "網絡描述及性能分析、網絡動力學過程分析、網絡設計",
@@ -1120,11 +960,11 @@ function App() {
       links: {
         title: "相關連結",
         items: [
-          { name: "信息科學與技術學院", href: "https://www.it.fudan.edu.cn/" },
-          { name: "復旦科研主頁", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "信息科學與技術學院", href: "https://fit.fudan.edu.cn/" },
+          { name: "復旦科研主頁", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "自適應網絡與控制研究室", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "實驗室主頁", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "實驗室主頁", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -1144,8 +984,8 @@ function App() {
     },
     es: {
       title: "Cong Li",
-      subtitle: "Profesora Asociada, Subdirectora de Ingeniería Electrónica",
-      university: "Facultad de Ciencia y Tecnología de la Información, Universidad de Fudan",
+      subtitle: "Profesora asociada de investigación, subdirectora del centro de talento",
+      university: "School of Future Information Technology, Fudan University",
       nav: {
         books: "Libros Recomendados",
         works: "Mis Obras"
@@ -1160,7 +1000,7 @@ function App() {
       },
       profile: {
         title: "Perfil",
-        content: "Cong Li, Profesora Asociada y Subdirectora de Ingeniería Electrónica en la Facultad de Ciencia y Tecnología de la Información de la Universidad de Fudan. PhD en Sistemas Inteligentes de la Universidad Tecnológica de Delft, Países Bajos. MS en Reconocimiento de Patrones y Sistemas Inteligentes de la Universidad de Jilin. Investigadora principal de múltiples proyectos nacionales, miembro del comité de programa de conferencias internacionales y miembro del comité editorial de revistas internacionales.",
+        content: "Cong Li investiga redes complejas, dinámica de redes y redes neuronales de grafos en la Universidad de Fudan. Obtuvo el grado en Ingeniería de Telecomunicaciones en la Universidad de Jilin en 2009 y el doctorado en Sistemas Inteligentes en la Universidad Tecnológica de Delft en 2014.",
         research: "Áreas de investigación: Teoría y aplicaciones de redes complejas",
         areas: [
           "Caracterización y análisis de rendimiento de redes, dinámica de redes, diseño de redes",
@@ -1220,25 +1060,25 @@ function App() {
         title: "Noticias Académicas",
         items: [
           {
-            title: "Prof. Cong Li gana Premio Especial en los Premios de Excelencia de Innovación de Código Abierto de Shanghai 2024",
+            title: "Cong Li gana Premio Especial en los Premios de Excelencia de Innovación de Código Abierto de Shanghai 2024",
             source: "Laboratorio de Redes Adaptativas y Control, Universidad de Fudan",
             year: "2024",
             link: "Leer más"
           },
           {
-            title: "Prof. Cong Li preside el intercambio académico sobre nuevos avances en dinámica de orden superior de redes complejas",
+            title: "Cong Li preside el intercambio académico sobre nuevos avances en dinámica de orden superior de redes complejas",
             source: "Laboratorio de Redes Adaptativas y Control, Universidad de Fudan",
             year: "2024",
             link: "Leer más"
           },
           {
-            title: "Prof. Cong Li gana tercer premio en los Premios de Logros Docentes 2022 de la Sociedad de Computación de Shanghai",
+            title: "Cong Li gana tercer premio en los Premios de Logros Docentes 2022 de la Sociedad de Computación de Shanghai",
             source: "Sociedad de Computación de Shanghai",
             year: "2022",
             link: "Leer más"
           },
           {
-            title: "Prof. Cong Li gana el Premio del Decano de la Facultad 2020",
+            title: "Cong Li gana el Premio del Decano de la Facultad 2020",
             source: "Facultad de Ciencia y Tecnología de la Información",
             year: "2020",
             link: "Leer más"
@@ -1248,11 +1088,11 @@ function App() {
       links: {
         title: "Enlaces Relacionados",
         items: [
-          { name: "Facultad de Ciencia y Tecnología de la Información", href: "https://www.it.fudan.edu.cn/" },
-          { name: "Página de Investigación de Fudan", href: "http://www.it.fudan.edu.cn/Data/View/1178" },
+          { name: "Facultad de Ciencia y Tecnología de la Información", href: "https://fit.fudan.edu.cn/" },
+          { name: "Página de Investigación de Fudan", href: "https://fit.fudan.edu.cn/Data/View/1178" },
           { name: "Laboratorio de Redes Adaptativas y Control", href: "https://can.fudan.edu.cn/welcome_cn/" },
           { name: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ" },
-          { name: "Página del Laboratorio", href: "https://can.fudan.edu.cn/author/licong/" },
+          { name: "Página del Laboratorio", href: "https://can.fudan.edu.cn/dr-cong-li/" },
           { name: "ResearchGate", href: "https://www.researchgate.net/profile/Cong-Li-27" }
         ]
       },
@@ -1298,9 +1138,9 @@ function App() {
   ];
   const paperGuide: Record<SiteLanguage, { title: string; body: string; cta: string }> = {
     zh: {
-      title: '论文逐篇解读与分析',
-      body: '按复杂网络、网络科学、传播动力学、高阶网络与 AI+网络方向整理代表论文，提供题名、作者、年份、研究问题、方法路线和主要贡献的中文导读。',
-      cta: '查看论文解读索引'
+      title: '论文目录与书目信息',
+      body: '按复杂网络、传播动力学、高阶网络与图神经网络方向整理题名、作者、出版信息与原文出处。',
+      cta: '查看论文目录'
     },
     en: {
       title: 'Paper-by-paper interpretations',
@@ -1336,125 +1176,21 @@ function App() {
 
   return (
     <div className="site-shell min-h-screen text-white relative overflow-hidden">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: {
-            opacity: 0
-          },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onClick: { 
-                enable: true, 
-                mode: "push" 
-              },
-              onHover: { 
-                enable: true, 
-                mode: "repulse",
-                parallax: {
-                  enable: true,
-                  force: 20,
-                  smooth: 20
-                }
-              },
-              resize: true
-            },
-            modes: {
-              push: { 
-                quantity: 2
-              },
-              repulse: { 
-                distance: 100, 
-                duration: 0.8,
-                factor: 3,
-                speed: 0.5,
-                maxSpeed: 20,
-                easing: "ease-out-cubic"
-              }
-            }
-          },
-          particles: {
-            color: {
-              value: ["#FF6B6B", "#4ECDC4", "#45B7D1"],
-              animation: {
-                enable: true,
-                speed: 20,
-                sync: false
-              }
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: ["#45B7D1", "#4ECDC4"],
-              opacity: 0.2,
-              width: 1
-            },
-            move: {
-              enable: true,
-              direction: "none",
-              outModes: {
-                default: "out",
-                bottom: "out",
-                left: "out",
-                right: "out",
-                top: "out"
-              },
-              random: false,
-              speed: 0.3,
-              straight: false,
-              bounce: false,
-              attract: {
-                enable: true,
-                distance: 200,
-                rotate: {
-                  x: 600,
-                  y: 600
-                }
-              }
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800
-              },
-              value: 86
-            },
-            opacity: {
-              value: 0.5,
-              random: false,
-              animation: {
-                enable: false
-              }
-            },
-            shape: {
-              type: "circle"
-            },
-            size: {
-              value: { min: 1, max: 2 },
-              random: true,
-              animation: {
-                enable: false
-              }
-            }
-          },
-          detectRetina: true
-        }}
-        className="absolute inset-0 opacity-70"
-      />
+      {showBackground && <React.Suspense fallback={null}><NetworkBackground /></React.Suspense>}
 
 <div className="relative z-10">
     <header className="site-hero max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-6 md:pt-10 md:pb-8">
         <div className="site-hero-card">
             <div className="site-profile-lockup">
                 <img
-                    src="https://qiniu.swarma.org//master/image/2a98d4e3d7567f756229659196055d30.png"
-                    alt="pic"
+                    src="/images/cong-li.png"
+                    alt="李聪 Cong Li，复旦大学未来信息创新学院"
+                    width={144}
+                    height={144}
                     className="site-avatar"
                 />
                 <div className="site-profile-copy min-w-0 text-center md:text-left">
-                    <h1 className="site-title">{content[language].title}</h1>
+                    <h1 className="site-title">{language === 'zh' ? '李聪 Cong Li' : content[language].title}</h1>
                     <div className="site-subtitle-group">
                         <p className="site-subtitle">{content[language].subtitle}</p>
                         <p className="site-affiliation">{content[language].university}</p>
@@ -1469,7 +1205,7 @@ function App() {
 
             
             <div className="site-hero-side">
-            <a href="/papers/index.html" className="site-hero-primary-link">
+            <a href="/papers/" className="site-hero-primary-link">
               <FileText className="w-5 h-5" />
               <span>{paperGuide[language].cta}</span>
               <ArrowRight className="w-4 h-4" />
@@ -1701,7 +1437,7 @@ function App() {
               {content[language].sections.publications}
             </h2>
 
-            <a href="/papers/index.html" className="site-card site-feature-card mb-8">
+            <a href="/papers/" className="site-card site-feature-card mb-8">
               <div>
                 <p className="site-card-eyebrow">论文导读</p>
                 <h3 className="font-semibold mb-2">{paperGuide[language].title}</h3>
@@ -1722,7 +1458,7 @@ function App() {
                       <>
                         <Disclosure.Button className="site-disclosure-button">
                           <div className="text-left">
-                            <h4 className="font-semibold">{book[language]}</h4>
+                            <h4 className="font-semibold">{book[language === 'zh' || language === 'hk' ? 'zh' : 'en']}</h4>
                             <p className="text-sm text-gray-300">{book.authors}, {book.year}</p>
                           </div>
                           {open ? (
@@ -1731,11 +1467,11 @@ function App() {
                             <ChevronDown className="w-5 h-5 text-gray-400" />
                           )}
                         </Disclosure.Button>
-                        <Disclosure.Panel className="site-disclosure-panel">
+                        <Disclosure.Panel unmount={false} className="site-disclosure-panel">
                           <div className="flex gap-6">
                             <img 
                               src={book.cover} 
-                              alt={book[language]}
+                              alt={book[language === 'zh' || language === 'hk' ? 'zh' : 'en']}
                               className="w-32 h-auto rounded-lg shadow-lg"
                             />
                             <div className="space-y-2">
@@ -1780,7 +1516,7 @@ function App() {
                       <>
                         <Disclosure.Button className="site-disclosure-button">
                           <div className="text-left">
-                            <h4 className="font-semibold">{paper[language]}</h4>
+                            <h4 className="font-semibold">{paper[language === 'zh' || language === 'hk' ? 'zh' : 'en']}</h4>
                             <p className="text-sm text-gray-300">
                               {paper.authors}, {paper.journal}, {paper.year}
                             </p>
@@ -1791,7 +1527,7 @@ function App() {
                             <ChevronDown className="w-5 h-5 text-gray-400" />
                           )}
                         </Disclosure.Button>
-                        <Disclosure.Panel className="site-disclosure-panel">
+                        <Disclosure.Panel unmount={false} className="site-disclosure-panel">
                           <div className="space-y-2">
                             <p className="text-purple-300">{paper[language === 'zh' ? 'en' : 'zh']}</p>
                             <p className="text-sm text-gray-300">
@@ -1806,7 +1542,7 @@ function App() {
                               className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition mt-2"
                             >
                               <ExternalLink className="w-4 h-4" />
-                              {content[language].publications.googleScholar}
+                              DOI · {paper.year}
                             </a>
                           </div>
                         </Disclosure.Panel>

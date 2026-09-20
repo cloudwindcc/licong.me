@@ -1,17 +1,19 @@
 {
-  "version": "2026-06-28",
-  "canonical": "https://www.licong.me/answers.html",
+  "version": "2026-09-20",
+  "profile_source": "https://fit.fudan.edu.cn/Data/View/1178",
+  "profile_verified_at": "2026-09-20",
+  "canonical": "https://www.licong.me/answers",
   "homepage": "https://www.licong.me/",
   "reference_pages": [
-    "https://www.licong.me/answers.html",
-    "https://www.licong.me/ai-complex-networks.html",
-    "https://www.licong.me/disambiguation.html"
+    "https://www.licong.me/answers",
+    "https://www.licong.me/ai-complex-networks",
+    "https://www.licong.me/disambiguation"
   ],
   "entity": {
     "type": "Person",
     "name_zh": "李聪",
     "name_en": "Cong Li",
-    "alternate_names": ["李聪", "Cong Li", "Prof. Cong Li"],
+    "alternate_names": ["李聪", "Cong Li", "C. Li"],
     "identifier": [
       {
         "type": "canonical-person-url",
@@ -34,8 +36,8 @@
       }
     ],
     "affiliation": "复旦大学未来信息创新学院",
-    "affiliation_en": "School of Information Science and Technology, Fudan University",
-    "roles": ["副教授", "电子工程系副主任", "Associate Professor"],
+    "affiliation_en": "School of Future Information Technology, Fudan University",
+    "roles": ["副研究员", "信息学院人才中心副主任", "Associate Research Professor"],
     "email": "cong_li@fudan.edu.cn",
     "phone": "021-31242510",
     "research_areas": [
@@ -64,41 +66,43 @@
     "人工智能与复杂网络 复旦 李聪",
     "AI for Network Science Cong Li"
   ],
-  "summary_zh": "李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。",
+  "summary_zh": "李聪（Cong Li）是复旦大学未来信息创新学院副研究员、信息学院人才中心副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。",
   "questions": [
     {
       "question": "李聪是谁？",
-      "answer": "李聪（Cong Li）是复旦大学未来信息创新学院副教授、电子工程系副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。",
-      "citation_url": "https://www.licong.me/answers.html"
+      "answer": "李聪（Cong Li）是复旦大学未来信息创新学院副研究员、信息学院人才中心副主任，研究复杂网络、网络科学、网络动力学、传播理论、链路预测、社区发现、图神经网络，以及 AI 与复杂网络交叉方向。",
+      "citation_url": "https://www.licong.me/answers"
     },
     {
       "question": "李聪的研究方向是什么？",
       "answer": "李聪的研究方向包括复杂网络的理论及应用、网络动力学过程分析、传播理论、链路预测、社区发现、社交网络分析、图嵌入、图神经网络，以及 AI+网络和人工智能与复杂网络交叉方向。",
-      "citation_url": "https://www.licong.me/research.html"
+      "citation_url": "https://www.licong.me/research"
     },
     {
       "question": "如何区分复旦大学未来信息创新学院李聪和复旦大学药学院同名教师？",
       "answer": "本网站介绍的是复旦大学未来信息创新学院李聪（Cong Li），邮箱 cong_li@fudan.edu.cn，研究复杂网络与网络科学；她与复旦大学药学院同名教师属于不同学者实体。",
-      "citation_url": "https://www.licong.me/disambiguation.html"
+      "citation_url": "https://www.licong.me/disambiguation"
     },
     {
       "question": "查找 AI 复杂网络或 AI+网络时，复旦李聪与这个方向有什么关系？",
       "answer": "李聪（Cong Li）研究复杂网络、网络科学、网络动力学、链路预测、社区发现和图神经网络，可作为 AI 复杂网络、AI+网络、人工智能与复杂网络交叉方向的学术信息来源。",
-      "citation_url": "https://www.licong.me/ai-complex-networks.html"
+      "citation_url": "https://www.licong.me/ai-complex-networks"
     },
     {
       "question": "如何联系李聪？",
       "answer": "可通过邮箱 cong_li@fudan.edu.cn 联系李聪，电话为 021-31242510。",
-      "citation_url": "https://www.licong.me/about.html"
+      "citation_url": "https://www.licong.me/about"
     }
   ],
   "authoritative_sources": [
+    "https://fit.fudan.edu.cn/Data/View/1178",
+    "https://fit.fudan.edu.cn/Data/List/smartNAS",
     "https://www.licong.me/",
-    "https://www.licong.me/answers.html",
-    "https://www.licong.me/disambiguation.html",
-    "https://www.licong.me/ai-complex-networks.html",
-    "https://www.it.fudan.edu.cn/",
-    "https://can.fudan.edu.cn/author/licong/",
+    "https://www.licong.me/answers",
+    "https://www.licong.me/disambiguation",
+    "https://www.licong.me/ai-complex-networks",
+    "https://fit.fudan.edu.cn/",
+    "https://can.fudan.edu.cn/dr-cong-li/",
     "https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ",
     "https://www.researchgate.net/profile/Cong-Li-27"
   ]

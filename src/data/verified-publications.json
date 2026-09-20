@@ -1,0 +1,66 @@
+{
+  "verifiedAt": "2026-09-20",
+  "source": "https://fit.fudan.edu.cn/Data/View/1178",
+  "papers": [
+    {
+      "slug": "adaptive-overlap-penalization-hypergraph-influence-maximization",
+      "title": "Adaptive Overlap Penalization and Probabilistic Modeling in Hypergraph Influence Maximization",
+      "titleZh": "超图影响力最大化中的自适应重叠惩罚与概率建模",
+      "authors": "L. Y. Wu, C. Li, B. Qu, X. Li",
+      "journal": "Information Processing & Management",
+      "details": "63, 104594",
+      "year": "2026",
+      "doi": "10.1016/j.ipm.2025.104594"
+    },
+    {
+      "slug": "balancer-temporal-knowledge-graph-embedding",
+      "title": "Balancer: Temporal knowledge graph embedding for novel events reasoning with contrastive learning",
+      "titleZh": "Balancer：结合对比学习的时序知识图谱嵌入与新事件推理",
+      "authors": "Z. Y. Kuang, B. Qu, X. Li, C. Li",
+      "journal": "Knowledge-Based Systems",
+      "details": "333, 114984",
+      "year": "2026",
+      "doi": "10.1016/j.knosys.2025.114984"
+    },
+    {
+      "slug": "human-spatio-temporal-behaviors-functionality-social-networks",
+      "title": "How Human Spatio-Temporal Behaviors Facilitate Epidemics in Functionality Social Networks",
+      "titleZh": "人类时空行为如何影响功能性社交网络中的流行传播",
+      "authors": "H. Lin, Z. Jin, X. Li, C. Li",
+      "journal": "IEEE Transactions on Network Science and Engineering",
+      "details": "13, 3240-3255",
+      "year": "2026",
+      "doi": "10.1109/TNSE.2025.3628855"
+    },
+    {
+      "slug": "higher-order-epidemic-spreading-simplicial-networks",
+      "title": "Higher Order Epidemic Spreading in Simplicial Networks",
+      "titleZh": "单纯形网络中的高阶流行传播",
+      "authors": "Y. Zhao, C. Li, D. H. Shi, G. R. Chen, X. Li",
+      "journal": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+      "details": "55(11), 7714-7728",
+      "year": "2025",
+      "doi": "10.1109/TSMC.2025.3601832"
+    },
+    {
+      "slug": "target-controllability-complex-networks-greedy-optimization",
+      "title": "Target Controllability of Complex Networks Based on Greedy Optimization",
+      "titleZh": "基于贪心优化的复杂网络目标可控性",
+      "authors": "J. Ding, Y. Zhuo, X. Hu, Y. Zhao, C. Li, X. Li",
+      "journal": "IEEE Transactions on Control of Network Systems",
+      "details": "12(4), 2630-2641",
+      "year": "2025",
+      "doi": "10.1109/TCNS.2025.3585397"
+    },
+    {
+      "slug": "controlling-epidemics-information-dynamics-neural-ode",
+      "title": "Controlling Epidemics with Information Dynamics: A Neural ODE Approach",
+      "titleZh": "结合信息动力学与神经常微分方程的流行传播控制",
+      "authors": "D. Han, S. Jin, C. Li",
+      "journal": "IEEE Transactions on Computational Social Systems",
+      "details": "12(6), 4179-4192",
+      "year": "2025",
+      "doi": "10.1109/TCSS.2025.3569393"
+    }
+  ]
+}

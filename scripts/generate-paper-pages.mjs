@@ -7,12 +7,14 @@ const rootDir = join(__dirname, '..');
 const publicDir = join(rootDir, 'public');
 const papersDir = join(publicDir, 'papers');
 const dataDir = join(publicDir, 'data');
-const today = '2026-06-28';
+const today = '2026-09-20';
 const site = 'https://www.licong.me';
-const papersIndexPath = '/papers/index.html';
+const papersIndexPath = '/papers/';
 const papersIndexUrl = `${site}${papersIndexPath}`;
 const scholarProfile = 'https://scholar.google.com/citations?hl=en&user=S7-6p4MAAAAJ';
 const canFaculty = 'https://can.fudan.edu.cn/team/faculty/';
+const facultyProfile = 'https://fit.fudan.edu.cn/Data/View/1178';
+const verified = JSON.parse(readFileSync(join(rootDir, 'src/data/verified-publications.json'), 'utf8'));
 
 const papers = [
   {
@@ -633,59 +635,12 @@ function inferCategory(paper) {
   return '复杂网络理论与应用';
 }
 
-function inferQuestion(paper) {
-  const category = inferCategory(paper);
-  if (category === '网络传播与流行病动力学') {
-    return `这篇论文关注 ${firstTopic(paper)} 场景下传播过程如何发生、何时爆发以及怎样干预。对“网络上的流行传播”来说，关键不是只看单个节点，而是看节点连接、时间变化、行为选择和信息传播如何共同改变阈值与风险。`;
-  }
-  if (category === '高阶网络与超图') {
-    return `这篇论文把研究对象从普通边关系推进到 ${firstTopic(paper)}。它关心的问题是：当多个节点以团、单纯形或超边方式同时相互作用时，传统二元网络指标是否仍然足够，以及怎样刻画新的结构重要性和动力学影响。`;
-  }
-  if (category === 'AI 与网络科学') {
-    return `这篇论文面向 ${firstTopic(paper)}，讨论如何用机器学习或表征学习补足传统网络模型在预测、分类或推理上的限制。其核心问题是把网络结构、属性、时序或高阶关系转化为可学习的表示。`;
-  }
-  if (category === '网络结构与控制') {
-    return `这篇论文围绕 ${firstTopic(paper)} 展开，关注网络结构指标如何影响稳定性、可控性或传播能力。它把图谱、特征向量、路径或控制节点等对象作为理解复杂系统的入口。`;
-  }
-  if (category === '复杂网络应用') {
-    return `这篇论文把复杂网络方法用于 ${firstTopic(paper)} 等实际系统，核心问题是如何从真实数据中提取关系结构，并让网络指标服务于预测、解释或决策。`;
-  }
-  return `这篇论文围绕 ${firstTopic(paper)} 展开，讨论复杂网络理论如何描述系统结构、动力学过程和可观测行为之间的关系。`;
-}
-
-function inferMethod(paper) {
-  const text = `${paper.title} ${paper.topics.join(' ')}`.toLowerCase();
-  if (/graph neural|neural ode|attention|deep learning|embedding|representation|knowledge graph/.test(text)) {
-    return '方法上侧重把网络拓扑、节点属性、时序关系或高阶结构编码成模型可学习的表示，再用于阈值预测、动态预测、分类、推荐或影响力估计。';
-  }
-  if (/spectral|eigen|radius|fundamental weight|effective resistance/.test(text)) {
-    return '方法上偏向谱图理论与线性代数视角，通过特征值、特征向量、有效电阻或相关界限解释网络结构变化对整体系统性质的影响。';
-  }
-  if (/vaccin|game|social cost|zero-determinant|public goods/.test(text)) {
-    return '方法上把传播动力学与博弈、成本、行为感知或策略选择结合起来，使干预问题不只停留在“是否接种”，还考虑个体差异和社会收益。';
-  }
-  if (/temporal|time-varying|contact memory|spatio-temporal|location/.test(text)) {
-    return '方法上强调时间信息：节点关系不是静态边，而是随时间出现、消失或携带记忆效应的交互序列，因此需要时态网络或活动驱动模型。';
-  }
-  if (/higher-order|hypergraph|simplicial|clique/.test(text)) {
-    return '方法上使用高阶网络、超图、团结构或单纯形表示，把多节点共同交互显式纳入建模，而不是把所有关系都压缩成两两边。';
-  }
-  return '方法上通常结合复杂网络建模、指标设计、动力学分析和真实数据验证，在理论模型与应用场景之间建立可解释的桥梁。';
-}
-
-function inferContribution(paper) {
-  return `从题名和公开索引信息看，论文的贡献在于把“${firstTopic(paper)}”变成一个可被计算、比较或预测的网络科学问题。它为李聪教授关于复杂网络结构、传播动力学、网络控制和 AI+网络的研究谱系补上了一个具体切面。`;
-}
-
-function inferReadingNote(paper) {
-  const category = inferCategory(paper);
-  return `阅读这篇论文时，可以把题名、作者、年份、期刊/会议和主题词放在一起理解：它属于李聪（Cong Li）在复旦大学未来信息创新学院围绕复杂网络、网络科学与${category}形成的研究脉络。本页先给出公开书目信息，再用中文梳理研究问题、方法路线和主要贡献，便于读者快速判断它与相关研究方向的关系。`;
-}
 
 function paperJsonLd(paper) {
   const authors = paper.authors.split(',').map((name) => ({
     '@type': 'Person',
-    name: name.trim()
+    name: name.trim(),
+    ...(/^C\.\s*Li$/.test(name.trim()) ? { '@id': `${site}/#person` } : {})
   }));
   return {
     '@context': 'https://schema.org',
@@ -695,7 +650,7 @@ function paperJsonLd(paper) {
         '@id': `${site}/papers/${paper.slug}.html#article`,
         url: `${site}/papers/${paper.slug}.html`,
         name: paper.title,
-        headline: `${paper.title} - 李聪论文解读`,
+        headline: paper.title,
         author: authors,
         datePublished: paper.year,
         isPartOf: {
@@ -706,15 +661,19 @@ function paperJsonLd(paper) {
           { '@type': 'Thing', name: inferCategory(paper) },
           ...paper.topics.map((topic) => ({ '@type': 'Thing', name: topic }))
         ],
-        description: `${paper.title} 的中文解读页面，整理论文公开书目信息、研究问题、方法路线和主要贡献。`,
-        sameAs: scholarProfile,
+        description: `${paper.title}，${paper.authors}，${paper.venue}。`,
+        ...(paper.doi ? {
+          sameAs: `https://doi.org/${paper.doi}`,
+          identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: paper.doi },
+          citation: { '@type': 'WebPage', url: facultyProfile }
+        } : {}),
         mainEntityOfPage: `${site}/papers/${paper.slug}.html`
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: '首页', item: site },
-          { '@type': 'ListItem', position: 2, name: '论文逐篇解读', item: papersIndexUrl },
+          { '@type': 'ListItem', position: 2, name: '论文目录', item: papersIndexUrl },
           { '@type': 'ListItem', position: 3, name: paper.title, item: `${site}/papers/${paper.slug}.html` }
         ]
       }
@@ -725,21 +684,23 @@ function paperJsonLd(paper) {
 function renderNav() {
   return `<nav>
       <a href="/">首页</a>
-      <a href="/about.html">个人简介</a>
-      <a href="/research.html">研究方向</a>
-      <a href="/publications.html">论文与著作</a>
-      <a href="${papersIndexPath}">论文解读</a>
-      <a href="/disambiguation.html">同名区分</a>
+      <a href="/about">个人简介</a>
+      <a href="/research">研究方向</a>
+      <a href="/publications">论文与著作</a>
+      <a href="${papersIndexPath}">论文资料</a>
+      <a href="/disambiguation">同名区分</a>
     </nav>`;
 }
 
 function renderPaperPage(paper) {
   const category = inferCategory(paper);
-  const title = `${paper.title} - 李聪论文解读`;
-  const description = `${paper.title} 的中文解读：作者、年份、期刊会议、研究问题、方法路线、主要贡献和阅读提示。`;
+  const title = `${paper.title} | 李聪 Cong Li`;
+  const description = `${paper.title}；${paper.authors}；${paper.venue}。论文书目信息与原文入口。`;
   const keywords = ['李聪', 'Cong Li', '复旦大学', '未来信息创新学院', category, ...paper.topics].join(', ');
   const topics = paper.topics.map((topic) => `<span>${escapeHtml(topic)}</span>`).join('');
-  const citations = paper.citations ? `<dd>${escapeHtml(paper.citations)}（Google Scholar 动态指标，可能变化）</dd>` : '<dd>公开索引暂未显示或动态变化</dd>';
+  const doiRow = paper.doi
+    ? `          <dt>DOI</dt><dd><a href="https://doi.org/${escapeHtml(paper.doi)}">${escapeHtml(paper.doi)}</a></dd>`
+    : '';
   return `<!doctype html>
 <html lang="zh-CN">
   <head>
@@ -757,10 +718,10 @@ function renderPaperPage(paper) {
   <body>
     ${renderNav()}
     <main class="paper-page">
-      <p class="breadcrumbs"><a href="/">首页</a> / <a href="${papersIndexPath}">论文逐篇解读</a> / ${escapeHtml(paper.year)}</p>
+      <p class="breadcrumbs"><a href="/">首页</a> / <a href="${papersIndexPath}">论文目录</a> / ${escapeHtml(paper.year)}</p>
       <h1>${escapeHtml(paper.title)}</h1>
       <p class="lead">
-        这是李聪（Cong Li）复旦大学未来信息创新学院复杂网络与网络科学方向论文的独立解读页，面向希望快速了解论文背景、方法与贡献的读者。
+        ${escapeHtml(paper.titleZh || paper.title)}。本页整理作者、出版信息、研究主题及资料出处。
       </p>
       <div class="topic-tags">${topics}</div>
 
@@ -771,41 +732,20 @@ function renderPaperPage(paper) {
           <dt>年份</dt><dd>${escapeHtml(paper.year)}</dd>
           <dt>期刊/会议</dt><dd>${escapeHtml(paper.venue)}</dd>
           <dt>主题分类</dt><dd>${escapeHtml(category)}</dd>
-          <dt>引用次数</dt>${citations}
-          <dt>资料来源</dt><dd><a href="${scholarProfile}">Google Scholar 个人主页</a>；<a href="${canFaculty}">复旦 CAN Lab Faculty 页面</a></dd>
+${doiRow}
+          <dt>资料来源</dt><dd><a href="${facultyProfile}">复旦大学李聪教师主页</a>；<a href="${scholarProfile}">Google Scholar</a></dd>
         </dl>
       </section>
 
-      <section>
-        <h2>这篇论文解决什么问题？</h2>
-        <p>${escapeHtml(inferQuestion(paper))}</p>
+      <section id="reference">
+        <h2>书目引用</h2>
+        <p>${escapeHtml(paper.authors)}. <cite>${escapeHtml(paper.title)}</cite>. ${escapeHtml(paper.venue)}.${paper.doi ? ` DOI: <a href="https://doi.org/${escapeHtml(paper.doi)}">${escapeHtml(paper.doi)}</a>.` : ''}</p>
+        <p class="source-note">研究方法、实验条件与结论请以原文为准；主题分类用于浏览目录。</p>
       </section>
-
       <section>
-        <h2>方法与技术路线</h2>
-        <p>${escapeHtml(inferMethod(paper))}</p>
+        <h2>相关论文</h2>
+        <ul>${papers.filter((other) => other.slug !== paper.slug && inferCategory(other) === category).slice(0, 4).map((other) => `<li><a href="/papers/${other.slug}.html">${escapeHtml(other.title)}</a>（${escapeHtml(other.year)}）</li>`).join('')}</ul>
       </section>
-
-      <section>
-        <h2>主要贡献</h2>
-        <p>${escapeHtml(inferContribution(paper))}</p>
-      </section>
-
-      <section>
-        <h2>阅读提示</h2>
-        <p>${escapeHtml(inferReadingNote(paper))}</p>
-      </section>
-
-      <section>
-        <h2>论文定位</h2>
-        <blockquote>
-          ${escapeHtml(paper.title)} 是李聪（Cong Li）在 ${escapeHtml(category)} 方向的代表性论文之一，公开索引信息显示其发表于 ${escapeHtml(paper.venue)}。从研究主题看，该工作与复旦大学未来信息创新学院复杂网络、网络科学与 AI+网络研究谱系中的相关问题相互呼应。
-        </blockquote>
-      </section>
-
-      <p class="source-note">
-        注：本页解读基于公开题名、作者、年份、期刊/会议和 Google Scholar 索引信息整理，不替代论文全文、DOI 页面或出版社正式版本。后续可继续补充 DOI、摘要、全文链接和更细的段落级解读。
-      </p>
     </main>
   </body>
 </html>
@@ -825,14 +765,13 @@ function renderIndexPage() {
         </article>`;
   }).join('\n');
 
-  const lowConfidenceList = lowConfidenceExamples.map((title) => `<li>${escapeHtml(title)}</li>`).join('');
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': `${papersIndexUrl}#page`,
     url: papersIndexUrl,
-    name: '李聪 Cong Li 论文逐篇解读',
-    description: '复旦大学未来信息创新学院李聪复杂网络、网络科学、网络传播与 AI+网络方向论文的逐篇中文解读索引。',
+    name: '李聪 Cong Li 论文目录',
+    description: '复旦大学未来信息创新学院李聪的论文目录、书目信息及原文出处。',
     about: { '@id': `${site}/#person` },
     dateModified: today,
     hasPart: papers.map((paper) => ({
@@ -847,9 +786,9 @@ function renderIndexPage() {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>李聪 Cong Li - 论文逐篇解读与分析</title>
+    <title>李聪 Cong Li - 论文目录与书目信息</title>
     <meta name="description" content="复旦大学未来信息创新学院李聪复杂网络、网络科学、网络传播、高阶网络、图神经网络和 AI+网络方向论文的逐篇中文解读页面。" />
-    <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 复杂网络, 网络科学, 论文解读" />
+    <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 复杂网络, 网络科学, 论文资料" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="${papersIndexUrl}" />
@@ -859,18 +798,18 @@ function renderIndexPage() {
   <body>
     ${renderNav()}
     <main>
-      <h1>李聪 Cong Li 论文逐篇解读与分析</h1>
+      <h1>李聪 Cong Li 论文目录与书目信息</h1>
       <p class="lead">
-        本页整理李聪（Cong Li）在复杂网络、网络科学、传播动力学、高阶网络与图神经网络等方向的论文解读。每篇论文设有独立页面，集中呈现题名、作者、年份、来源、研究问题、方法路线和主要贡献，方便读者按主题逐篇查阅。
+        本页整理李聪（Cong Li）在复杂网络、传播动力学、高阶网络与图神经网络等方向的论文书目，提供作者、出版信息与原文出处。
       </p>
 
       <section class="fact">
-        <h2>本批次页面范围</h2>
+        <h2>查阅说明</h2>
         <p>
-          本索引优先覆盖 Google Scholar 公开资料中明显属于复旦大学未来信息创新学院李聪复杂网络、网络科学、传播动力学、高阶网络、图神经网络、网络应用方向的论文与章节。为避免同名作者混淆，地学、RFID、生物材料、医学外科等低置信或明显跨实体条目暂不生成独立页。
+          可按题名、年份与研究主题浏览论文。作者归属请结合学院教师主页和论文原文核对。
         </p>
         <p>
-          当前已生成 <strong>${papers.length}</strong> 个独立论文解读页面；后续可以继续补 DOI、摘要、出版社链接、PDF 链接和更精细的逐段解读。
+          目录共收录 <strong>${papers.length}</strong> 条书目。<a href="${facultyProfile}">复旦大学教师主页</a>提供个人资料和代表性论文目录。
         </p>
       </section>
 
@@ -881,13 +820,6 @@ function renderIndexPage() {
         </div>
       </section>
 
-      <section>
-        <h2>同名与低置信条目处理</h2>
-        <p>
-          Google Scholar 中可能混入其他 Cong Li / C. Li 的成果。为避免同名作者混淆，本批次没有把以下类型直接归入李聪教授复杂网络论文页：
-        </p>
-        <ul>${lowConfidenceList}</ul>
-      </section>
     </main>
   </body>
 </html>
@@ -904,7 +836,7 @@ function renderPublicationsPage() {
         '@id': `${site}/publications.html#book-spreading-complex-networks`,
         name: 'Theory of Spreading on Complex Networks: Hidden Rules of Epidemics',
         inLanguage: ['zh-CN', 'en'],
-        isbn: '978-94-6186-364-5',
+        isbn: '978-7-04-054605-7',
         datePublished: '2020',
         author: [
           { '@type': 'Person', name: 'Li Xiang' },
@@ -942,26 +874,26 @@ function renderPublicationsPage() {
     <main>
       <h1>论文与著作</h1>
       <p>
-        李聪的学术工作聚焦复杂网络、网络科学、网络动力学、传播理论、高阶网络、网络表征学习和 AI+网络。本站按论文逐篇整理相关公开书目信息与中文解读，帮助读者从主题、方法和贡献三个层面理解其研究脉络。
+        李聪的学术工作聚焦复杂网络、网络动力学、传播理论、高阶网络、网络表征学习和人工智能。以下为论文书目与著作资料。
       </p>
 
       <section class="fact">
-        <h2>逐篇论文解读入口</h2>
+        <h2>论文目录</h2>
         <p>
-          当前已生成 <strong>${papers.length}</strong> 个独立页面，每页包含论文题名、作者、年份、来源、研究问题、技术路线、贡献解读和阅读提示。
+          目录包含 <strong>${papers.length}</strong> 条书目，可查阅论文题名、作者、年份、出版信息及资料来源。
         </p>
-        <p><a href="${papersIndexPath}">打开论文逐篇解读索引</a></p>
+        <p><a href="${papersIndexPath}">打开论文目录索引</a></p>
       </section>
 
       <h2>著作</h2>
       <ul>
         <li>
           <strong>Theory of Spreading on Complex Networks: Hidden Rules of Epidemics</strong>，
-          Li Xiang, Li Cong, Wang Jian Bo，2020，ISBN 978-94-6186-364-5。
+          Li Xiang, Li Cong, Wang Jian Bo，2020，ISBN 978-7-04-054605-7。<a href="${facultyProfile}">学院著作目录</a>。
         </li>
       </ul>
 
-      <h2>代表性论文解读</h2>
+      <h2>代表性论文资料</h2>
       <ul>${featured}</ul>
 
       <h2>论文索引</h2>
@@ -990,46 +922,22 @@ function buildManifest() {
       ...paper,
       url: `${site}/papers/${paper.slug}.html`,
       category: inferCategory(paper),
-      analysis: {
-        question: inferQuestion(paper),
-        method: inferMethod(paper),
-        contribution: inferContribution(paper),
-        readingNote: inferReadingNote(paper)
-      }
+      ...(paper.doi ? { doiUrl: `https://doi.org/${paper.doi}`, source: facultyProfile, verifiedAt: verified.verifiedAt } : {})
     }))
   };
 }
 
-function renderSitemap() {
-  const existing = readFileSync(join(publicDir, 'sitemap.xml'), 'utf8');
-  const baseUrls = [...existing.matchAll(/<loc>(.*?)<\/loc>/g)]
-    .map((match) => match[1])
-    .filter((url) => !url.startsWith(`${site}/papers/`));
-  const allUrls = [
-    ...baseUrls,
-    papersIndexUrl,
-    ...papers.map((paper) => `${site}/papers/${paper.slug}.html`)
-  ];
-  const blocks = [...new Set(allUrls)].map((url) => {
-    const isPaper = url.includes('/papers/');
-    return `  <url>
-    <loc>${url}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${isPaper ? 'monthly' : 'weekly'}</changefreq>
-    <priority>${url.endsWith('/papers/index.html') ? '0.9' : isPaper ? '0.72' : '0.8'}</priority>
-  </url>`;
-  }).join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${blocks}
-</urlset>
-`;
-}
 
 const excludedLowConfidenceExamples = lowConfidenceExamples;
 
 mkdirSync(papersDir, { recursive: true });
 mkdirSync(dataDir, { recursive: true });
+
+for (const entry of verified.papers) {
+  const paper = papers.find((item) => item.slug === entry.slug);
+  if (!paper) throw new Error(`Verified paper not found: ${entry.slug}`);
+  Object.assign(paper, entry, { venue: `${entry.journal} ${entry.details}, ${entry.year}` });
+}
 
 for (const paper of papers) {
   writeFileSync(join(papersDir, `${paper.slug}.html`), renderPaperPage(paper), 'utf8');
@@ -1038,6 +946,5 @@ for (const paper of papers) {
 writeFileSync(join(papersDir, 'index.html'), renderIndexPage(), 'utf8');
 writeFileSync(join(dataDir, 'paper-analyses.json'), `${JSON.stringify(buildManifest(), null, 2)}\n`, 'utf8');
 writeFileSync(join(publicDir, 'publications.html'), renderPublicationsPage(), 'utf8');
-writeFileSync(join(publicDir, 'sitemap.xml'), renderSitemap(), 'utf8');
 
 console.log(`Generated ${papers.length} paper pages in ${papersDir}`);
