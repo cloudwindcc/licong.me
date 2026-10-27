@@ -1,20 +1,20 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { canonicalUrl, site, facultyProfile } from './site-utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, '..');
 const publicDir = join(rootDir, 'public');
 const papersDir = join(publicDir, 'papers');
 const dataDir = join(publicDir, 'data');
-const today = '2026-09-20';
-const site = 'https://www.licong.me';
+const today = '2026-10-27';
 const papersIndexPath = '/papers/';
 const papersIndexUrl = `${site}${papersIndexPath}`;
 const scholarProfile = 'https://scholar.google.com/citations?hl=en&user=S7-6p4MAAAAJ';
 const canFaculty = 'https://can.fudan.edu.cn/team/faculty/';
-const facultyProfile = 'https://fit.fudan.edu.cn/Data/View/1178';
 const verified = JSON.parse(readFileSync(join(rootDir, 'src/data/verified-publications.json'), 'utf8'));
+const readingNotes = JSON.parse(readFileSync(join(rootDir, 'src/data/paper-reading-notes.json'), 'utf8'));
 
 const papers = [
   {
@@ -621,8 +621,8 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-function firstTopic(paper) {
-  return paper.topics[0] ?? 'complex networks';
+function paperUrl(paper) {
+  return canonicalUrl(`/papers/${paper.slug}`);
 }
 
 function inferCategory(paper) {
@@ -647,8 +647,8 @@ function paperJsonLd(paper) {
     '@graph': [
       {
         '@type': 'ScholarlyArticle',
-        '@id': `${site}/papers/${paper.slug}.html#article`,
-        url: `${site}/papers/${paper.slug}.html`,
+        '@id': `${paperUrl(paper)}#article`,
+        url: paperUrl(paper),
         name: paper.title,
         headline: paper.title,
         author: authors,
@@ -665,16 +665,16 @@ function paperJsonLd(paper) {
         ...(paper.doi ? {
           sameAs: `https://doi.org/${paper.doi}`,
           identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: paper.doi },
-          citation: { '@type': 'WebPage', url: facultyProfile }
+          citation: { '@type': 'WebPage', url: readingNotes[paper.slug]?.sources[1]?.url || facultyProfile }
         } : {}),
-        mainEntityOfPage: `${site}/papers/${paper.slug}.html`
+        mainEntityOfPage: paperUrl(paper)
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: '首页', item: site },
           { '@type': 'ListItem', position: 2, name: '论文目录', item: papersIndexUrl },
-          { '@type': 'ListItem', position: 3, name: paper.title, item: `${site}/papers/${paper.slug}.html` }
+          { '@type': 'ListItem', position: 3, name: paper.title, item: paperUrl(paper) }
         ]
       }
     ]
@@ -694,8 +694,9 @@ function renderNav() {
 
 function renderPaperPage(paper) {
   const category = inferCategory(paper);
+  const note = readingNotes[paper.slug];
   const title = `${paper.title} | 李聪 Cong Li`;
-  const description = `${paper.title}；${paper.authors}；${paper.venue}。论文书目信息与原文入口。`;
+  const description = note ? `${note.titleZh}。${note.summary}` : `${paper.title}；${paper.authors}；${paper.venue}。论文书目信息与原文入口。`;
   const keywords = ['李聪', 'Cong Li', '复旦大学', '未来信息创新学院', category, ...paper.topics].join(', ');
   const topics = paper.topics.map((topic) => `<span>${escapeHtml(topic)}</span>`).join('');
   const doiRow = paper.doi
@@ -711,7 +712,7 @@ function renderPaperPage(paper) {
     <meta name="keywords" content="${escapeHtml(keywords)}" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="${site}/papers/${paper.slug}.html" />
+    <link rel="canonical" href="${paperUrl(paper)}" />
     <link rel="stylesheet" href="/static-pages.css" />
     <script type="application/ld+json">${JSON.stringify(paperJsonLd(paper), null, 6)}</script>
   </head>
@@ -724,6 +725,7 @@ function renderPaperPage(paper) {
         ${escapeHtml(paper.titleZh || paper.title)}。本页整理作者、出版信息、研究主题及资料出处。
       </p>
       <div class="topic-tags">${topics}</div>
+      ${note ? `<p>${escapeHtml(note.summary)}</p>` : ''}
 
       <section class="fact">
         <h2>论文信息</h2>
@@ -737,6 +739,8 @@ ${doiRow}
         </dl>
       </section>
 
+      ${renderReadingNote(note)}
+
       <section id="reference">
         <h2>书目引用</h2>
         <p>${escapeHtml(paper.authors)}. <cite>${escapeHtml(paper.title)}</cite>. ${escapeHtml(paper.venue)}.${paper.doi ? ` DOI: <a href="https://doi.org/${escapeHtml(paper.doi)}">${escapeHtml(paper.doi)}</a>.` : ''}</p>
@@ -744,7 +748,7 @@ ${doiRow}
       </section>
       <section>
         <h2>相关论文</h2>
-        <ul>${papers.filter((other) => other.slug !== paper.slug && inferCategory(other) === category).slice(0, 4).map((other) => `<li><a href="/papers/${other.slug}.html">${escapeHtml(other.title)}</a>（${escapeHtml(other.year)}）</li>`).join('')}</ul>
+        <ul>${papers.filter((other) => other.slug !== paper.slug && inferCategory(other) === category).slice(0, 4).map((other) => `<li><a href="${paperUrl(other)}">${escapeHtml(other.title)}</a>（${escapeHtml(other.year)}）</li>`).join('')}</ul>
       </section>
     </main>
   </body>
@@ -752,18 +756,46 @@ ${doiRow}
 `;
 }
 
-function renderIndexPage() {
-  const cards = papers.map((paper) => {
-    const category = inferCategory(paper);
-    const topics = paper.topics.slice(0, 3).map((topic) => `<span>${escapeHtml(topic)}</span>`).join('');
-    return `<article class="paper-card">
+function renderReadingNote(note) {
+  if (!note) return '';
+  return `<section class="reading-note" aria-label="论文阅读笔记">
+        <h2>${escapeHtml(note.titleZh)}</h2>
+        ${note.sections.map((section) => `<h3>${escapeHtml(section.heading)}</h3>
+        ${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n')}
+        ${section.formula ? `<p class="paper-formula">${escapeHtml(section.formula)}</p><p>${escapeHtml(section.afterFormula)}</p>` : ''}`).join('\n')}
+        <h3>原文与核对来源</h3>
+        <ul>${note.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join('')}</ul>
+        <p class="source-note">以上为依据所列资料整理的阅读笔记，核对日期：<time datetime="${escapeHtml(note.reviewedAt)}">${escapeHtml(note.reviewedAt)}</time>。</p>
+      </section>`;
+}
+
+function renderPaperCard(paper) {
+  const category = inferCategory(paper);
+  const note = readingNotes[paper.slug];
+  const topics = paper.topics.slice(0, 3).map((topic) => `<span>${escapeHtml(topic)}</span>`).join('');
+  return `<article class="paper-card">
           <p class="paper-year">${escapeHtml(paper.year)} · ${escapeHtml(category)}</p>
-          <h2><a href="/papers/${paper.slug}.html">${escapeHtml(paper.title)}</a></h2>
+          <h3><a href="${paperUrl(paper)}">${escapeHtml(paper.title)}</a></h3>
           <p>${escapeHtml(paper.authors)}</p>
           <p class="paper-venue">${escapeHtml(paper.venue)}</p>
+          ${note ? `<p class="paper-summary">${escapeHtml(note.summary)}</p>` : ''}
           <div class="topic-tags">${topics}</div>
         </article>`;
-  }).join('\n');
+}
+
+function renderIndexPage() {
+  const categories = [
+    { id: 'structure', name: '网络结构与控制' },
+    { id: 'epidemics', name: '网络传播与流行病动力学' },
+    { id: 'higher-order', name: '高阶网络与超图' },
+    { id: 'ai', name: 'AI 与网络科学' },
+    { id: 'applications', name: '复杂网络应用' },
+    { id: 'theory', name: '复杂网络理论与应用' }
+  ].map((category) => ({
+    ...category,
+    papers: papers.filter((paper) => inferCategory(paper) === category.name).sort((a, b) => Number(b.year) - Number(a.year) || a.title.localeCompare(b.title))
+  })).filter((category) => category.papers.length > 0);
+  const featured = papers.filter((paper) => readingNotes[paper.slug]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -777,7 +809,7 @@ function renderIndexPage() {
     hasPart: papers.map((paper) => ({
       '@type': 'ScholarlyArticle',
       name: paper.title,
-      url: `${site}/papers/${paper.slug}.html`
+      url: paperUrl(paper)
     }))
   };
 
@@ -787,7 +819,7 @@ function renderIndexPage() {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>李聪 Cong Li - 论文目录与书目信息</title>
-    <meta name="description" content="复旦大学未来信息创新学院李聪复杂网络、网络科学、网络传播、高阶网络、图神经网络和 AI+网络方向论文的逐篇中文解读页面。" />
+    <meta name="description" content="按研究主题与年份查阅李聪 Cong Li 的 ${papers.length} 条论文书目，涵盖网络结构与控制、传播动力学、高阶网络与图神经网络，并提供原文来源及重点论文阅读笔记。" />
     <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 复杂网络, 网络科学, 论文资料" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -813,12 +845,19 @@ function renderIndexPage() {
         </p>
       </section>
 
-      <section>
-        <h2>逐篇页面</h2>
-        <div class="paper-grid">
-          ${cards}
-        </div>
+      <section id="reading-notes" aria-labelledby="reading-notes-heading">
+        <h2 id="reading-notes-heading">重点论文阅读笔记</h2>
+        <p>以下两篇附有依据原文整理的研究问题、方法要点和资料出处。</p>
+        <ul>${featured.map((paper) => `<li><a href="${paperUrl(paper)}">${escapeHtml(readingNotes[paper.slug].titleZh)}</a>：${escapeHtml(readingNotes[paper.slug].summary)}</li>`).join('')}</ul>
       </section>
+
+      <nav class="paper-topic-nav" aria-label="按研究主题浏览">
+        ${categories.map((category) => `<a href="#${category.id}">${escapeHtml(category.name)}（${category.papers.length}）</a>`).join('\n')}
+      </nav>
+      ${categories.map((category) => `<section id="${category.id}" aria-labelledby="${category.id}-heading">
+        <h2 id="${category.id}-heading">${escapeHtml(category.name)}</h2>
+        <div class="paper-grid">${category.papers.map(renderPaperCard).join('\n')}</div>
+      </section>`).join('\n')}
 
     </main>
   </body>
@@ -827,13 +866,13 @@ function renderIndexPage() {
 }
 
 function renderPublicationsPage() {
-  const featured = papers.slice(0, 10).map((paper) => `<li><a href="/papers/${paper.slug}.html">${escapeHtml(paper.title)}</a>，${escapeHtml(paper.authors)}，${escapeHtml(paper.year)}。</li>`).join('');
+  const featured = papers.slice(0, 10).map((paper) => `<li><a href="${paperUrl(paper)}">${escapeHtml(paper.title)}</a>，${escapeHtml(paper.authors)}，${escapeHtml(paper.year)}。</li>`).join('');
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Book',
-        '@id': `${site}/publications.html#book-spreading-complex-networks`,
+        '@id': `${site}/publications#book-spreading-complex-networks`,
         name: 'Theory of Spreading on Complex Networks: Hidden Rules of Epidemics',
         inLanguage: ['zh-CN', 'en'],
         isbn: '978-7-04-054605-7',
@@ -846,8 +885,8 @@ function renderPublicationsPage() {
       },
       {
         '@type': 'CollectionPage',
-        '@id': `${site}/publications.html#page`,
-        url: `${site}/publications.html`,
+        '@id': `${site}/publications#page`,
+        url: `${site}/publications`,
         name: '李聪 Cong Li - 论文与著作',
         about: { '@id': `${site}/#person` },
         dateModified: today,
@@ -865,7 +904,7 @@ function renderPublicationsPage() {
     <meta name="description" content="李聪在复杂网络、网络科学、传播理论、高阶网络、链路预测、社区发现、图神经网络和 AI+网络方向的论文、著作与逐篇解读入口。" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="${site}/publications.html" />
+    <link rel="canonical" href="${site}/publications" />
     <link rel="stylesheet" href="/static-pages.css" />
     <script type="application/ld+json">${JSON.stringify(jsonLd, null, 6)}</script>
   </head>
@@ -920,9 +959,10 @@ function buildManifest() {
     excludedLowConfidenceExamples,
     papers: papers.map((paper) => ({
       ...paper,
-      url: `${site}/papers/${paper.slug}.html`,
+      url: paperUrl(paper),
       category: inferCategory(paper),
-      ...(paper.doi ? { doiUrl: `https://doi.org/${paper.doi}`, source: facultyProfile, verifiedAt: verified.verifiedAt } : {})
+      ...(paper.doi ? { doiUrl: `https://doi.org/${paper.doi}`, source: readingNotes[paper.slug]?.sources[1]?.url || facultyProfile, verifiedAt: readingNotes[paper.slug]?.reviewedAt || verified.verifiedAt } : {}),
+      ...(readingNotes[paper.slug] ? { readingNote: readingNotes[paper.slug] } : {})
     }))
   };
 }
@@ -939,12 +979,23 @@ for (const entry of verified.papers) {
   Object.assign(paper, entry, { venue: `${entry.journal} ${entry.details}, ${entry.year}` });
 }
 
-for (const paper of papers) {
-  writeFileSync(join(papersDir, `${paper.slug}.html`), renderPaperPage(paper), 'utf8');
+for (const [slug, note] of Object.entries(readingNotes)) {
+  const paper = papers.find((item) => item.slug === slug);
+  if (!paper) throw new Error(`Reading note has no paper: ${slug}`);
+  if (note.doi) paper.doi = note.doi;
+  paper.titleZh = note.titleZh;
 }
 
-writeFileSync(join(papersDir, 'index.html'), renderIndexPage(), 'utf8');
+function writeHtml(path, html) {
+  writeFileSync(path, html.replace(/[ \t]+$/gm, ''), 'utf8');
+}
+
+for (const paper of papers) {
+  writeHtml(join(papersDir, `${paper.slug}.html`), renderPaperPage(paper));
+}
+
+writeHtml(join(papersDir, 'index.html'), renderIndexPage());
 writeFileSync(join(dataDir, 'paper-analyses.json'), `${JSON.stringify(buildManifest(), null, 2)}\n`, 'utf8');
-writeFileSync(join(publicDir, 'publications.html'), renderPublicationsPage(), 'utf8');
+writeHtml(join(publicDir, 'publications.html'), renderPublicationsPage());
 
 console.log(`Generated ${papers.length} paper pages in ${papersDir}`);

@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bounds for the spectral radius of a graph when nodes are removed | 李聪 Cong Li</title>
-    <meta name="description" content="Bounds for the spectral radius of a graph when nodes are removed；C. Li, H. Wang, P. Van Mieghem；Linear Algebra and its Applications 437(1), 319-323, 2012。论文书目信息与原文入口。" />
+    <meta name="description" content="删除节点后的图谱半径界。给定待删除节点集合，利用原图的主特征向量估计剩余图的谱半径上下界。" />
     <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 网络结构与控制, spectral radius, node removal, graph theory" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://www.licong.me/papers/spectral-radius-when-nodes-removed.html" />
+    <link rel="canonical" href="https://www.licong.me/papers/spectral-radius-when-nodes-removed" />
     <link rel="stylesheet" href="/static-pages.css" />
     <script type="application/ld+json">{
       "@context": "https://schema.org",
       "@graph": [
             {
                   "@type": "ScholarlyArticle",
-                  "@id": "https://www.licong.me/papers/spectral-radius-when-nodes-removed.html#article",
-                  "url": "https://www.licong.me/papers/spectral-radius-when-nodes-removed.html",
+                  "@id": "https://www.licong.me/papers/spectral-radius-when-nodes-removed#article",
+                  "url": "https://www.licong.me/papers/spectral-radius-when-nodes-removed",
                   "name": "Bounds for the spectral radius of a graph when nodes are removed",
                   "headline": "Bounds for the spectral radius of a graph when nodes are removed",
                   "author": [
@@ -58,7 +58,17 @@
                         }
                   ],
                   "description": "Bounds for the spectral radius of a graph when nodes are removed，C. Li, H. Wang, P. Van Mieghem，Linear Algebra and its Applications 437(1), 319-323, 2012。",
-                  "mainEntityOfPage": "https://www.licong.me/papers/spectral-radius-when-nodes-removed.html"
+                  "sameAs": "https://doi.org/10.1016/j.laa.2012.02.023",
+                  "identifier": {
+                        "@type": "PropertyValue",
+                        "propertyID": "DOI",
+                        "value": "10.1016/j.laa.2012.02.023"
+                  },
+                  "citation": {
+                        "@type": "WebPage",
+                        "url": "https://research.tudelft.nl/en/publications/bounds-for-the-spectral-radius-of-a-graph-when-nodes-are-removed/"
+                  },
+                  "mainEntityOfPage": "https://www.licong.me/papers/spectral-radius-when-nodes-removed"
             },
             {
                   "@type": "BreadcrumbList",
@@ -79,7 +89,7 @@
                               "@type": "ListItem",
                               "position": 3,
                               "name": "Bounds for the spectral radius of a graph when nodes are removed",
-                              "item": "https://www.licong.me/papers/spectral-radius-when-nodes-removed.html"
+                              "item": "https://www.licong.me/papers/spectral-radius-when-nodes-removed"
                         }
                   ]
             }
@@ -99,9 +109,10 @@
       <p class="breadcrumbs"><a href="/">首页</a> / <a href="/papers/">论文目录</a> / 2012</p>
       <h1>Bounds for the spectral radius of a graph when nodes are removed</h1>
       <p class="lead">
-        Bounds for the spectral radius of a graph when nodes are removed。本页整理作者、出版信息、研究主题及资料出处。
+        删除节点后的图谱半径界。本页整理作者、出版信息、研究主题及资料出处。
       </p>
       <div class="topic-tags"><span>spectral radius</span><span>node removal</span><span>graph theory</span></div>
+      <p>给定待删除节点集合，利用原图的主特征向量估计剩余图的谱半径上下界。</p>
 
       <section class="fact">
         <h2>论文信息</h2>
@@ -110,19 +121,35 @@
           <dt>年份</dt><dd>2012</dd>
           <dt>期刊/会议</dt><dd>Linear Algebra and its Applications 437(1), 319-323, 2012</dd>
           <dt>主题分类</dt><dd>网络结构与控制</dd>
-
+          <dt>DOI</dt><dd><a href="https://doi.org/10.1016/j.laa.2012.02.023">10.1016/j.laa.2012.02.023</a></dd>
           <dt>资料来源</dt><dd><a href="https://fit.fudan.edu.cn/Data/View/1178">复旦大学李聪教师主页</a>；<a href="https://scholar.google.com/citations?hl=en&user=S7-6p4MAAAAJ">Google Scholar</a></dd>
         </dl>
       </section>
 
+      <section class="reading-note" aria-label="论文阅读笔记">
+        <h2>删除节点后的图谱半径界</h2>
+        <h3>删除节点后，谱半径如何变化？</h3>
+        <p>论文研究无向图的邻接矩阵。删除节点及其关联边后，剩余图的谱半径不超过原值；定理 1 进一步用原图主特征向量和被删除节点之间的连边给出下界。</p>
+
+<h3>单节点删除的界</h3>
+        <p>令 A 为原图邻接矩阵，λ₁(A) 为谱半径，x 为满足 xᵀx = 1 的主特征向量，A₋ₙ 为删除节点 n 后的邻接矩阵。公式 (2) 给出：</p>
+        <p class="paper-formula">(1 − 2xₙ²)λ₁(A) ≤ λ₁(A₋ₙ) ≤ λ₁(A)</p><p>多节点删除还需计入被删除节点之间的连边项，具体表达式见原文公式 (1)。</p>
+<h3>最优节点选择与 NP-hard 问题应如何查阅？</h3>
+        <p>定理 1 处理给定节点集合后的谱半径界。讨论最优 k 个节点的选择或 NP-hard 证明时，需要另行明确优化目标、约束和相应复杂性论证；不能仅凭这一谱界推导该结论。</p>
+
+        <h3>原文与核对来源</h3>
+        <ul><li><a href="https://www.nas.ewi.tudelft.nl/people/Piet/papers/LAA_2012_MaxEigenvectorComponent.pdf">作者公开全文：定理 1、公式 (1)–(2)</a></li><li><a href="https://research.tudelft.nl/en/publications/bounds-for-the-spectral-radius-of-a-graph-when-nodes-are-removed/">TU Delft 论文记录与 DOI</a></li></ul>
+        <p class="source-note">以上为依据所列资料整理的阅读笔记，核对日期：<time datetime="2026-10-27">2026-10-27</time>。</p>
+      </section>
+
       <section id="reference">
         <h2>书目引用</h2>
-        <p>C. Li, H. Wang, P. Van Mieghem. <cite>Bounds for the spectral radius of a graph when nodes are removed</cite>. Linear Algebra and its Applications 437(1), 319-323, 2012.</p>
+        <p>C. Li, H. Wang, P. Van Mieghem. <cite>Bounds for the spectral radius of a graph when nodes are removed</cite>. Linear Algebra and its Applications 437(1), 319-323, 2012. DOI: <a href="https://doi.org/10.1016/j.laa.2012.02.023">10.1016/j.laa.2012.02.023</a>.</p>
         <p class="source-note">研究方法、实验条件与结论请以原文为准；主题分类用于浏览目录。</p>
       </section>
       <section>
         <h2>相关论文</h2>
-        <ul><li><a href="/papers/decreasing-spectral-radius-link-removals.html">Decreasing the spectral radius of a graph by link removals</a>（2011）</li><li><a href="/papers/degree-principal-eigenvectors-complex-networks.html">Degree and principal eigenvectors in complex networks</a>（2012）</li><li><a href="/papers/functional-regions-structural-controllability-brain-networks.html">The functional regions in structural controllability of human functional brain networks</a>（2017）</li><li><a href="/papers/average-hopcount-shortest-path-tree-like-components.html">Average hopcount of the shortest path in tree-like components with finite size</a>（2019）</li></ul>
+        <ul><li><a href="https://www.licong.me/papers/decreasing-spectral-radius-link-removals">Decreasing the spectral radius of a graph by link removals</a>（2011）</li><li><a href="https://www.licong.me/papers/degree-principal-eigenvectors-complex-networks">Degree and principal eigenvectors in complex networks</a>（2012）</li><li><a href="https://www.licong.me/papers/functional-regions-structural-controllability-brain-networks">The functional regions in structural controllability of human functional brain networks</a>（2017）</li><li><a href="https://www.licong.me/papers/average-hopcount-shortest-path-tree-like-components">Average hopcount of the shortest path in tree-like components with finite size</a>（2019）</li></ul>
       </section>
     </main>
   </body>

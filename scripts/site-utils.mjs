@@ -17,6 +17,7 @@ export function canonicalUrl(input) {
   url.protocol = 'https:';
   url.hostname = 'www.licong.me';
   url.pathname = url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  if (url.pathname === '/papers') url.pathname = '/papers/';
   return url.href;
 }
 

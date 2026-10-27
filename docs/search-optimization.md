@@ -36,6 +36,18 @@ scripts/check-browser.mjs runs desktop/mobile and no-JavaScript checks. Supply P
 
 Verify remaining bibliography entries against publisher pages, DOI metadata or the faculty list before expanding them. Add paper-specific explanations only after reading the abstract/full text and checking methods, conditions and limitations. Do not reconstruct findings from titles. Preserve a source and review date per verified entry; do not invent authorship, citation counts or original research claims.
 
+### Search Console follow-up: 2026-10-27
+
+The 90-day baseline (2026-07-27 through 2026-10-24) is 1,055 property impressions and 35 clicks. The latest 28 days have 266 impressions and 13 clicks, compared with 369 impressions and 12 clicks in the preceding 28 days. Average position moved from 6.70 to 9.06. Query rows cover only a small part of the totals, so they do not establish branded traffic share or the cause of the change. Property totals and URL-level totals use different aggregation rules.
+
+Paper generation now writes clean canonical URLs directly into HTML, links, JSON-LD and the paper manifest. Build finalization still normalizes metadata and derives the sitemap. The audit checks both the public sources and built output, matching each canonical to its actual route, Open Graph URL, JSON-LD and internal links.
+
+The paper directory groups all 65 records by research topic and sorts each group by year. Two source-backed reading notes live in `src/data/paper-reading-notes.json`: the node-removal spectral-radius paper (including its DOI, the single-node bound and the distinction between a bound and an optimization complexity proof), and BotScan (based on the coauthor-uploaded manuscript). Keep these notes distinct from the bibliography-only records; each note includes original sources and its review date.
+
+Production inspected during the Search Console analysis still served older canonicals. After deploying the new build, verify `/papers/`, `/about`, both reviewed papers and `/sitemap.xml`: canonical targets must return 200, old `.html` URLs must redirect to them, and sitemap URLs must use the same targets. The historical HTTP sitemap entry in Search Console has a 2016 error record; its current URL redirects to the working HTTPS sitemap. Account-side cleanup of that entry and a fresh indexing-coverage review remain separate from repository changes. A submitted URL count is not an indexed-page count.
+
+Compare another complete 28-day period after release, tracking impressions, clicks and position for the directory and reviewed papers. Record the actual release date before attributing any later movement to these changes.
+
 For the query 李聪 复旦, emphasize the positive identity: current school, department, research topics, cong_li@fudan.edu.cn and exact faculty URL. Ask the actual faculty/lab page maintainers to link to the canonical homepage; this external edit has not been performed. Do not manufacture backlinks or try to suppress the other scholar.
 
 ## Measurement
