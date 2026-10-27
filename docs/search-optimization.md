@@ -46,6 +46,8 @@ The paper directory groups all 65 records by research topic and sorts each group
 
 Production inspected during the Search Console analysis still served older canonicals. After deploying the new build, verify `/papers/`, `/about`, both reviewed papers and `/sitemap.xml`: canonical targets must return 200, old `.html` URLs must redirect to them, and sitemap URLs must use the same targets. The historical HTTP sitemap entry in Search Console has a 2016 error record; its current URL redirects to the working HTTPS sitemap. Account-side cleanup of that entry and a fresh indexing-coverage review remain separate from repository changes. A submitted URL count is not an indexed-page count.
 
+The first Cloudflare preview build used the legacy image's Node.js 18.17.1 despite the package engine requirement and failed in Undici with `File is not defined`. The root `.node-version` now selects Node.js 22 using Cloudflare's supported file-based version override. Keep this file aligned with `package.json` when upgrading the build runtime.
+
 Compare another complete 28-day period after release, tracking impressions, clicks and position for the directory and reviewed papers. Record the actual release date before attributing any later movement to these changes.
 
 For the query 李聪 复旦, emphasize the positive identity: current school, department, research topics, cong_li@fudan.edu.cn and exact faculty URL. Ask the actual faculty/lab page maintainers to link to the canonical homepage; this external edit has not been performed. Do not manufacture backlinks or try to suppress the other scholar.
