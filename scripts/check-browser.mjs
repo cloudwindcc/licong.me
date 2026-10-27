@@ -36,6 +36,10 @@ try {
         await page.locator('.paper-topic-nav a[href="#applications"]').click();
         assert.equal(new URL(page.url()).hash, '#applications');
         assert.ok(await page.locator('#applications h2').isVisible());
+        await page.locator('#reading-notes a[href="/papers/spectral-radius-when-nodes-removed"]').click();
+        assert.equal(new URL(page.url()).origin, base, 'Paper navigation must stay on the preview host');
+        await page.locator('.reading-note').waitFor({ state: 'visible' });
+        await page.goBack({ waitUntil: 'domcontentloaded' });
       }
       if (path.includes('spectral-radius-when-nodes-removed') || path.includes('botscan-unsupervised-bot-detection')) {
         assert.ok(await page.locator('.reading-note').isVisible());

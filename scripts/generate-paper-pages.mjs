@@ -621,8 +621,12 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
+function paperPath(paper) {
+  return `/papers/${paper.slug}`;
+}
+
 function paperUrl(paper) {
-  return canonicalUrl(`/papers/${paper.slug}`);
+  return canonicalUrl(paperPath(paper));
 }
 
 function inferCategory(paper) {
@@ -748,7 +752,7 @@ ${doiRow}
       </section>
       <section>
         <h2>相关论文</h2>
-        <ul>${papers.filter((other) => other.slug !== paper.slug && inferCategory(other) === category).slice(0, 4).map((other) => `<li><a href="${paperUrl(other)}">${escapeHtml(other.title)}</a>（${escapeHtml(other.year)}）</li>`).join('')}</ul>
+        <ul>${papers.filter((other) => other.slug !== paper.slug && inferCategory(other) === category).slice(0, 4).map((other) => `<li><a href="${paperPath(other)}">${escapeHtml(other.title)}</a>（${escapeHtml(other.year)}）</li>`).join('')}</ul>
       </section>
     </main>
   </body>
@@ -775,7 +779,7 @@ function renderPaperCard(paper) {
   const topics = paper.topics.slice(0, 3).map((topic) => `<span>${escapeHtml(topic)}</span>`).join('');
   return `<article class="paper-card">
           <p class="paper-year">${escapeHtml(paper.year)} · ${escapeHtml(category)}</p>
-          <h3><a href="${paperUrl(paper)}">${escapeHtml(paper.title)}</a></h3>
+          <h3><a href="${paperPath(paper)}">${escapeHtml(paper.title)}</a></h3>
           <p>${escapeHtml(paper.authors)}</p>
           <p class="paper-venue">${escapeHtml(paper.venue)}</p>
           ${note ? `<p class="paper-summary">${escapeHtml(note.summary)}</p>` : ''}
@@ -848,7 +852,7 @@ function renderIndexPage() {
       <section id="reading-notes" aria-labelledby="reading-notes-heading">
         <h2 id="reading-notes-heading">重点论文阅读笔记</h2>
         <p>以下两篇附有依据原文整理的研究问题、方法要点和资料出处。</p>
-        <ul>${featured.map((paper) => `<li><a href="${paperUrl(paper)}">${escapeHtml(readingNotes[paper.slug].titleZh)}</a>：${escapeHtml(readingNotes[paper.slug].summary)}</li>`).join('')}</ul>
+        <ul>${featured.map((paper) => `<li><a href="${paperPath(paper)}">${escapeHtml(readingNotes[paper.slug].titleZh)}</a>：${escapeHtml(readingNotes[paper.slug].summary)}</li>`).join('')}</ul>
       </section>
 
       <nav class="paper-topic-nav" aria-label="按研究主题浏览">
@@ -866,7 +870,7 @@ function renderIndexPage() {
 }
 
 function renderPublicationsPage() {
-  const featured = papers.slice(0, 10).map((paper) => `<li><a href="${paperUrl(paper)}">${escapeHtml(paper.title)}</a>，${escapeHtml(paper.authors)}，${escapeHtml(paper.year)}。</li>`).join('');
+  const featured = papers.slice(0, 10).map((paper) => `<li><a href="${paperPath(paper)}">${escapeHtml(paper.title)}</a>，${escapeHtml(paper.authors)}，${escapeHtml(paper.year)}。</li>`).join('');
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
