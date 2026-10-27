@@ -12,6 +12,7 @@
 ## 本地开发
 
 要求 Node.js 22.12 或更高版本。
+Cloudflare Pages 通过仓库根目录的 `.node-version` 选择 Node.js 22，避免旧构建镜像默认使用 Node.js 18。
 
 ```bash
 npm ci

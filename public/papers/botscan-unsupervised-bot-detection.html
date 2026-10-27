@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BotScan: an unsupervised bot detection based on adversarial learning and social perception | 李聪 Cong Li</title>
-    <meta name="description" content="BotScan: an unsupervised bot detection based on adversarial learning and social perception；H. Lin, N. Chen, Y. Chen, X. Li, C. Li；2024 14th Asian Control Conference, 1872-1878, 2024。论文书目信息与原文入口。" />
+    <meta name="description" content="BotScan：结合对抗学习与社交感知的无监督机器人检测。结合用户属性、文本语义及局部与远程邻域结构，并用 CatGAN 生成对抗样本，研究多类别社交机器人检测。" />
     <meta name="keywords" content="李聪, Cong Li, 复旦大学, 未来信息创新学院, 复杂网络应用, bot detection, social perception, adversarial learning" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://www.licong.me/papers/botscan-unsupervised-bot-detection.html" />
+    <link rel="canonical" href="https://www.licong.me/papers/botscan-unsupervised-bot-detection" />
     <link rel="stylesheet" href="/static-pages.css" />
     <script type="application/ld+json">{
       "@context": "https://schema.org",
       "@graph": [
             {
                   "@type": "ScholarlyArticle",
-                  "@id": "https://www.licong.me/papers/botscan-unsupervised-bot-detection.html#article",
-                  "url": "https://www.licong.me/papers/botscan-unsupervised-bot-detection.html",
+                  "@id": "https://www.licong.me/papers/botscan-unsupervised-bot-detection#article",
+                  "url": "https://www.licong.me/papers/botscan-unsupervised-bot-detection",
                   "name": "BotScan: an unsupervised bot detection based on adversarial learning and social perception",
                   "headline": "BotScan: an unsupervised bot detection based on adversarial learning and social perception",
                   "author": [
@@ -66,7 +66,7 @@
                         }
                   ],
                   "description": "BotScan: an unsupervised bot detection based on adversarial learning and social perception，H. Lin, N. Chen, Y. Chen, X. Li, C. Li，2024 14th Asian Control Conference, 1872-1878, 2024。",
-                  "mainEntityOfPage": "https://www.licong.me/papers/botscan-unsupervised-bot-detection.html"
+                  "mainEntityOfPage": "https://www.licong.me/papers/botscan-unsupervised-bot-detection"
             },
             {
                   "@type": "BreadcrumbList",
@@ -87,7 +87,7 @@
                               "@type": "ListItem",
                               "position": 3,
                               "name": "BotScan: an unsupervised bot detection based on adversarial learning and social perception",
-                              "item": "https://www.licong.me/papers/botscan-unsupervised-bot-detection.html"
+                              "item": "https://www.licong.me/papers/botscan-unsupervised-bot-detection"
                         }
                   ]
             }
@@ -107,9 +107,10 @@
       <p class="breadcrumbs"><a href="/">首页</a> / <a href="/papers/">论文目录</a> / 2024</p>
       <h1>BotScan: an unsupervised bot detection based on adversarial learning and social perception</h1>
       <p class="lead">
-        BotScan: an unsupervised bot detection based on adversarial learning and social perception。本页整理作者、出版信息、研究主题及资料出处。
+        BotScan：结合对抗学习与社交感知的无监督机器人检测。本页整理作者、出版信息、研究主题及资料出处。
       </p>
       <div class="topic-tags"><span>bot detection</span><span>social perception</span><span>adversarial learning</span></div>
+      <p>结合用户属性、文本语义及局部与远程邻域结构，并用 CatGAN 生成对抗样本，研究多类别社交机器人检测。</p>
 
       <section class="fact">
         <h2>论文信息</h2>
@@ -123,6 +124,22 @@
         </dl>
       </section>
 
+      <section class="reading-note" aria-label="论文阅读笔记">
+        <h2>BotScan：结合对抗学习与社交感知的无监督机器人检测</h2>
+        <h3>BotScan 解决什么问题？</h3>
+        <p>社交机器人会改变行为以规避检测。论文把用户之间的关系纳入建模，研究无监督、多类别机器人检测，并通过合成样本训练提高模型应对机器人演化的能力。</p>
+
+<h3>图表示与对抗学习如何结合？</h3>
+        <p>GSASRL 模块编码用户属性、文本语义和邻域信息，使用局部结构提取器 LSE 与远程结构提取器 RSE 表达不同范围的网络结构。CatGAN 生成新的机器人样本用于对抗训练。</p>
+
+<h3>如何理解论文的实验结果？</h3>
+        <p>作者在两个数据集上与基线比较，并检验模型鲁棒性。阅读结果时应结合原文的数据划分、评价指标和对比方法；迁移到新的平台或时间段仍需重新验证。</p>
+
+        <h3>原文与核对来源</h3>
+        <ul><li><a href="https://www.researchgate.net/publication/380519429_BotScan_An_Unsupervised_Bot_Detection_Based_on_Adversarial_Learning_and_Social_Perception">作者 Yang Chen 上传的论文全文与摘要</a></li><li><a href="https://fit.fudan.edu.cn/Data/View/1178">复旦大学教师主页：会议论文第 25 条</a></li></ul>
+        <p class="source-note">以上为依据所列资料整理的阅读笔记，核对日期：<time datetime="2026-10-27">2026-10-27</time>。</p>
+      </section>
+
       <section id="reference">
         <h2>书目引用</h2>
         <p>H. Lin, N. Chen, Y. Chen, X. Li, C. Li. <cite>BotScan: an unsupervised bot detection based on adversarial learning and social perception</cite>. 2024 14th Asian Control Conference, 1872-1878, 2024.</p>
@@ -130,7 +147,7 @@
       </section>
       <section>
         <h2>相关论文</h2>
-        <ul><li><a href="/papers/metrics-correlation-functional-brain-networks.html">The correlation of metrics in complex networks with applications in functional brain networks</a>（2011）</li><li><a href="/papers/mining-rank-universities-wikipedia.html">Mining the rank of universities with Wikipedia</a>（2019）</li><li><a href="/papers/multiple-social-ties-human-location-prediction.html">Can multiple social ties help improve human location prediction?</a>（2019）</li><li><a href="/papers/botscout-social-bot-detection-semantics-attributes-neighborhoods.html">BotScout: A Social Bot Detection Algorithm Based on Semantics, Attributes and Neighborhoods</a>（2024）</li></ul>
+        <ul><li><a href="/papers/metrics-correlation-functional-brain-networks">The correlation of metrics in complex networks with applications in functional brain networks</a>（2011）</li><li><a href="/papers/mining-rank-universities-wikipedia">Mining the rank of universities with Wikipedia</a>（2019）</li><li><a href="/papers/multiple-social-ties-human-location-prediction">Can multiple social ties help improve human location prediction?</a>（2019）</li><li><a href="/papers/botscout-social-bot-detection-semantics-attributes-neighborhoods">BotScout: A Social Bot Detection Algorithm Based on Semantics, Attributes and Neighborhoods</a>（2024）</li></ul>
       </section>
     </main>
   </body>
