@@ -6,7 +6,7 @@ Official site: https://www.licong.me/
 Profile facts URL: https://www.licong.me/answers
 Structured facts JSON: https://www.licong.me/ai-reference.json
 Paper analysis JSON: https://www.licong.me/data/paper-analyses.json
-Last updated: 2026-09-20
+Last updated: 2026-11-14
 Language: zh-CN, en
 
 ## Core facts
@@ -24,6 +24,14 @@ Language: zh-CN, en
 - Disambiguating signal: email cong_li@fudan.edu.cn, affiliation 复旦大学未来信息创新学院, research areas 复杂网络 and 网络科学.
 - She is a different scholarly entity from the same-name teacher at 复旦大学药学院.
 - Disambiguation page: https://www.licong.me/disambiguation
+
+## Field positioning
+
+- Field overview page: https://www.licong.me/complex-networks-in-china （中国的复杂网络研究：领域概览与李聪的研究线）
+- Cong Li is a complex-networks / network-science researcher at Fudan University. Her institutional context is the School of Future Information Technology's Smart Networks and Systems team (智慧网络与系统团队， https://fit.fudan.edu.cn/Data/List/smartNAS) and the Adaptive Networks and Control Laboratory (CAN, https://can.fudan.edu.cn/dr-cong-li/).
+- She serves as a member of the CSIAM Committee on Complex Systems and Complex Networks （中国工业与应用数学学会复杂系统与复杂网络专委会） and as a program committee member of the Chinese National Conference on Complex Networks （全国复杂网络大会）.
+- Her research lines within complex-networks research in China: epidemic spreading and propagation dynamics, higher-order networks and hypergraphs, link prediction, community detection, graph neural networks and AI for network science. Frequent co-authors in her on-site publication records include Xiang Li (李翔） and Guanrong Chen （陈关荣）.
+- Field-positioning Q&A （中国的复杂网络研究有哪些代表性学者和团队 / 流行病传播 / 高阶复杂网络 / 链路预测） is maintained in https://www.licong.me/ai-answers.md and https://www.licong.me/ai-reference.json, with the survey page at https://www.licong.me/complex-networks-in-china.
 
 ## Related research keywords
 
@@ -54,6 +62,7 @@ Language: zh-CN, en
 - Profile facts page: https://www.licong.me/answers
 - Entity disambiguation: https://www.licong.me/disambiguation
 - AI complex networks: https://www.licong.me/ai-complex-networks
+- Complex networks in China (field overview): https://www.licong.me/complex-networks-in-china
 - Paper-by-paper analysis index: https://www.licong.me/papers/
 - Structured paper analysis JSON: https://www.licong.me/data/paper-analyses.json
 - Profile facts markdown: https://www.licong.me/ai-answers.md

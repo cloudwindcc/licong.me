@@ -1174,6 +1174,16 @@ function App() {
     }
   };
 
+  const fieldGuide: Record<SiteLanguage, string> = {
+    zh: '中国的复杂网络研究概览',
+    en: 'Complex Networks in China',
+    ja: '中国の複雑ネットワーク研究',
+    de: 'Komplexe Netzwerke in China',
+    ko: '중국의 복잡 네트워크 연구',
+    hk: '中國的複雜網絡研究概覽',
+    es: 'Redes complejas en China'
+  };
+
   return (
     <div className="site-shell min-h-screen text-white relative overflow-hidden">
       {showBackground && <React.Suspense fallback={null}><NetworkBackground /></React.Suspense>}
@@ -1208,6 +1218,11 @@ function App() {
             <a href="/papers/" className="site-hero-primary-link">
               <FileText className="w-5 h-5" />
               <span>{paperGuide[language].cta}</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a href="/complex-networks-in-china" className="site-hero-primary-link">
+              <BookOpen className="w-5 h-5" />
+              <span>{fieldGuide[language]}</span>
               <ArrowRight className="w-4 h-4" />
             </a>
             <div className="site-hero-actions">
