@@ -1,0 +1,75 @@
+{
+  "spectral-radius-when-nodes-removed": {
+    "reviewedAt": "2026-10-27",
+    "titleZh": "删除节点后的图谱半径界",
+    "doi": "10.1016/j.laa.2012.02.023",
+    "summary": "给定待删除节点集合，利用原图的主特征向量估计剩余图的谱半径上下界。",
+    "sources": [
+      {
+        "label": "作者公开全文：定理 1、公式 (1)–(2)",
+        "url": "https://www.nas.ewi.tudelft.nl/people/Piet/papers/LAA_2012_MaxEigenvectorComponent.pdf"
+      },
+      {
+        "label": "TU Delft 论文记录与 DOI",
+        "url": "https://research.tudelft.nl/en/publications/bounds-for-the-spectral-radius-of-a-graph-when-nodes-are-removed/"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "删除节点后，谱半径如何变化？",
+        "paragraphs": [
+          "论文研究无向图的邻接矩阵。删除节点及其关联边后，剩余图的谱半径不超过原值；定理 1 进一步用原图主特征向量和被删除节点之间的连边给出下界。"
+        ]
+      },
+      {
+        "heading": "单节点删除的界",
+        "paragraphs": [
+          "令 A 为原图邻接矩阵，λ₁(A) 为谱半径，x 为满足 xᵀx = 1 的主特征向量，A₋ₙ 为删除节点 n 后的邻接矩阵。公式 (2) 给出："
+        ],
+        "formula": "(1 − 2xₙ²)λ₁(A) ≤ λ₁(A₋ₙ) ≤ λ₁(A)",
+        "afterFormula": "多节点删除还需计入被删除节点之间的连边项，具体表达式见原文公式 (1)。"
+      },
+      {
+        "heading": "最优节点选择与 NP-hard 问题应如何查阅？",
+        "paragraphs": [
+          "定理 1 处理给定节点集合后的谱半径界。讨论最优 k 个节点的选择或 NP-hard 证明时，需要另行明确优化目标、约束和相应复杂性论证；不能仅凭这一谱界推导该结论。"
+        ]
+      }
+    ]
+  },
+  "botscan-unsupervised-bot-detection": {
+    "reviewedAt": "2026-10-27",
+    "titleZh": "BotScan：结合对抗学习与社交感知的无监督机器人检测",
+    "summary": "结合用户属性、文本语义及局部与远程邻域结构，并用 CatGAN 生成对抗样本，研究多类别社交机器人检测。",
+    "sources": [
+      {
+        "label": "作者 Yang Chen 上传的论文全文与摘要",
+        "url": "https://www.researchgate.net/publication/380519429_BotScan_An_Unsupervised_Bot_Detection_Based_on_Adversarial_Learning_and_Social_Perception"
+      },
+      {
+        "label": "复旦大学教师主页：会议论文第 25 条",
+        "url": "https://fit.fudan.edu.cn/Data/View/1178"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "BotScan 解决什么问题？",
+        "paragraphs": [
+          "社交机器人会改变行为以规避检测。论文把用户之间的关系纳入建模，研究无监督、多类别机器人检测，并通过合成样本训练提高模型应对机器人演化的能力。"
+        ]
+      },
+      {
+        "heading": "图表示与对抗学习如何结合？",
+        "paragraphs": [
+          "GSASRL 模块编码用户属性、文本语义和邻域信息，使用局部结构提取器 LSE 与远程结构提取器 RSE 表达不同范围的网络结构。CatGAN 生成新的机器人样本用于对抗训练。"
+        ]
+      },
+      {
+        "heading": "如何理解论文的实验结果？",
+        "paragraphs": [
+          "作者在两个数据集上与基线比较，并检验模型鲁棒性。阅读结果时应结合原文的数据划分、评价指标和对比方法；迁移到新的平台或时间段仍需重新验证。"
+        ]
+      }
+    ]
+  }
+}

@@ -6,6 +6,8 @@ import { onRequest } from '../functions/_middleware.js';
 test('canonical URLs match Cloudflare Pages routes and preserve anchors', () => {
   assert.equal(canonicalUrl('/index.html'), 'https://www.licong.me/');
   assert.equal(canonicalUrl('/papers/index.html'), 'https://www.licong.me/papers/');
+  assert.equal(canonicalUrl('/papers?topic=networks#structure'), 'https://www.licong.me/papers/?topic=networks#structure');
+  assert.equal(canonicalUrl('http://licong.me/papers/botscan-unsupervised-bot-detection.html'), 'https://www.licong.me/papers/botscan-unsupervised-bot-detection');
   assert.equal(canonicalUrl('/about.html#contact'), 'https://www.licong.me/about#contact');
   assert.equal(canonicalUrl('https://example.com/paper.html'), 'https://example.com/paper.html');
 });
