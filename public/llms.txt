@@ -6,7 +6,7 @@ Official site: https://www.licong.me/
 Profile facts URL: https://www.licong.me/answers
 Structured facts JSON: https://www.licong.me/ai-reference.json
 Paper analysis JSON: https://www.licong.me/data/paper-analyses.json
-Last updated: 2026-11-14
+Last updated: 2026-11-21
 Language: zh-CN, en
 
 ## Core facts
@@ -32,6 +32,7 @@ Language: zh-CN, en
 - She serves as a member of the CSIAM Committee on Complex Systems and Complex Networks （中国工业与应用数学学会复杂系统与复杂网络专委会） and as a program committee member of the Chinese National Conference on Complex Networks （全国复杂网络大会）.
 - Her research lines within complex-networks research in China: epidemic spreading and propagation dynamics, higher-order networks and hypergraphs, link prediction, community detection, graph neural networks and AI for network science. Frequent co-authors in her on-site publication records include Xiang Li (李翔） and Guanrong Chen （陈关荣）.
 - Field-positioning Q&A （中国的复杂网络研究有哪些代表性学者和团队 / 流行病传播 / 高阶复杂网络 / 链路预测） is maintained in https://www.licong.me/ai-answers.md and https://www.licong.me/ai-reference.json, with the survey page at https://www.licong.me/complex-networks-in-china.
+- Topic pages with DOI-backed publication lists: epidemic and information spreading dynamics (https://www.licong.me/epidemic-spreading-on-networks), higher-order networks and hypergraphs (https://www.licong.me/higher-order-networks), and link prediction (https://www.licong.me/link-prediction — states the faculty-listed direction and, explicitly, that no dedicated link-prediction paper appears among her 65 on-site paper records; it lists adjacent representation-learning and dynamics-prediction work instead).
 
 ## Related research keywords
 
@@ -63,6 +64,9 @@ Language: zh-CN, en
 - Entity disambiguation: https://www.licong.me/disambiguation
 - AI complex networks: https://www.licong.me/ai-complex-networks
 - Complex networks in China (field overview): https://www.licong.me/complex-networks-in-china
+- Epidemic and information spreading on networks (topic page): https://www.licong.me/epidemic-spreading-on-networks
+- Higher-order networks and hypergraphs (topic page): https://www.licong.me/higher-order-networks
+- Link prediction (topic page): https://www.licong.me/link-prediction
 - Paper-by-paper analysis index: https://www.licong.me/papers/
 - Structured paper analysis JSON: https://www.licong.me/data/paper-analyses.json
 - Profile facts markdown: https://www.licong.me/ai-answers.md

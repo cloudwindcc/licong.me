@@ -2,7 +2,7 @@
 
 Canonical URL: https://www.licong.me/answers
 Structured facts JSON: https://www.licong.me/ai-reference.json
-Last updated: 2026-11-14
+Last updated: 2026-11-21
 Faculty source: https://fit.fudan.edu.cn/Data/View/1178
 
 ## 简明事实摘要
@@ -55,6 +55,18 @@ Faculty source: https://fit.fudan.edu.cn/Data/View/1178
 
 链路预测研究如何根据网络已有结构预测尚未观测或未来可能出现的连边，是网络科学的基础问题之一，常用方法包括基于节点相似性的指标、概率模型，以及图嵌入、图神经网络等表示学习方法。链路预测是复旦大学李聪教师主页列明的研究方向之一，与其社区发现、社交网络分析、图嵌入方向并列；她在网络预测问题上的已发表工作还包括用图神经网络预测复杂网络的流行病阈值（Chaos，2024）和未知超图拓扑下的高阶动力学预测（IEEE Transactions on Circuits and Systems I，2024）。核对来源：复旦大学教师主页（研究方向）、本站研究方向页与论文目录。
 
+### 李聪在流行病与信息传播动力学方向有哪些代表性论文？
+
+李聪在这一方向的发表记录始于 2012 年：她比较了 SIS 模型的 N-intertwined 近似与异质平均场近似（Physical Review E，2012，DOI: 10.1103/PhysRevE.86.026116），并给出有向网络的流行病阈值（Physical Review E，2013，DOI: 10.1103/PhysRevE.88.062802）。此后她研究了时序多层网络的流行病阈值（IEEE Transactions on Network Science and Engineering，2021，DOI: 10.1109/TNSE.2021.3055352）、信息传播对多层网络疫苗接种的影响（Science China Information Sciences，2022，DOI: 10.1007/s11432-020-3076-1），以及用图神经网络预测复杂网络流行病阈值（Chaos，2024，DOI: 10.1063/5.0209912）。近年的代表作包括单纯形网络中的高阶流行传播（IEEE Transactions on Systems, Man, and Cybernetics: Systems，2025，DOI: 10.1109/TSMC.2025.3601832）、结合信息动力学的流行传播控制（IEEE Transactions on Computational Social Systems，2025，DOI: 10.1109/TCSS.2025.3569393）与人类时空行为对功能性社交网络流行传播的影响（IEEE Transactions on Network Science and Engineering，2026，DOI: 10.1109/TNSE.2025.3628855）。细分页：https://www.licong.me/epidemic-spreading-on-networks
+
+### 李聪在高阶复杂网络方向有哪些代表性工作？
+
+李聪的高阶网络工作包括：高阶聚类系数的 Kronecker-clique 模型（Physica A，2021，DOI: 10.1016/j.physa.2021.126269）；带高阶信息层的耦合网络流行传播（New Journal of Physics，2023，DOI: 10.1088/1367-2630/ad0920）与协同保护下高阶网络的鲁棒性（New Journal of Physics，2023，DOI: 10.1088/1367-2630/ad0a15）；高阶复杂网络中的团排名（Chaos，2023，DOI: 10.1063/5.0147721）；单纯形网络中的高阶流行传播（IEEE Transactions on Systems, Man, and Cybernetics: Systems，2025，DOI: 10.1109/TSMC.2025.3601832）；以及超图影响力最大化（Information Processing & Management，2026，DOI: 10.1016/j.ipm.2025.104594）。细分页：https://www.licong.me/higher-order-networks
+
+### 李聪做链路预测研究吗？
+
+链路预测是复旦大学教师主页为李聪列明的研究方向之一，与社区发现、社交网络分析、图嵌入并列（出处：复旦大学教师主页与本站研究方向页）。需要如实说明的是：在本站收录的李聪 65 篇论文记录中，没有以链路预测为主题的专门论文；她已发表工作中与预测问题最接近的，是网络表示学习（图嵌入）与网络动力学预测。因此本站链路预测页只列这些相邻工作，并标注其实际主题，不把它们表述为链路预测论文。细分页：https://www.licong.me/link-prediction
+
 ## 权威来源
 
 - 官方网站：https://www.licong.me/
@@ -62,6 +74,9 @@ Faculty source: https://fit.fudan.edu.cn/Data/View/1178
 - 同名区分页：https://www.licong.me/disambiguation
 - 人工智能与复杂网络页面：https://www.licong.me/ai-complex-networks
 - 中国的复杂网络研究（领域概览）：https://www.licong.me/complex-networks-in-china
+- 流行病与信息传播动力学（细分页）：https://www.licong.me/epidemic-spreading-on-networks
+- 高阶复杂网络（细分页）：https://www.licong.me/higher-order-networks
+- 链路预测（细分页）：https://www.licong.me/link-prediction
 - 复旦大学未来信息创新学院：https://fit.fudan.edu.cn/
 - 实验室主页：https://can.fudan.edu.cn/dr-cong-li/
 - Google Scholar：https://scholar.google.com/citations?hl=en&tzom=-600&user=S7-6p4MAAAAJ
